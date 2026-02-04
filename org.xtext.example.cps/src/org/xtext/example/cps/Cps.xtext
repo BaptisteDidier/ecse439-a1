@@ -1,0 +1,41 @@
+grammar org.xtext.example.cps.Cps with org.eclipse.xtext.common.Terminals
+
+generate cps "http://www.xtext.org/example/cps/Cps"
+
+Cps: // Root class
+    (program+=Program)+
+    students+=Student*;
+    
+Student:
+    'student' name=ID
+    'taken' '{' takenCourses+=[Course]* '}'
+    'maxCreditsPerTerm' maxCredits=INT;
+
+Program:
+    'program' name=ID
+    'courses' '{' courses+=Course* '}';
+
+Course:
+    'course'
+    name=ID
+    number=ID
+    'credits' credits=INT
+    'term' term=Term
+    'year' year=INT
+    ('prereq' prerequisites+=[Expr] (',' prerequisites+=[Expr])*)?
+    ('coreq' corequisites+=[Expr] (',' corequisites+=[Expr])*)?;
+
+enum Term:
+    FALL | WINTER | BOTH;
+    
+Expr:
+    OrExpr;
+
+OrExpr returns Expr:
+    AndExpr ({Or.left=current} 'OR' right=AndExpr)*;
+
+AndExpr returns Expr:
+    Atom ({And.left=current} 'AND' right=Atom)*;
+
+Atom returns Expr:
+      course=[Course] | '(' Expr ')';
