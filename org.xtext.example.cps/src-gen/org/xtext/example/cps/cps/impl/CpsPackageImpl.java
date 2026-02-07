@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.cps.cps.And;
 import org.xtext.example.cps.cps.Course;
+import org.xtext.example.cps.cps.Cps;
 import org.xtext.example.cps.cps.CpsFactory;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Expr;
-import org.xtext.example.cps.cps.Model;
 import org.xtext.example.cps.cps.Or;
 import org.xtext.example.cps.cps.Program;
 import org.xtext.example.cps.cps.Student;
@@ -35,14 +35,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass modelEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass studentEClass = null;
+  private EClass cpsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -50,6 +43,13 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   private EClass programEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass studentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -154,9 +154,9 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EClass getModel()
+  public EClass getCps()
   {
-    return modelEClass;
+    return cpsEClass;
   }
 
   /**
@@ -165,9 +165,9 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EReference getModel_Program()
+  public EReference getCps_Program()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(0);
+    return (EReference)cpsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -176,9 +176,42 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EReference getModel_Students()
+  public EReference getCps_Students()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+    return (EReference)cpsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProgram()
+  {
+    return programEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProgram_Name()
+  {
+    return (EAttribute)programEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getProgram_Courses()
+  {
+    return (EReference)programEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -198,7 +231,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getStudent_StudentName()
+  public EAttribute getStudent_Name()
   {
     return (EAttribute)studentEClass.getEStructuralFeatures().get(0);
   }
@@ -231,39 +264,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EClass getProgram()
-  {
-    return programEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getProgram_ProgramName()
-  {
-    return (EAttribute)programEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getProgram_Courses()
-  {
-    return (EReference)programEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getCourse()
   {
     return courseEClass;
@@ -275,7 +275,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getCourse_CourseName()
+  public EAttribute getCourse_Name()
   {
     return (EAttribute)courseEClass.getEStructuralFeatures().get(0);
   }
@@ -286,7 +286,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getCourse_CourseNumber()
+  public EAttribute getCourse_Number()
   {
     return (EAttribute)courseEClass.getEStructuralFeatures().get(1);
   }
@@ -330,7 +330,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EReference getCourse_Prerequisites()
+  public EReference getCourse_Prereq()
   {
     return (EReference)courseEClass.getEStructuralFeatures().get(5);
   }
@@ -341,7 +341,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EReference getCourse_Corequisites()
+  public EReference getCourse_Coreq()
   {
     return (EReference)courseEClass.getEStructuralFeatures().get(6);
   }
@@ -454,27 +454,27 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     isCreated = true;
 
     // Create classes and their features
-    modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__PROGRAM);
-    createEReference(modelEClass, MODEL__STUDENTS);
+    cpsEClass = createEClass(CPS);
+    createEReference(cpsEClass, CPS__PROGRAM);
+    createEReference(cpsEClass, CPS__STUDENTS);
+
+    programEClass = createEClass(PROGRAM);
+    createEAttribute(programEClass, PROGRAM__NAME);
+    createEReference(programEClass, PROGRAM__COURSES);
 
     studentEClass = createEClass(STUDENT);
-    createEAttribute(studentEClass, STUDENT__STUDENT_NAME);
+    createEAttribute(studentEClass, STUDENT__NAME);
     createEReference(studentEClass, STUDENT__TAKEN_COURSES);
     createEAttribute(studentEClass, STUDENT__MAX_CREDITS);
 
-    programEClass = createEClass(PROGRAM);
-    createEAttribute(programEClass, PROGRAM__PROGRAM_NAME);
-    createEReference(programEClass, PROGRAM__COURSES);
-
     courseEClass = createEClass(COURSE);
-    createEAttribute(courseEClass, COURSE__COURSE_NAME);
-    createEAttribute(courseEClass, COURSE__COURSE_NUMBER);
+    createEAttribute(courseEClass, COURSE__NAME);
+    createEAttribute(courseEClass, COURSE__NUMBER);
     createEAttribute(courseEClass, COURSE__CREDITS);
     createEAttribute(courseEClass, COURSE__TERM);
     createEAttribute(courseEClass, COURSE__YEAR);
-    createEReference(courseEClass, COURSE__PREREQUISITES);
-    createEReference(courseEClass, COURSE__COREQUISITES);
+    createEReference(courseEClass, COURSE__PREREQ);
+    createEReference(courseEClass, COURSE__COREQ);
 
     exprEClass = createEClass(EXPR);
     createEReference(exprEClass, EXPR__COURSE);
@@ -522,27 +522,27 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     andEClass.getESuperTypes().add(this.getExpr());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Program(), this.getProgram(), null, "program", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Students(), this.getStudent(), null, "students", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(cpsEClass, Cps.class, "Cps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCps_Program(), this.getProgram(), null, "program", null, 0, 1, Cps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCps_Students(), this.getStudent(), null, "students", null, 0, -1, Cps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProgram_Name(), ecorePackage.getEString(), "name", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProgram_Courses(), this.getCourse(), null, "courses", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStudent_StudentName(), ecorePackage.getEString(), "studentName", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStudent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStudent_TakenCourses(), this.getCourse(), null, "takenCourses", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStudent_MaxCredits(), ecorePackage.getEInt(), "maxCredits", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProgram_ProgramName(), ecorePackage.getEString(), "programName", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProgram_Courses(), this.getCourse(), null, "courses", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCourse_CourseName(), ecorePackage.getEString(), "courseName", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCourse_CourseNumber(), ecorePackage.getEString(), "courseNumber", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCourse_Number(), ecorePackage.getEString(), "number", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCourse_Credits(), ecorePackage.getEInt(), "credits", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCourse_Term(), this.getTerm(), "term", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCourse_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCourse_Prerequisites(), this.getExpr(), null, "prerequisites", null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCourse_Corequisites(), this.getExpr(), null, "corequisites", null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCourse_Prereq(), this.getExpr(), null, "prereq", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCourse_Coreq(), this.getExpr(), null, "coreq", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpr_Course(), this.getCourse(), null, "course", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -26,15 +26,15 @@ import org.eclipse.xtext.service.GrammarProvider;
 @Singleton
 public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarElementFinder {
 	
-	public class ModelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Model");
+	public class CpsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Cps");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cProgramAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cProgramProgramParserRuleCall_0_0 = (RuleCall)cProgramAssignment_0.eContents().get(0);
 		private final Assignment cStudentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cStudentsStudentParserRuleCall_1_0 = (RuleCall)cStudentsAssignment_1.eContents().get(0);
 		
-		//Model:
+		//Cps:
 		//    program=Program
 		//    students+=Student*;
 		@Override public ParserRule getRule() { return rule; }
@@ -55,12 +55,57 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//Student
 		public RuleCall getStudentsStudentParserRuleCall_1_0() { return cStudentsStudentParserRuleCall_1_0; }
 	}
+	public class ProgramElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Program");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProgramKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cCoursesKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cCoursesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCoursesCourseParserRuleCall_4_0 = (RuleCall)cCoursesAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Program:
+		//    'program' name=ID
+		//    'courses' '{' courses+=Course* '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'program' name=ID
+		//'courses' '{' courses+=Course* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'program'
+		public Keyword getProgramKeyword_0() { return cProgramKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'courses'
+		public Keyword getCoursesKeyword_2() { return cCoursesKeyword_2; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//courses+=Course*
+		public Assignment getCoursesAssignment_4() { return cCoursesAssignment_4; }
+		
+		//Course
+		public RuleCall getCoursesCourseParserRuleCall_4_0() { return cCoursesCourseParserRuleCall_4_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
 	public class StudentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Student");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cStudentKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cStudentNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cStudentNameIDTerminalRuleCall_1_0 = (RuleCall)cStudentNameAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cTakenKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cTakenCoursesAssignment_4 = (Assignment)cGroup.eContents().get(4);
@@ -72,12 +117,12 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cMaxCreditsINTTerminalRuleCall_7_0 = (RuleCall)cMaxCreditsAssignment_7.eContents().get(0);
 		
 		//Student:
-		//    'student' studentName=ID
+		//    'student' name=ID
 		//    'taken' '{' takenCourses+=[Course]* '}'
 		//    'maxCreditsPerTerm' maxCredits=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'student' studentName=ID
+		//'student' name=ID
 		//'taken' '{' takenCourses+=[Course]* '}'
 		//'maxCreditsPerTerm' maxCredits=INT
 		public Group getGroup() { return cGroup; }
@@ -85,11 +130,11 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'student'
 		public Keyword getStudentKeyword_0() { return cStudentKeyword_0; }
 		
-		//studentName=ID
-		public Assignment getStudentNameAssignment_1() { return cStudentNameAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getStudentNameIDTerminalRuleCall_1_0() { return cStudentNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'taken'
 		public Keyword getTakenKeyword_2() { return cTakenKeyword_2; }
@@ -118,59 +163,14 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//INT
 		public RuleCall getMaxCreditsINTTerminalRuleCall_7_0() { return cMaxCreditsINTTerminalRuleCall_7_0; }
 	}
-	public class ProgramElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Program");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cProgramKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cProgramNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cProgramNameIDTerminalRuleCall_1_0 = (RuleCall)cProgramNameAssignment_1.eContents().get(0);
-		private final Keyword cCoursesKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cCoursesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cCoursesCourseParserRuleCall_4_0 = (RuleCall)cCoursesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		
-		//Program:
-		//    'program' programName=ID
-		//    'courses' '{' courses+=Course* '}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'program' programName=ID
-		//'courses' '{' courses+=Course* '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'program'
-		public Keyword getProgramKeyword_0() { return cProgramKeyword_0; }
-		
-		//programName=ID
-		public Assignment getProgramNameAssignment_1() { return cProgramNameAssignment_1; }
-		
-		//ID
-		public RuleCall getProgramNameIDTerminalRuleCall_1_0() { return cProgramNameIDTerminalRuleCall_1_0; }
-		
-		//'courses'
-		public Keyword getCoursesKeyword_2() { return cCoursesKeyword_2; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-		
-		//courses+=Course*
-		public Assignment getCoursesAssignment_4() { return cCoursesAssignment_4; }
-		
-		//Course
-		public RuleCall getCoursesCourseParserRuleCall_4_0() { return cCoursesCourseParserRuleCall_4_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
 	public class CourseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Course");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCourseKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCourseNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCourseNameIDTerminalRuleCall_1_0 = (RuleCall)cCourseNameAssignment_1.eContents().get(0);
-		private final Assignment cCourseNumberAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCourseNumberIDTerminalRuleCall_2_0 = (RuleCall)cCourseNumberAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cNumberAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNumberIDTerminalRuleCall_2_0 = (RuleCall)cNumberAssignment_2.eContents().get(0);
 		private final Keyword cCreditsKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cCreditsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cCreditsINTTerminalRuleCall_4_0 = (RuleCall)cCreditsAssignment_4.eContents().get(0);
@@ -182,60 +182,44 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cYearINTTerminalRuleCall_8_0 = (RuleCall)cYearAssignment_8.eContents().get(0);
 		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
 		private final Keyword cPrereqKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cPrerequisitesAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final CrossReference cPrerequisitesExprCrossReference_9_1_0 = (CrossReference)cPrerequisitesAssignment_9_1.eContents().get(0);
-		private final RuleCall cPrerequisitesExprIDTerminalRuleCall_9_1_0_1 = (RuleCall)cPrerequisitesExprCrossReference_9_1_0.eContents().get(1);
-		private final Group cGroup_9_2 = (Group)cGroup_9.eContents().get(2);
-		private final Keyword cCommaKeyword_9_2_0 = (Keyword)cGroup_9_2.eContents().get(0);
-		private final Assignment cPrerequisitesAssignment_9_2_1 = (Assignment)cGroup_9_2.eContents().get(1);
-		private final CrossReference cPrerequisitesExprCrossReference_9_2_1_0 = (CrossReference)cPrerequisitesAssignment_9_2_1.eContents().get(0);
-		private final RuleCall cPrerequisitesExprIDTerminalRuleCall_9_2_1_0_1 = (RuleCall)cPrerequisitesExprCrossReference_9_2_1_0.eContents().get(1);
+		private final Assignment cPrereqAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final RuleCall cPrereqExprParserRuleCall_9_1_0 = (RuleCall)cPrereqAssignment_9_1.eContents().get(0);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cCoreqKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
-		private final Assignment cCorequisitesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
-		private final CrossReference cCorequisitesExprCrossReference_10_1_0 = (CrossReference)cCorequisitesAssignment_10_1.eContents().get(0);
-		private final RuleCall cCorequisitesExprIDTerminalRuleCall_10_1_0_1 = (RuleCall)cCorequisitesExprCrossReference_10_1_0.eContents().get(1);
-		private final Group cGroup_10_2 = (Group)cGroup_10.eContents().get(2);
-		private final Keyword cCommaKeyword_10_2_0 = (Keyword)cGroup_10_2.eContents().get(0);
-		private final Assignment cCorequisitesAssignment_10_2_1 = (Assignment)cGroup_10_2.eContents().get(1);
-		private final CrossReference cCorequisitesExprCrossReference_10_2_1_0 = (CrossReference)cCorequisitesAssignment_10_2_1.eContents().get(0);
-		private final RuleCall cCorequisitesExprIDTerminalRuleCall_10_2_1_0_1 = (RuleCall)cCorequisitesExprCrossReference_10_2_1_0.eContents().get(1);
+		private final Assignment cCoreqAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cCoreqExprParserRuleCall_10_1_0 = (RuleCall)cCoreqAssignment_10_1.eContents().get(0);
 		
 		//Course:
-		//    'course'
-		//    courseName=ID
-		//    courseNumber=ID
+		//    'course' name=ID number=ID
 		//    'credits' credits=INT
 		//    'term' term=Term
 		//    'year' year=INT
-		//    ('prereq' prerequisites+=[Expr] (',' prerequisites+=[Expr])*)?
-		//    ('coreq' corequisites+=[Expr] (',' corequisites+=[Expr])*)?;
+		//    ('prereq' prereq=Expr)?
+		//    ('coreq' coreq=Expr)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'course'
-		//courseName=ID
-		//courseNumber=ID
+		//'course' name=ID number=ID
 		//'credits' credits=INT
 		//'term' term=Term
 		//'year' year=INT
-		//('prereq' prerequisites+=[Expr] (',' prerequisites+=[Expr])*)?
-		//('coreq' corequisites+=[Expr] (',' corequisites+=[Expr])*)?
+		//('prereq' prereq=Expr)?
+		//('coreq' coreq=Expr)?
 		public Group getGroup() { return cGroup; }
 		
 		//'course'
 		public Keyword getCourseKeyword_0() { return cCourseKeyword_0; }
 		
-		//courseName=ID
-		public Assignment getCourseNameAssignment_1() { return cCourseNameAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getCourseNameIDTerminalRuleCall_1_0() { return cCourseNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//courseNumber=ID
-		public Assignment getCourseNumberAssignment_2() { return cCourseNumberAssignment_2; }
+		//number=ID
+		public Assignment getNumberAssignment_2() { return cNumberAssignment_2; }
 		
 		//ID
-		public RuleCall getCourseNumberIDTerminalRuleCall_2_0() { return cCourseNumberIDTerminalRuleCall_2_0; }
+		public RuleCall getNumberIDTerminalRuleCall_2_0() { return cNumberIDTerminalRuleCall_2_0; }
 		
 		//'credits'
 		public Keyword getCreditsKeyword_3() { return cCreditsKeyword_3; }
@@ -264,65 +248,29 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//INT
 		public RuleCall getYearINTTerminalRuleCall_8_0() { return cYearINTTerminalRuleCall_8_0; }
 		
-		//('prereq' prerequisites+=[Expr] (',' prerequisites+=[Expr])*)?
+		//('prereq' prereq=Expr)?
 		public Group getGroup_9() { return cGroup_9; }
 		
 		//'prereq'
 		public Keyword getPrereqKeyword_9_0() { return cPrereqKeyword_9_0; }
 		
-		//prerequisites+=[Expr]
-		public Assignment getPrerequisitesAssignment_9_1() { return cPrerequisitesAssignment_9_1; }
+		//prereq=Expr
+		public Assignment getPrereqAssignment_9_1() { return cPrereqAssignment_9_1; }
 		
-		//[Expr]
-		public CrossReference getPrerequisitesExprCrossReference_9_1_0() { return cPrerequisitesExprCrossReference_9_1_0; }
+		//Expr
+		public RuleCall getPrereqExprParserRuleCall_9_1_0() { return cPrereqExprParserRuleCall_9_1_0; }
 		
-		//ID
-		public RuleCall getPrerequisitesExprIDTerminalRuleCall_9_1_0_1() { return cPrerequisitesExprIDTerminalRuleCall_9_1_0_1; }
-		
-		//(',' prerequisites+=[Expr])*
-		public Group getGroup_9_2() { return cGroup_9_2; }
-		
-		//','
-		public Keyword getCommaKeyword_9_2_0() { return cCommaKeyword_9_2_0; }
-		
-		//prerequisites+=[Expr]
-		public Assignment getPrerequisitesAssignment_9_2_1() { return cPrerequisitesAssignment_9_2_1; }
-		
-		//[Expr]
-		public CrossReference getPrerequisitesExprCrossReference_9_2_1_0() { return cPrerequisitesExprCrossReference_9_2_1_0; }
-		
-		//ID
-		public RuleCall getPrerequisitesExprIDTerminalRuleCall_9_2_1_0_1() { return cPrerequisitesExprIDTerminalRuleCall_9_2_1_0_1; }
-		
-		//('coreq' corequisites+=[Expr] (',' corequisites+=[Expr])*)?
+		//('coreq' coreq=Expr)?
 		public Group getGroup_10() { return cGroup_10; }
 		
 		//'coreq'
 		public Keyword getCoreqKeyword_10_0() { return cCoreqKeyword_10_0; }
 		
-		//corequisites+=[Expr]
-		public Assignment getCorequisitesAssignment_10_1() { return cCorequisitesAssignment_10_1; }
+		//coreq=Expr
+		public Assignment getCoreqAssignment_10_1() { return cCoreqAssignment_10_1; }
 		
-		//[Expr]
-		public CrossReference getCorequisitesExprCrossReference_10_1_0() { return cCorequisitesExprCrossReference_10_1_0; }
-		
-		//ID
-		public RuleCall getCorequisitesExprIDTerminalRuleCall_10_1_0_1() { return cCorequisitesExprIDTerminalRuleCall_10_1_0_1; }
-		
-		//(',' corequisites+=[Expr])*
-		public Group getGroup_10_2() { return cGroup_10_2; }
-		
-		//','
-		public Keyword getCommaKeyword_10_2_0() { return cCommaKeyword_10_2_0; }
-		
-		//corequisites+=[Expr]
-		public Assignment getCorequisitesAssignment_10_2_1() { return cCorequisitesAssignment_10_2_1; }
-		
-		//[Expr]
-		public CrossReference getCorequisitesExprCrossReference_10_2_1_0() { return cCorequisitesExprCrossReference_10_2_1_0; }
-		
-		//ID
-		public RuleCall getCorequisitesExprIDTerminalRuleCall_10_2_1_0_1() { return cCorequisitesExprIDTerminalRuleCall_10_2_1_0_1; }
+		//Expr
+		public RuleCall getCoreqExprParserRuleCall_10_1_0() { return cCoreqExprParserRuleCall_10_1_0; }
 	}
 	public class ExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Expr");
@@ -417,10 +365,12 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		
 		//Atom returns Expr:
-		//      course=[Course] | '(' Expr ')';
+		//      course=[Course]
+		//    | '(' Expr ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//course=[Course] | '(' Expr ')'
+		//  course=[Course]
+		//| '(' Expr ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//course=[Course]
@@ -456,31 +406,38 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Keyword cBOTHBOTHKeyword_2_0 = (Keyword)cBOTHEnumLiteralDeclaration_2.eContents().get(0);
 		
 		//enum Term:
-		//    FALL | WINTER | BOTH;
+		//    FALL='FALL'
+		//  | WINTER='WINTER'
+		//  | BOTH='BOTH';
 		public EnumRule getRule() { return rule; }
 		
-		//FALL | WINTER | BOTH
+		//  FALL='FALL'
+		//| WINTER='WINTER'
+		//| BOTH='BOTH'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//FALL
+		//FALL='FALL'
 		public EnumLiteralDeclaration getFALLEnumLiteralDeclaration_0() { return cFALLEnumLiteralDeclaration_0; }
 		
+		//'FALL'
 		public Keyword getFALLFALLKeyword_0_0() { return cFALLFALLKeyword_0_0; }
 		
-		//WINTER
+		//WINTER='WINTER'
 		public EnumLiteralDeclaration getWINTEREnumLiteralDeclaration_1() { return cWINTEREnumLiteralDeclaration_1; }
 		
+		//'WINTER'
 		public Keyword getWINTERWINTERKeyword_1_0() { return cWINTERWINTERKeyword_1_0; }
 		
-		//BOTH
+		//BOTH='BOTH'
 		public EnumLiteralDeclaration getBOTHEnumLiteralDeclaration_2() { return cBOTHEnumLiteralDeclaration_2; }
 		
+		//'BOTH'
 		public Keyword getBOTHBOTHKeyword_2_0() { return cBOTHBOTHKeyword_2_0; }
 	}
 	
-	private final ModelElements pModel;
-	private final StudentElements pStudent;
+	private final CpsElements pCps;
 	private final ProgramElements pProgram;
+	private final StudentElements pStudent;
 	private final CourseElements pCourse;
 	private final TermElements eTerm;
 	private final ExprElements pExpr;
@@ -497,9 +454,9 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 			TerminalsGrammarAccess gaTerminals) {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
-		this.pModel = new ModelElements();
-		this.pStudent = new StudentElements();
+		this.pCps = new CpsElements();
 		this.pProgram = new ProgramElements();
+		this.pStudent = new StudentElements();
 		this.pCourse = new CourseElements();
 		this.eTerm = new TermElements();
 		this.pExpr = new ExprElements();
@@ -535,19 +492,30 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 
 	
-	//Model:
+	//Cps:
 	//    program=Program
 	//    students+=Student*;
-	public ModelElements getModelAccess() {
-		return pModel;
+	public CpsElements getCpsAccess() {
+		return pCps;
 	}
 	
-	public ParserRule getModelRule() {
-		return getModelAccess().getRule();
+	public ParserRule getCpsRule() {
+		return getCpsAccess().getRule();
+	}
+	
+	//Program:
+	//    'program' name=ID
+	//    'courses' '{' courses+=Course* '}';
+	public ProgramElements getProgramAccess() {
+		return pProgram;
+	}
+	
+	public ParserRule getProgramRule() {
+		return getProgramAccess().getRule();
 	}
 	
 	//Student:
-	//    'student' studentName=ID
+	//    'student' name=ID
 	//    'taken' '{' takenCourses+=[Course]* '}'
 	//    'maxCreditsPerTerm' maxCredits=INT;
 	public StudentElements getStudentAccess() {
@@ -558,26 +526,13 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		return getStudentAccess().getRule();
 	}
 	
-	//Program:
-	//    'program' programName=ID
-	//    'courses' '{' courses+=Course* '}';
-	public ProgramElements getProgramAccess() {
-		return pProgram;
-	}
-	
-	public ParserRule getProgramRule() {
-		return getProgramAccess().getRule();
-	}
-	
 	//Course:
-	//    'course'
-	//    courseName=ID
-	//    courseNumber=ID
+	//    'course' name=ID number=ID
 	//    'credits' credits=INT
 	//    'term' term=Term
 	//    'year' year=INT
-	//    ('prereq' prerequisites+=[Expr] (',' prerequisites+=[Expr])*)?
-	//    ('coreq' corequisites+=[Expr] (',' corequisites+=[Expr])*)?;
+	//    ('prereq' prereq=Expr)?
+	//    ('coreq' coreq=Expr)?;
 	public CourseElements getCourseAccess() {
 		return pCourse;
 	}
@@ -587,7 +542,9 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//enum Term:
-	//    FALL | WINTER | BOTH;
+	//    FALL='FALL'
+	//  | WINTER='WINTER'
+	//  | BOTH='BOTH';
 	public TermElements getTermAccess() {
 		return eTerm;
 	}
@@ -627,7 +584,8 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Atom returns Expr:
-	//      course=[Course] | '(' Expr ')';
+	//      course=[Course]
+	//    | '(' Expr ')';
 	public AtomElements getAtomAccess() {
 		return pAtom;
 	}

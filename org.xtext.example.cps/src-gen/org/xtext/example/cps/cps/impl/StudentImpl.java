@@ -28,7 +28,7 @@ import org.xtext.example.cps.cps.Student;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getStudentName <em>Student Name</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getTakenCourses <em>Taken Courses</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getMaxCredits <em>Max Credits</em>}</li>
  * </ul>
@@ -38,24 +38,24 @@ import org.xtext.example.cps.cps.Student;
 public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 {
   /**
-   * The default value of the '{@link #getStudentName() <em>Student Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStudentName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String STUDENT_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getStudentName() <em>Student Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStudentName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String studentName = STUDENT_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTakenCourses() <em>Taken Courses</em>}' reference list.
@@ -114,9 +114,9 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
    * @generated
    */
   @Override
-  public String getStudentName()
+  public String getName()
   {
-    return studentName;
+    return name;
   }
 
   /**
@@ -125,12 +125,12 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
    * @generated
    */
   @Override
-  public void setStudentName(String newStudentName)
+  public void setName(String newName)
   {
-    String oldStudentName = studentName;
-    studentName = newStudentName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.STUDENT__STUDENT_NAME, oldStudentName, studentName));
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.STUDENT__NAME, oldName, name));
   }
 
   /**
@@ -183,8 +183,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
   {
     switch (featureID)
     {
-      case CpsPackage.STUDENT__STUDENT_NAME:
-        return getStudentName();
+      case CpsPackage.STUDENT__NAME:
+        return getName();
       case CpsPackage.STUDENT__TAKEN_COURSES:
         return getTakenCourses();
       case CpsPackage.STUDENT__MAX_CREDITS:
@@ -204,8 +204,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
   {
     switch (featureID)
     {
-      case CpsPackage.STUDENT__STUDENT_NAME:
-        setStudentName((String)newValue);
+      case CpsPackage.STUDENT__NAME:
+        setName((String)newValue);
         return;
       case CpsPackage.STUDENT__TAKEN_COURSES:
         getTakenCourses().clear();
@@ -228,8 +228,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
   {
     switch (featureID)
     {
-      case CpsPackage.STUDENT__STUDENT_NAME:
-        setStudentName(STUDENT_NAME_EDEFAULT);
+      case CpsPackage.STUDENT__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case CpsPackage.STUDENT__TAKEN_COURSES:
         getTakenCourses().clear();
@@ -251,8 +251,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
   {
     switch (featureID)
     {
-      case CpsPackage.STUDENT__STUDENT_NAME:
-        return STUDENT_NAME_EDEFAULT == null ? studentName != null : !STUDENT_NAME_EDEFAULT.equals(studentName);
+      case CpsPackage.STUDENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CpsPackage.STUDENT__TAKEN_COURSES:
         return takenCourses != null && !takenCourses.isEmpty();
       case CpsPackage.STUDENT__MAX_CREDITS:
@@ -272,8 +272,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (studentName: ");
-    result.append(studentName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", maxCredits: ");
     result.append(maxCredits);
     result.append(')');

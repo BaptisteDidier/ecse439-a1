@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Model</b></em>'.
+ * A representation of the model object '<em><b>Cps</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.Model#getProgram <em>Program</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.Model#getStudents <em>Students</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Cps#getProgram <em>Program</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Cps#getStudents <em>Students</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.cps.cps.CpsPackage#getModel()
+ * @see org.xtext.example.cps.cps.CpsPackage#getCps()
  * @model
  * @generated
  */
-public interface Model extends EObject
+public interface Cps extends EObject
 {
   /**
    * Returns the value of the '<em><b>Program</b></em>' containment reference.
@@ -32,14 +32,14 @@ public interface Model extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Program</em>' containment reference.
    * @see #setProgram(Program)
-   * @see org.xtext.example.cps.cps.CpsPackage#getModel_Program()
+   * @see org.xtext.example.cps.cps.CpsPackage#getCps_Program()
    * @model containment="true"
    * @generated
    */
   Program getProgram();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Model#getProgram <em>Program</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Cps#getProgram <em>Program</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Program</em>' containment reference.
@@ -54,10 +54,10 @@ public interface Model extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Students</em>' containment reference list.
-   * @see org.xtext.example.cps.cps.CpsPackage#getModel_Students()
+   * @see org.xtext.example.cps.cps.CpsPackage#getCps_Students()
    * @model containment="true"
    * @generated
    */
   EList<Student> getStudents();
 
-} // Model
+} // Cps

@@ -31,7 +31,7 @@ import org.xtext.example.cps.cps.Program;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.impl.ProgramImpl#getProgramName <em>Program Name</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.ProgramImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.ProgramImpl#getCourses <em>Courses</em>}</li>
  * </ul>
  *
@@ -40,24 +40,24 @@ import org.xtext.example.cps.cps.Program;
 public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
 {
   /**
-   * The default value of the '{@link #getProgramName() <em>Program Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProgramName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String PROGRAM_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getProgramName() <em>Program Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProgramName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String programName = PROGRAM_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
@@ -96,9 +96,9 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * @generated
    */
   @Override
-  public String getProgramName()
+  public String getName()
   {
-    return programName;
+    return name;
   }
 
   /**
@@ -107,12 +107,12 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * @generated
    */
   @Override
-  public void setProgramName(String newProgramName)
+  public void setName(String newName)
   {
-    String oldProgramName = programName;
-    programName = newProgramName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.PROGRAM__PROGRAM_NAME, oldProgramName, programName));
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.PROGRAM__NAME, oldName, name));
   }
 
   /**
@@ -156,8 +156,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case CpsPackage.PROGRAM__PROGRAM_NAME:
-        return getProgramName();
+      case CpsPackage.PROGRAM__NAME:
+        return getName();
       case CpsPackage.PROGRAM__COURSES:
         return getCourses();
     }
@@ -175,8 +175,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case CpsPackage.PROGRAM__PROGRAM_NAME:
-        setProgramName((String)newValue);
+      case CpsPackage.PROGRAM__NAME:
+        setName((String)newValue);
         return;
       case CpsPackage.PROGRAM__COURSES:
         getCourses().clear();
@@ -196,8 +196,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case CpsPackage.PROGRAM__PROGRAM_NAME:
-        setProgramName(PROGRAM_NAME_EDEFAULT);
+      case CpsPackage.PROGRAM__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case CpsPackage.PROGRAM__COURSES:
         getCourses().clear();
@@ -216,8 +216,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
   {
     switch (featureID)
     {
-      case CpsPackage.PROGRAM__PROGRAM_NAME:
-        return PROGRAM_NAME_EDEFAULT == null ? programName != null : !PROGRAM_NAME_EDEFAULT.equals(programName);
+      case CpsPackage.PROGRAM__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CpsPackage.PROGRAM__COURSES:
         return courses != null && !courses.isEmpty();
     }
@@ -235,8 +235,8 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (programName: ");
-    result.append(programName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

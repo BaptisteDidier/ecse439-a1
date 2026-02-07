@@ -15,14 +15,14 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.xtext.example.cps.cps.Model;
+import org.xtext.example.cps.cps.Cps;
 
 @ExtendWith(InjectionExtension.class)
 @InjectWith(CpsInjectorProvider.class)
 @SuppressWarnings("all")
 public class CpsParsingTest {
   @Inject
-  private ParseHelper<Model> parseHelper;
+  private ParseHelper<Cps> parseHelper;
 
   @Test
   public void loadModel() {
@@ -30,7 +30,7 @@ public class CpsParsingTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("Hello Xtext!");
       _builder.newLine();
-      final Model result = this.parseHelper.parse(_builder);
+      final Cps result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();

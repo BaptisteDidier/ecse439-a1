@@ -76,19 +76,19 @@ public class CpsAdapterFactory extends AdapterFactoryImpl
     new CpsSwitch<Adapter>()
     {
       @Override
-      public Adapter caseModel(Model object)
+      public Adapter caseCps(Cps object)
       {
-        return createModelAdapter();
-      }
-      @Override
-      public Adapter caseStudent(Student object)
-      {
-        return createStudentAdapter();
+        return createCpsAdapter();
       }
       @Override
       public Adapter caseProgram(Program object)
       {
         return createProgramAdapter();
+      }
+      @Override
+      public Adapter caseStudent(Student object)
+      {
+        return createStudentAdapter();
       }
       @Override
       public Adapter caseCourse(Course object)
@@ -133,31 +133,16 @@ public class CpsAdapterFactory extends AdapterFactoryImpl
 
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cps.cps.Model <em>Model</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cps.cps.Cps <em>Cps</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.cps.cps.Model
+   * @see org.xtext.example.cps.cps.Cps
    * @generated
    */
-  public Adapter createModelAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cps.cps.Student <em>Student</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cps.cps.Student
-   * @generated
-   */
-  public Adapter createStudentAdapter()
+  public Adapter createCpsAdapter()
   {
     return null;
   }
@@ -173,6 +158,21 @@ public class CpsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createProgramAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cps.cps.Student <em>Student</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cps.cps.Student
+   * @generated
+   */
+  public Adapter createStudentAdapter()
   {
     return null;
   }

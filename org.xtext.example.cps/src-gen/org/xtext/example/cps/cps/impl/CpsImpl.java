@@ -19,26 +19,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.example.cps.cps.Cps;
 import org.xtext.example.cps.cps.CpsPackage;
-import org.xtext.example.cps.cps.Model;
 import org.xtext.example.cps.cps.Program;
 import org.xtext.example.cps.cps.Student;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Cps</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.impl.ModelImpl#getProgram <em>Program</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.impl.ModelImpl#getStudents <em>Students</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CpsImpl#getProgram <em>Program</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CpsImpl#getStudents <em>Students</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class CpsImpl extends MinimalEObjectImpl.Container implements Cps
 {
   /**
    * The cached value of the '{@link #getProgram() <em>Program</em>}' containment reference.
@@ -65,7 +65,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected CpsImpl()
   {
     super();
   }
@@ -78,7 +78,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return CpsPackage.Literals.MODEL;
+    return CpsPackage.Literals.CPS;
   }
 
   /**
@@ -103,7 +103,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     program = newProgram;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CpsPackage.MODEL__PROGRAM, oldProgram, newProgram);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CpsPackage.CPS__PROGRAM, oldProgram, newProgram);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -121,14 +121,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       NotificationChain msgs = null;
       if (program != null)
-        msgs = ((InternalEObject)program).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CpsPackage.MODEL__PROGRAM, null, msgs);
+        msgs = ((InternalEObject)program).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CpsPackage.CPS__PROGRAM, null, msgs);
       if (newProgram != null)
-        msgs = ((InternalEObject)newProgram).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CpsPackage.MODEL__PROGRAM, null, msgs);
+        msgs = ((InternalEObject)newProgram).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CpsPackage.CPS__PROGRAM, null, msgs);
       msgs = basicSetProgram(newProgram, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.MODEL__PROGRAM, newProgram, newProgram));
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.CPS__PROGRAM, newProgram, newProgram));
   }
 
   /**
@@ -141,7 +141,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     if (students == null)
     {
-      students = new EObjectContainmentEList<Student>(Student.class, this, CpsPackage.MODEL__STUDENTS);
+      students = new EObjectContainmentEList<Student>(Student.class, this, CpsPackage.CPS__STUDENTS);
     }
     return students;
   }
@@ -156,9 +156,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CpsPackage.MODEL__PROGRAM:
+      case CpsPackage.CPS__PROGRAM:
         return basicSetProgram(null, msgs);
-      case CpsPackage.MODEL__STUDENTS:
+      case CpsPackage.CPS__STUDENTS:
         return ((InternalEList<?>)getStudents()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -174,9 +174,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CpsPackage.MODEL__PROGRAM:
+      case CpsPackage.CPS__PROGRAM:
         return getProgram();
-      case CpsPackage.MODEL__STUDENTS:
+      case CpsPackage.CPS__STUDENTS:
         return getStudents();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -193,10 +193,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CpsPackage.MODEL__PROGRAM:
+      case CpsPackage.CPS__PROGRAM:
         setProgram((Program)newValue);
         return;
-      case CpsPackage.MODEL__STUDENTS:
+      case CpsPackage.CPS__STUDENTS:
         getStudents().clear();
         getStudents().addAll((Collection<? extends Student>)newValue);
         return;
@@ -214,10 +214,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CpsPackage.MODEL__PROGRAM:
+      case CpsPackage.CPS__PROGRAM:
         setProgram((Program)null);
         return;
-      case CpsPackage.MODEL__STUDENTS:
+      case CpsPackage.CPS__STUDENTS:
         getStudents().clear();
         return;
     }
@@ -234,12 +234,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CpsPackage.MODEL__PROGRAM:
+      case CpsPackage.CPS__PROGRAM:
         return program != null;
-      case CpsPackage.MODEL__STUDENTS:
+      case CpsPackage.CPS__STUDENTS:
         return students != null && !students.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //CpsImpl

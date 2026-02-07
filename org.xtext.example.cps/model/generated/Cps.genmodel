@@ -11,27 +11,27 @@
       <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Term/WINTER"/>
       <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Term/BOTH"/>
     </genEnums>
-    <genClasses ecoreClass="Cps.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Model/program"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Model/students"/>
+    <genClasses ecoreClass="Cps.ecore#//Cps">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Cps/program"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Cps/students"/>
+    </genClasses>
+    <genClasses ecoreClass="Cps.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Program/courses"/>
     </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Student">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/studentName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//Student/takenCourses"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/maxCredits"/>
     </genClasses>
-    <genClasses ecoreClass="Cps.ecore#//Program">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Program/programName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Program/courses"/>
-    </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Course">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/courseName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/courseNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/number"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/credits"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/term"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/year"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//Course/prerequisites"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//Course/corequisites"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Course/prereq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Course/coreq"/>
     </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Expr">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//Expr/course"/>

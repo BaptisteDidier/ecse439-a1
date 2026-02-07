@@ -66,9 +66,9 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
   {
     switch (eClass.getClassifierID())
     {
-      case CpsPackage.MODEL: return createModel();
-      case CpsPackage.STUDENT: return createStudent();
+      case CpsPackage.CPS: return createCps();
       case CpsPackage.PROGRAM: return createProgram();
+      case CpsPackage.STUDENT: return createStudent();
       case CpsPackage.COURSE: return createCourse();
       case CpsPackage.EXPR: return createExpr();
       case CpsPackage.OR: return createOr();
@@ -118,22 +118,10 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
    * @generated
    */
   @Override
-  public Model createModel()
+  public Cps createCps()
   {
-    ModelImpl model = new ModelImpl();
-    return model;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Student createStudent()
-  {
-    StudentImpl student = new StudentImpl();
-    return student;
+    CpsImpl cps = new CpsImpl();
+    return cps;
   }
 
   /**
@@ -146,6 +134,18 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
   {
     ProgramImpl program = new ProgramImpl();
     return program;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Student createStudent()
+  {
+    StudentImpl student = new StudentImpl();
+    return student;
   }
 
   /**

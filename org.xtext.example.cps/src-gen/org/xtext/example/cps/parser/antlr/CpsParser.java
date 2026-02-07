@@ -27,7 +27,7 @@ public class CpsParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "Cps";
 	}
 
 	public CpsGrammarAccess getGrammarAccess() {

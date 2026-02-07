@@ -73,17 +73,10 @@ public class CpsSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case CpsPackage.MODEL:
+      case CpsPackage.CPS:
       {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CpsPackage.STUDENT:
-      {
-        Student student = (Student)theEObject;
-        T result = caseStudent(student);
+        Cps cps = (Cps)theEObject;
+        T result = caseCps(cps);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -91,6 +84,13 @@ public class CpsSwitch<T> extends Switch<T>
       {
         Program program = (Program)theEObject;
         T result = caseProgram(program);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CpsPackage.STUDENT:
+      {
+        Student student = (Student)theEObject;
+        T result = caseStudent(student);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -129,33 +129,17 @@ public class CpsSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Cps</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Cps</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseModel(Model object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Student</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Student</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStudent(Student object)
+  public T caseCps(Cps object)
   {
     return null;
   }
@@ -172,6 +156,22 @@ public class CpsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProgram(Program object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Student</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Student</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStudent(Student object)
   {
     return null;
   }

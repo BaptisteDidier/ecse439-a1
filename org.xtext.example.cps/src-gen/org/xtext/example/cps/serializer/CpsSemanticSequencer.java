@@ -16,9 +16,9 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.cps.cps.And;
 import org.xtext.example.cps.cps.Course;
+import org.xtext.example.cps.cps.Cps;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Expr;
-import org.xtext.example.cps.cps.Model;
 import org.xtext.example.cps.cps.Or;
 import org.xtext.example.cps.cps.Program;
 import org.xtext.example.cps.cps.Student;
@@ -44,11 +44,11 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case CpsPackage.COURSE:
 				sequence_Course(context, (Course) semanticObject); 
 				return; 
+			case CpsPackage.CPS:
+				sequence_Cps(context, (Cps) semanticObject); 
+				return; 
 			case CpsPackage.EXPR:
 				sequence_Atom(context, (Expr) semanticObject); 
-				return; 
-			case CpsPackage.MODEL:
-				sequence_Model(context, (Model) semanticObject); 
 				return; 
 			case CpsPackage.OR:
 				sequence_OrExpr(context, (Or) semanticObject); 
@@ -124,13 +124,13 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         courseName=ID 
-	 *         courseNumber=ID 
+	 *         name=ID 
+	 *         number=ID 
 	 *         credits=INT 
 	 *         term=Term 
 	 *         year=INT 
-	 *         (prerequisites+=[Expr|ID] prerequisites+=[Expr|ID]*)? 
-	 *         (corequisites+=[Expr|ID] corequisites+=[Expr|ID]*)?
+	 *         prereq=Expr? 
+	 *         coreq=Expr?
 	 *     )
 	 * </pre>
 	 */
@@ -142,13 +142,13 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Model returns Model
+	 *     Cps returns Cps
 	 *
 	 * Constraint:
 	 *     (program=Program students+=Student*)
 	 * </pre>
 	 */
-	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+	protected void sequence_Cps(ISerializationContext context, Cps semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -187,7 +187,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Program returns Program
 	 *
 	 * Constraint:
-	 *     (programName=ID courses+=Course*)
+	 *     (name=ID courses+=Course*)
 	 * </pre>
 	 */
 	protected void sequence_Program(ISerializationContext context, Program semanticObject) {
@@ -201,7 +201,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Student returns Student
 	 *
 	 * Constraint:
-	 *     (studentName=ID takenCourses+=[Course|ID]* maxCredits=INT)
+	 *     (name=ID takenCourses+=[Course|ID]* maxCredits=INT)
 	 * </pre>
 	 */
 	protected void sequence_Student(ISerializationContext context, Student semanticObject) {

@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.Student#getStudentName <em>Student Name</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Student#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Student#getTakenCourses <em>Taken Courses</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Student#getMaxCredits <em>Max Credits</em>}</li>
  * </ul>
@@ -28,26 +28,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Student extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Student Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Student Name</em>' attribute.
-   * @see #setStudentName(String)
-   * @see org.xtext.example.cps.cps.CpsPackage#getStudent_StudentName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.cps.cps.CpsPackage#getStudent_Name()
    * @model
    * @generated
    */
-  String getStudentName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Student#getStudentName <em>Student Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Student#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Student Name</em>' attribute.
-   * @see #getStudentName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setStudentName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Taken Courses</b></em>' reference list.

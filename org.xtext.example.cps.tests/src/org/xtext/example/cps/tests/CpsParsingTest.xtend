@@ -10,13 +10,13 @@ import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
-import org.xtext.example.cps.cps.Model
+import org.xtext.example.cps.cps.Cps
 
 @ExtendWith(InjectionExtension)
 @InjectWith(CpsInjectorProvider)
 class CpsParsingTest {
 	@Inject
-	ParseHelper<Model> parseHelper
+	ParseHelper<Cps> parseHelper
 	
 	@Test
 	def void loadModel() {

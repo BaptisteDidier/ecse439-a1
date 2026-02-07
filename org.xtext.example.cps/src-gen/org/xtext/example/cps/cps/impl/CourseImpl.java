@@ -3,18 +3,14 @@
  */
 package org.xtext.example.cps.cps.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.xtext.example.cps.cps.Course;
 import org.xtext.example.cps.cps.CpsPackage;
@@ -29,13 +25,13 @@ import org.xtext.example.cps.cps.Term;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCourseName <em>Course Name</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCourseNumber <em>Course Number</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCredits <em>Credits</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getTerm <em>Term</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getYear <em>Year</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getPrerequisites <em>Prerequisites</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCorequisites <em>Corequisites</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getPrereq <em>Prereq</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCoreq <em>Coreq</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,44 +39,44 @@ import org.xtext.example.cps.cps.Term;
 public class CourseImpl extends MinimalEObjectImpl.Container implements Course
 {
   /**
-   * The default value of the '{@link #getCourseName() <em>Course Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCourseName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String COURSE_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCourseName() <em>Course Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCourseName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String courseName = COURSE_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getCourseNumber() <em>Course Number</em>}' attribute.
+   * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCourseNumber()
+   * @see #getNumber()
    * @generated
    * @ordered
    */
-  protected static final String COURSE_NUMBER_EDEFAULT = null;
+  protected static final String NUMBER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCourseNumber() <em>Course Number</em>}' attribute.
+   * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCourseNumber()
+   * @see #getNumber()
    * @generated
    * @ordered
    */
-  protected String courseNumber = COURSE_NUMBER_EDEFAULT;
+  protected String number = NUMBER_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCredits() <em>Credits</em>}' attribute.
@@ -143,24 +139,24 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   protected int year = YEAR_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getPrerequisites() <em>Prerequisites</em>}' reference list.
+   * The cached value of the '{@link #getPrereq() <em>Prereq</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPrerequisites()
+   * @see #getPrereq()
    * @generated
    * @ordered
    */
-  protected EList<Expr> prerequisites;
+  protected Expr prereq;
 
   /**
-   * The cached value of the '{@link #getCorequisites() <em>Corequisites</em>}' reference list.
+   * The cached value of the '{@link #getCoreq() <em>Coreq</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCorequisites()
+   * @see #getCoreq()
    * @generated
    * @ordered
    */
-  protected EList<Expr> corequisites;
+  protected Expr coreq;
 
   /**
    * <!-- begin-user-doc -->
@@ -189,9 +185,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public String getCourseName()
+  public String getName()
   {
-    return courseName;
+    return name;
   }
 
   /**
@@ -200,12 +196,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public void setCourseName(String newCourseName)
+  public void setName(String newName)
   {
-    String oldCourseName = courseName;
-    courseName = newCourseName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__COURSE_NAME, oldCourseName, courseName));
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__NAME, oldName, name));
   }
 
   /**
@@ -214,9 +210,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public String getCourseNumber()
+  public String getNumber()
   {
-    return courseNumber;
+    return number;
   }
 
   /**
@@ -225,12 +221,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public void setCourseNumber(String newCourseNumber)
+  public void setNumber(String newNumber)
   {
-    String oldCourseNumber = courseNumber;
-    courseNumber = newCourseNumber;
+    String oldNumber = number;
+    number = newNumber;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__COURSE_NUMBER, oldCourseNumber, courseNumber));
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__NUMBER, oldNumber, number));
   }
 
   /**
@@ -314,13 +310,26 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public EList<Expr> getPrerequisites()
+  public Expr getPrereq()
   {
-    if (prerequisites == null)
+    return prereq;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPrereq(Expr newPrereq, NotificationChain msgs)
+  {
+    Expr oldPrereq = prereq;
+    prereq = newPrereq;
+    if (eNotificationRequired())
     {
-      prerequisites = new EObjectResolvingEList<Expr>(Expr.class, this, CpsPackage.COURSE__PREREQUISITES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__PREREQ, oldPrereq, newPrereq);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return prerequisites;
+    return msgs;
   }
 
   /**
@@ -329,13 +338,88 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public EList<Expr> getCorequisites()
+  public void setPrereq(Expr newPrereq)
   {
-    if (corequisites == null)
+    if (newPrereq != prereq)
     {
-      corequisites = new EObjectResolvingEList<Expr>(Expr.class, this, CpsPackage.COURSE__COREQUISITES);
+      NotificationChain msgs = null;
+      if (prereq != null)
+        msgs = ((InternalEObject)prereq).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__PREREQ, null, msgs);
+      if (newPrereq != null)
+        msgs = ((InternalEObject)newPrereq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__PREREQ, null, msgs);
+      msgs = basicSetPrereq(newPrereq, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return corequisites;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__PREREQ, newPrereq, newPrereq));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Expr getCoreq()
+  {
+    return coreq;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetCoreq(Expr newCoreq, NotificationChain msgs)
+  {
+    Expr oldCoreq = coreq;
+    coreq = newCoreq;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__COREQ, oldCoreq, newCoreq);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCoreq(Expr newCoreq)
+  {
+    if (newCoreq != coreq)
+    {
+      NotificationChain msgs = null;
+      if (coreq != null)
+        msgs = ((InternalEObject)coreq).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__COREQ, null, msgs);
+      if (newCoreq != null)
+        msgs = ((InternalEObject)newCoreq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__COREQ, null, msgs);
+      msgs = basicSetCoreq(newCoreq, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__COREQ, newCoreq, newCoreq));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CpsPackage.COURSE__PREREQ:
+        return basicSetPrereq(null, msgs);
+      case CpsPackage.COURSE__COREQ:
+        return basicSetCoreq(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -348,20 +432,20 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__COURSE_NAME:
-        return getCourseName();
-      case CpsPackage.COURSE__COURSE_NUMBER:
-        return getCourseNumber();
+      case CpsPackage.COURSE__NAME:
+        return getName();
+      case CpsPackage.COURSE__NUMBER:
+        return getNumber();
       case CpsPackage.COURSE__CREDITS:
         return getCredits();
       case CpsPackage.COURSE__TERM:
         return getTerm();
       case CpsPackage.COURSE__YEAR:
         return getYear();
-      case CpsPackage.COURSE__PREREQUISITES:
-        return getPrerequisites();
-      case CpsPackage.COURSE__COREQUISITES:
-        return getCorequisites();
+      case CpsPackage.COURSE__PREREQ:
+        return getPrereq();
+      case CpsPackage.COURSE__COREQ:
+        return getCoreq();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -371,17 +455,16 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__COURSE_NAME:
-        setCourseName((String)newValue);
+      case CpsPackage.COURSE__NAME:
+        setName((String)newValue);
         return;
-      case CpsPackage.COURSE__COURSE_NUMBER:
-        setCourseNumber((String)newValue);
+      case CpsPackage.COURSE__NUMBER:
+        setNumber((String)newValue);
         return;
       case CpsPackage.COURSE__CREDITS:
         setCredits((Integer)newValue);
@@ -392,13 +475,11 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
       case CpsPackage.COURSE__YEAR:
         setYear((Integer)newValue);
         return;
-      case CpsPackage.COURSE__PREREQUISITES:
-        getPrerequisites().clear();
-        getPrerequisites().addAll((Collection<? extends Expr>)newValue);
+      case CpsPackage.COURSE__PREREQ:
+        setPrereq((Expr)newValue);
         return;
-      case CpsPackage.COURSE__COREQUISITES:
-        getCorequisites().clear();
-        getCorequisites().addAll((Collection<? extends Expr>)newValue);
+      case CpsPackage.COURSE__COREQ:
+        setCoreq((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -414,11 +495,11 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__COURSE_NAME:
-        setCourseName(COURSE_NAME_EDEFAULT);
+      case CpsPackage.COURSE__NAME:
+        setName(NAME_EDEFAULT);
         return;
-      case CpsPackage.COURSE__COURSE_NUMBER:
-        setCourseNumber(COURSE_NUMBER_EDEFAULT);
+      case CpsPackage.COURSE__NUMBER:
+        setNumber(NUMBER_EDEFAULT);
         return;
       case CpsPackage.COURSE__CREDITS:
         setCredits(CREDITS_EDEFAULT);
@@ -429,11 +510,11 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
       case CpsPackage.COURSE__YEAR:
         setYear(YEAR_EDEFAULT);
         return;
-      case CpsPackage.COURSE__PREREQUISITES:
-        getPrerequisites().clear();
+      case CpsPackage.COURSE__PREREQ:
+        setPrereq((Expr)null);
         return;
-      case CpsPackage.COURSE__COREQUISITES:
-        getCorequisites().clear();
+      case CpsPackage.COURSE__COREQ:
+        setCoreq((Expr)null);
         return;
     }
     super.eUnset(featureID);
@@ -449,20 +530,20 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__COURSE_NAME:
-        return COURSE_NAME_EDEFAULT == null ? courseName != null : !COURSE_NAME_EDEFAULT.equals(courseName);
-      case CpsPackage.COURSE__COURSE_NUMBER:
-        return COURSE_NUMBER_EDEFAULT == null ? courseNumber != null : !COURSE_NUMBER_EDEFAULT.equals(courseNumber);
+      case CpsPackage.COURSE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CpsPackage.COURSE__NUMBER:
+        return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
       case CpsPackage.COURSE__CREDITS:
         return credits != CREDITS_EDEFAULT;
       case CpsPackage.COURSE__TERM:
         return term != TERM_EDEFAULT;
       case CpsPackage.COURSE__YEAR:
         return year != YEAR_EDEFAULT;
-      case CpsPackage.COURSE__PREREQUISITES:
-        return prerequisites != null && !prerequisites.isEmpty();
-      case CpsPackage.COURSE__COREQUISITES:
-        return corequisites != null && !corequisites.isEmpty();
+      case CpsPackage.COURSE__PREREQ:
+        return prereq != null;
+      case CpsPackage.COURSE__COREQ:
+        return coreq != null;
     }
     return super.eIsSet(featureID);
   }
@@ -478,10 +559,10 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (courseName: ");
-    result.append(courseName);
-    result.append(", courseNumber: ");
-    result.append(courseNumber);
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", number: ");
+    result.append(number);
     result.append(", credits: ");
     result.append(credits);
     result.append(", term: ");

@@ -24,22 +24,13 @@ public interface CpsFactory extends EFactory
   CpsFactory eINSTANCE = org.xtext.example.cps.cps.impl.CpsFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
+   * Returns a new object of class '<em>Cps</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
+   * @return a new object of class '<em>Cps</em>'.
    * @generated
    */
-  Model createModel();
-
-  /**
-   * Returns a new object of class '<em>Student</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Student</em>'.
-   * @generated
-   */
-  Student createStudent();
+  Cps createCps();
 
   /**
    * Returns a new object of class '<em>Program</em>'.
@@ -49,6 +40,15 @@ public interface CpsFactory extends EFactory
    * @generated
    */
   Program createProgram();
+
+  /**
+   * Returns a new object of class '<em>Student</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Student</em>'.
+   * @generated
+   */
+  Student createStudent();
 
   /**
    * Returns a new object of class '<em>Course</em>'.

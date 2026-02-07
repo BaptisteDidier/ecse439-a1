@@ -3,8 +3,6 @@
  */
 package org.xtext.example.cps.cps;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,13 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.Course#getCourseName <em>Course Name</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.Course#getCourseNumber <em>Course Number</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Course#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Course#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getCredits <em>Credits</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getTerm <em>Term</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getYear <em>Year</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.Course#getPrerequisites <em>Prerequisites</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.Course#getCorequisites <em>Corequisites</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Course#getPrereq <em>Prereq</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Course#getCoreq <em>Coreq</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.cps.cps.CpsPackage#getCourse()
@@ -32,48 +30,48 @@ import org.eclipse.emf.ecore.EObject;
 public interface Course extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Course Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Course Name</em>' attribute.
-   * @see #setCourseName(String)
-   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_CourseName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Name()
    * @model
    * @generated
    */
-  String getCourseName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getCourseName <em>Course Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Course Name</em>' attribute.
-   * @see #getCourseName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setCourseName(String value);
+  void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Course Number</b></em>' attribute.
+   * Returns the value of the '<em><b>Number</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Course Number</em>' attribute.
-   * @see #setCourseNumber(String)
-   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_CourseNumber()
+   * @return the value of the '<em>Number</em>' attribute.
+   * @see #setNumber(String)
+   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Number()
    * @model
    * @generated
    */
-  String getCourseNumber();
+  String getNumber();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getCourseNumber <em>Course Number</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getNumber <em>Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Course Number</em>' attribute.
-   * @see #getCourseNumber()
+   * @param value the new value of the '<em>Number</em>' attribute.
+   * @see #getNumber()
    * @generated
    */
-  void setCourseNumber(String value);
+  void setNumber(String value);
 
   /**
    * Returns the value of the '<em><b>Credits</b></em>' attribute.
@@ -145,27 +143,47 @@ public interface Course extends EObject
   void setYear(int value);
 
   /**
-   * Returns the value of the '<em><b>Prerequisites</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.example.cps.cps.Expr}.
+   * Returns the value of the '<em><b>Prereq</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Prerequisites</em>' reference list.
-   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Prerequisites()
-   * @model
+   * @return the value of the '<em>Prereq</em>' containment reference.
+   * @see #setPrereq(Expr)
+   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Prereq()
+   * @model containment="true"
    * @generated
    */
-  EList<Expr> getPrerequisites();
+  Expr getPrereq();
 
   /**
-   * Returns the value of the '<em><b>Corequisites</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.example.cps.cps.Expr}.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getPrereq <em>Prereq</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Corequisites</em>' reference list.
-   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Corequisites()
-   * @model
+   * @param value the new value of the '<em>Prereq</em>' containment reference.
+   * @see #getPrereq()
    * @generated
    */
-  EList<Expr> getCorequisites();
+  void setPrereq(Expr value);
+
+  /**
+   * Returns the value of the '<em><b>Coreq</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Coreq</em>' containment reference.
+   * @see #setCoreq(Expr)
+   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Coreq()
+   * @model containment="true"
+   * @generated
+   */
+  Expr getCoreq();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getCoreq <em>Coreq</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Coreq</em>' containment reference.
+   * @see #getCoreq()
+   * @generated
+   */
+  void setCoreq(Expr value);
 
 } // Course

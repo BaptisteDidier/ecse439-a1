@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.Program#getProgramName <em>Program Name</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Program#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Program#getCourses <em>Courses</em>}</li>
  * </ul>
  *
@@ -27,26 +27,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Program extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Program Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Program Name</em>' attribute.
-   * @see #setProgramName(String)
-   * @see org.xtext.example.cps.cps.CpsPackage#getProgram_ProgramName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.xtext.example.cps.cps.CpsPackage#getProgram_Name()
    * @model
    * @generated
    */
-  String getProgramName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Program#getProgramName <em>Program Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Program#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Program Name</em>' attribute.
-   * @see #getProgramName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setProgramName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Courses</b></em>' containment reference list.

@@ -59,14 +59,14 @@ public interface CpsPackage extends EPackage
   CpsPackage eINSTANCE = org.xtext.example.cps.cps.impl.CpsPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cps.cps.impl.ModelImpl <em>Model</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.cps.cps.impl.CpsImpl <em>Cps</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.cps.cps.impl.ModelImpl
-   * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getModel()
+   * @see org.xtext.example.cps.cps.impl.CpsImpl
+   * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getCps()
    * @generated
    */
-  int MODEL = 0;
+  int CPS = 0;
 
   /**
    * The feature id for the '<em><b>Program</b></em>' containment reference.
@@ -75,7 +75,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__PROGRAM = 0;
+  int CPS__PROGRAM = 0;
 
   /**
    * The feature id for the '<em><b>Students</b></em>' containment reference list.
@@ -84,16 +84,53 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__STUDENTS = 1;
+  int CPS__STUDENTS = 1;
 
   /**
-   * The number of structural features of the '<em>Model</em>' class.
+   * The number of structural features of the '<em>Cps</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int CPS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cps.cps.impl.ProgramImpl <em>Program</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cps.cps.impl.ProgramImpl
+   * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getProgram()
+   * @generated
+   */
+  int PROGRAM = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROGRAM__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Courses</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROGRAM__COURSES = 1;
+
+  /**
+   * The number of structural features of the '<em>Program</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROGRAM_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.cps.cps.impl.StudentImpl <em>Student</em>}' class.
@@ -103,16 +140,16 @@ public interface CpsPackage extends EPackage
    * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getStudent()
    * @generated
    */
-  int STUDENT = 1;
+  int STUDENT = 2;
 
   /**
-   * The feature id for the '<em><b>Student Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STUDENT__STUDENT_NAME = 0;
+  int STUDENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Taken Courses</b></em>' reference list.
@@ -142,43 +179,6 @@ public interface CpsPackage extends EPackage
   int STUDENT_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cps.cps.impl.ProgramImpl <em>Program</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cps.cps.impl.ProgramImpl
-   * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getProgram()
-   * @generated
-   */
-  int PROGRAM = 2;
-
-  /**
-   * The feature id for the '<em><b>Program Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRAM__PROGRAM_NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Courses</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRAM__COURSES = 1;
-
-  /**
-   * The number of structural features of the '<em>Program</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRAM_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.cps.cps.impl.CourseImpl <em>Course</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -189,22 +189,22 @@ public interface CpsPackage extends EPackage
   int COURSE = 3;
 
   /**
-   * The feature id for the '<em><b>Course Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COURSE__COURSE_NAME = 0;
+  int COURSE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Course Number</b></em>' attribute.
+   * The feature id for the '<em><b>Number</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COURSE__COURSE_NUMBER = 1;
+  int COURSE__NUMBER = 1;
 
   /**
    * The feature id for the '<em><b>Credits</b></em>' attribute.
@@ -234,22 +234,22 @@ public interface CpsPackage extends EPackage
   int COURSE__YEAR = 4;
 
   /**
-   * The feature id for the '<em><b>Prerequisites</b></em>' reference list.
+   * The feature id for the '<em><b>Prereq</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COURSE__PREREQUISITES = 5;
+  int COURSE__PREREQ = 5;
 
   /**
-   * The feature id for the '<em><b>Corequisites</b></em>' reference list.
+   * The feature id for the '<em><b>Coreq</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COURSE__COREQUISITES = 6;
+  int COURSE__COREQ = 6;
 
   /**
    * The number of structural features of the '<em>Course</em>' class.
@@ -410,36 +410,68 @@ public interface CpsPackage extends EPackage
 
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cps.cps.Model <em>Model</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.cps.cps.Cps <em>Cps</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see org.xtext.example.cps.cps.Model
+   * @return the meta object for class '<em>Cps</em>'.
+   * @see org.xtext.example.cps.cps.Cps
    * @generated
    */
-  EClass getModel();
+  EClass getCps();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cps.cps.Model#getProgram <em>Program</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cps.cps.Cps#getProgram <em>Program</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Program</em>'.
-   * @see org.xtext.example.cps.cps.Model#getProgram()
-   * @see #getModel()
+   * @see org.xtext.example.cps.cps.Cps#getProgram()
+   * @see #getCps()
    * @generated
    */
-  EReference getModel_Program();
+  EReference getCps_Program();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.cps.cps.Model#getStudents <em>Students</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.cps.cps.Cps#getStudents <em>Students</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Students</em>'.
-   * @see org.xtext.example.cps.cps.Model#getStudents()
-   * @see #getModel()
+   * @see org.xtext.example.cps.cps.Cps#getStudents()
+   * @see #getCps()
    * @generated
    */
-  EReference getModel_Students();
+  EReference getCps_Students();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cps.cps.Program <em>Program</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Program</em>'.
+   * @see org.xtext.example.cps.cps.Program
+   * @generated
+   */
+  EClass getProgram();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Program#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.cps.cps.Program#getName()
+   * @see #getProgram()
+   * @generated
+   */
+  EAttribute getProgram_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.cps.cps.Program#getCourses <em>Courses</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Courses</em>'.
+   * @see org.xtext.example.cps.cps.Program#getCourses()
+   * @see #getProgram()
+   * @generated
+   */
+  EReference getProgram_Courses();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cps.cps.Student <em>Student</em>}'.
@@ -452,15 +484,15 @@ public interface CpsPackage extends EPackage
   EClass getStudent();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Student#getStudentName <em>Student Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Student#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Student Name</em>'.
-   * @see org.xtext.example.cps.cps.Student#getStudentName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.cps.cps.Student#getName()
    * @see #getStudent()
    * @generated
    */
-  EAttribute getStudent_StudentName();
+  EAttribute getStudent_Name();
 
   /**
    * Returns the meta object for the reference list '{@link org.xtext.example.cps.cps.Student#getTakenCourses <em>Taken Courses</em>}'.
@@ -485,38 +517,6 @@ public interface CpsPackage extends EPackage
   EAttribute getStudent_MaxCredits();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cps.cps.Program <em>Program</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Program</em>'.
-   * @see org.xtext.example.cps.cps.Program
-   * @generated
-   */
-  EClass getProgram();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Program#getProgramName <em>Program Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Program Name</em>'.
-   * @see org.xtext.example.cps.cps.Program#getProgramName()
-   * @see #getProgram()
-   * @generated
-   */
-  EAttribute getProgram_ProgramName();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.cps.cps.Program#getCourses <em>Courses</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Courses</em>'.
-   * @see org.xtext.example.cps.cps.Program#getCourses()
-   * @see #getProgram()
-   * @generated
-   */
-  EReference getProgram_Courses();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.cps.cps.Course <em>Course</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -527,26 +527,26 @@ public interface CpsPackage extends EPackage
   EClass getCourse();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getCourseName <em>Course Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Course Name</em>'.
-   * @see org.xtext.example.cps.cps.Course#getCourseName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.cps.cps.Course#getName()
    * @see #getCourse()
    * @generated
    */
-  EAttribute getCourse_CourseName();
+  EAttribute getCourse_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getCourseNumber <em>Course Number</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getNumber <em>Number</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Course Number</em>'.
-   * @see org.xtext.example.cps.cps.Course#getCourseNumber()
+   * @return the meta object for the attribute '<em>Number</em>'.
+   * @see org.xtext.example.cps.cps.Course#getNumber()
    * @see #getCourse()
    * @generated
    */
-  EAttribute getCourse_CourseNumber();
+  EAttribute getCourse_Number();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getCredits <em>Credits</em>}'.
@@ -582,26 +582,26 @@ public interface CpsPackage extends EPackage
   EAttribute getCourse_Year();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.example.cps.cps.Course#getPrerequisites <em>Prerequisites</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cps.cps.Course#getPrereq <em>Prereq</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Prerequisites</em>'.
-   * @see org.xtext.example.cps.cps.Course#getPrerequisites()
+   * @return the meta object for the containment reference '<em>Prereq</em>'.
+   * @see org.xtext.example.cps.cps.Course#getPrereq()
    * @see #getCourse()
    * @generated
    */
-  EReference getCourse_Prerequisites();
+  EReference getCourse_Prereq();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.example.cps.cps.Course#getCorequisites <em>Corequisites</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cps.cps.Course#getCoreq <em>Coreq</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Corequisites</em>'.
-   * @see org.xtext.example.cps.cps.Course#getCorequisites()
+   * @return the meta object for the containment reference '<em>Coreq</em>'.
+   * @see org.xtext.example.cps.cps.Course#getCoreq()
    * @see #getCourse()
    * @generated
    */
-  EReference getCourse_Corequisites();
+  EReference getCourse_Coreq();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cps.cps.Expr <em>Expr</em>}'.
@@ -700,14 +700,14 @@ public interface CpsPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.ModelImpl <em>Model</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.CpsImpl <em>Cps</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.cps.cps.impl.ModelImpl
-     * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getModel()
+     * @see org.xtext.example.cps.cps.impl.CpsImpl
+     * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getCps()
      * @generated
      */
-    EClass MODEL = eINSTANCE.getModel();
+    EClass CPS = eINSTANCE.getCps();
 
     /**
      * The meta object literal for the '<em><b>Program</b></em>' containment reference feature.
@@ -715,7 +715,7 @@ public interface CpsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__PROGRAM = eINSTANCE.getModel_Program();
+    EReference CPS__PROGRAM = eINSTANCE.getCps_Program();
 
     /**
      * The meta object literal for the '<em><b>Students</b></em>' containment reference list feature.
@@ -723,7 +723,33 @@ public interface CpsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__STUDENTS = eINSTANCE.getModel_Students();
+    EReference CPS__STUDENTS = eINSTANCE.getCps_Students();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.ProgramImpl <em>Program</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cps.cps.impl.ProgramImpl
+     * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getProgram()
+     * @generated
+     */
+    EClass PROGRAM = eINSTANCE.getProgram();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROGRAM__NAME = eINSTANCE.getProgram_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Courses</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROGRAM__COURSES = eINSTANCE.getProgram_Courses();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.StudentImpl <em>Student</em>}' class.
@@ -736,12 +762,12 @@ public interface CpsPackage extends EPackage
     EClass STUDENT = eINSTANCE.getStudent();
 
     /**
-     * The meta object literal for the '<em><b>Student Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STUDENT__STUDENT_NAME = eINSTANCE.getStudent_StudentName();
+    EAttribute STUDENT__NAME = eINSTANCE.getStudent_Name();
 
     /**
      * The meta object literal for the '<em><b>Taken Courses</b></em>' reference list feature.
@@ -760,32 +786,6 @@ public interface CpsPackage extends EPackage
     EAttribute STUDENT__MAX_CREDITS = eINSTANCE.getStudent_MaxCredits();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.ProgramImpl <em>Program</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cps.cps.impl.ProgramImpl
-     * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getProgram()
-     * @generated
-     */
-    EClass PROGRAM = eINSTANCE.getProgram();
-
-    /**
-     * The meta object literal for the '<em><b>Program Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PROGRAM__PROGRAM_NAME = eINSTANCE.getProgram_ProgramName();
-
-    /**
-     * The meta object literal for the '<em><b>Courses</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROGRAM__COURSES = eINSTANCE.getProgram_Courses();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.CourseImpl <em>Course</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -796,20 +796,20 @@ public interface CpsPackage extends EPackage
     EClass COURSE = eINSTANCE.getCourse();
 
     /**
-     * The meta object literal for the '<em><b>Course Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COURSE__COURSE_NAME = eINSTANCE.getCourse_CourseName();
+    EAttribute COURSE__NAME = eINSTANCE.getCourse_Name();
 
     /**
-     * The meta object literal for the '<em><b>Course Number</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COURSE__COURSE_NUMBER = eINSTANCE.getCourse_CourseNumber();
+    EAttribute COURSE__NUMBER = eINSTANCE.getCourse_Number();
 
     /**
      * The meta object literal for the '<em><b>Credits</b></em>' attribute feature.
@@ -836,20 +836,20 @@ public interface CpsPackage extends EPackage
     EAttribute COURSE__YEAR = eINSTANCE.getCourse_Year();
 
     /**
-     * The meta object literal for the '<em><b>Prerequisites</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Prereq</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COURSE__PREREQUISITES = eINSTANCE.getCourse_Prerequisites();
+    EReference COURSE__PREREQ = eINSTANCE.getCourse_Prereq();
 
     /**
-     * The meta object literal for the '<em><b>Corequisites</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Coreq</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COURSE__COREQUISITES = eINSTANCE.getCourse_Corequisites();
+    EReference COURSE__COREQ = eINSTANCE.getCourse_Coreq();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.ExprImpl <em>Expr</em>}' class.
