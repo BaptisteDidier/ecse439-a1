@@ -1,6 +1,9 @@
 package org.xtext.example.cps.validation;
 
 import org.eclipse.xtext.validation.Check;
+import org.xtext.example.cps.cps.Course;
+import org.xtext.example.cps.cps.Student;
+import org.xtext.example.cps.cps.CpsPackage;
 
 public class CpsValidator extends AbstractCpsValidator {
 	
