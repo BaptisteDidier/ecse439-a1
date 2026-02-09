@@ -1,0 +1,74 @@
+grammar org.xtext.example.cps.Cps with org.eclipse.xtext.common.Terminals
+
+// We are using a manually-edited Ecore model
+import "http://www.xtext.org/example/cps/Cps"
+
+Cps:
+    program=Program
+;
+
+Program:
+    'program' name=ID
+    'courses' '{' courses+=Course* '}'
+    'required' '{' requiredCourses+=[Course] (',' requiredCourses+=[Course])* '}'
+    'students' '{' students+=Student* '}'
+;
+
+Student:
+    'student' name=ID
+    'taken' '{' taken+=CourseOccurrence* '}'
+    'maxCreditsPerTerm' maxCredits=INT
+;
+
+// Abstraction–Occurrence: a student has occurrences that reference Course
+CourseOccurrence:
+    course=[Course] ('status' status=OccurrenceStatus)?
+;
+
+Course:
+    'course' name=ID number=ID
+    'credits' credits=INT
+    'offered' offered=Term
+    'year' year=INT
+    ('prereq' prereq=Expr)?
+    ('coreq' coreq=Expr)?
+;
+
+enum Term:
+    FALL='FALL'
+  | WINTER='WINTER'
+  | BOTH='BOTH'
+;
+
+enum OccurrenceStatus:
+    TAKEN='TAKEN'
+  | PLANNED='PLANNED'
+;
+
+// -------- Expression tree that matches your Ecore classes: Expr (abstract), And, Or, CourseRef --------
+
+// Make Expr build the correct Ecore subclasses using explicit alternatives:
+Expr returns Expr:
+      Or
+;
+
+// OR has lower precedence than AND
+Or returns Expr:
+    And ( {Or.left=current} 'OR' right=And )*
+;
+
+// AND has higher precedence
+And returns Expr:
+    Atom ( {And.left=current} 'AND' right=Atom )*
+;
+
+// Atom is either a course reference or parenthesized expression
+Atom returns Expr:
+      CourseRef
+    | '(' Expr ')'
+;
+
+// This produces your Ecore class CourseRef (subclass of Expr)
+CourseRef returns Expr:
+    course=[Course]
+;
