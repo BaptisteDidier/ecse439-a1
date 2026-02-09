@@ -14,8 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.Course#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.Course#getNumber <em>Number</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Course#getCode <em>Code</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getCredits <em>Credits</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getOffered <em>Offered</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getYear <em>Year</em>}</li>
@@ -30,48 +29,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface Course extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Code</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Name()
+   * @return the value of the '<em>Code</em>' attribute.
+   * @see #setCode(String)
+   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Code()
    * @model
    * @generated
    */
-  String getName();
+  String getCode();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getCode <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Code</em>' attribute.
+   * @see #getCode()
    * @generated
    */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Number</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Number</em>' attribute.
-   * @see #setNumber(String)
-   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Number()
-   * @model
-   * @generated
-   */
-  String getNumber();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getNumber <em>Number</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Number</em>' attribute.
-   * @see #getNumber()
-   * @generated
-   */
-  void setNumber(String value);
+  void setCode(String value);
 
   /**
    * Returns the value of the '<em><b>Credits</b></em>' attribute.

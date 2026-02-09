@@ -286,7 +286,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getCourse_Name()
+  public EAttribute getCourse_Code()
   {
     return (EAttribute)courseEClass.getEStructuralFeatures().get(0);
   }
@@ -297,7 +297,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getCourse_Number()
+  public EAttribute getCourse_Credits()
   {
     return (EAttribute)courseEClass.getEStructuralFeatures().get(1);
   }
@@ -308,7 +308,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getCourse_Credits()
+  public EAttribute getCourse_Offered()
   {
     return (EAttribute)courseEClass.getEStructuralFeatures().get(2);
   }
@@ -319,7 +319,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getCourse_Offered()
+  public EAttribute getCourse_Year()
   {
     return (EAttribute)courseEClass.getEStructuralFeatures().get(3);
   }
@@ -330,20 +330,9 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EAttribute getCourse_Year()
-  {
-    return (EAttribute)courseEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getCourse_Prereq()
   {
-    return (EReference)courseEClass.getEStructuralFeatures().get(5);
+    return (EReference)courseEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -354,7 +343,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
   @Override
   public EReference getCourse_Coreq()
   {
-    return (EReference)courseEClass.getEStructuralFeatures().get(6);
+    return (EReference)courseEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -480,8 +469,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     createEAttribute(studentEClass, STUDENT__MAX_CREDITS);
 
     courseEClass = createEClass(COURSE);
-    createEAttribute(courseEClass, COURSE__NAME);
-    createEAttribute(courseEClass, COURSE__NUMBER);
+    createEAttribute(courseEClass, COURSE__CODE);
     createEAttribute(courseEClass, COURSE__CREDITS);
     createEAttribute(courseEClass, COURSE__OFFERED);
     createEAttribute(courseEClass, COURSE__YEAR);
@@ -549,8 +537,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     initEAttribute(getStudent_MaxCredits(), ecorePackage.getEInt(), "maxCredits", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCourse_Number(), ecorePackage.getEString(), "number", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCourse_Code(), ecorePackage.getEString(), "code", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCourse_Credits(), ecorePackage.getEInt(), "credits", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCourse_Offered(), this.getTerm(), "offered", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCourse_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

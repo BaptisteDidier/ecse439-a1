@@ -360,9 +360,9 @@ ruleCourse returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_code_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getCourseAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_code_1_0, grammarAccess.getCourseAccess().getCodeIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -370,39 +370,21 @@ ruleCourse returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"name",
-						lv_name_1_0,
+						"code",
+						lv_code_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		(
-			(
-				lv_number_2_0=RULE_ID
-				{
-					newLeafNode(lv_number_2_0, grammarAccess.getCourseAccess().getNumberIDTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCourseRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"number",
-						lv_number_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_3='credits'
+		otherlv_2='credits'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getCourseAccess().getCreditsKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getCourseAccess().getCreditsKeyword_2());
 		}
 		(
 			(
-				lv_credits_4_0=RULE_INT
+				lv_credits_3_0=RULE_INT
 				{
-					newLeafNode(lv_credits_4_0, grammarAccess.getCourseAccess().getCreditsINTTerminalRuleCall_4_0());
+					newLeafNode(lv_credits_3_0, grammarAccess.getCourseAccess().getCreditsINTTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -411,21 +393,21 @@ ruleCourse returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"credits",
-						lv_credits_4_0,
+						lv_credits_3_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_5='offered'
+		otherlv_4='offered'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getCourseAccess().getOfferedKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getCourseAccess().getOfferedKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCourseAccess().getOfferedTermEnumRuleCall_6_0());
+					newCompositeNode(grammarAccess.getCourseAccess().getOfferedTermEnumRuleCall_5_0());
 				}
-				lv_offered_6_0=ruleTerm
+				lv_offered_5_0=ruleTerm
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCourseRule());
@@ -433,21 +415,21 @@ ruleCourse returns [EObject current=null]
 					set(
 						$current,
 						"offered",
-						lv_offered_6_0,
+						lv_offered_5_0,
 						"org.xtext.example.cps.Cps.Term");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7='year'
+		otherlv_6='year'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getCourseAccess().getYearKeyword_7());
+			newLeafNode(otherlv_6, grammarAccess.getCourseAccess().getYearKeyword_6());
 		}
 		(
 			(
-				lv_year_8_0=RULE_INT
+				lv_year_7_0=RULE_INT
 				{
-					newLeafNode(lv_year_8_0, grammarAccess.getCourseAccess().getYearINTTerminalRuleCall_8_0());
+					newLeafNode(lv_year_7_0, grammarAccess.getCourseAccess().getYearINTTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -456,22 +438,22 @@ ruleCourse returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"year",
-						lv_year_8_0,
+						lv_year_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
 		(
-			otherlv_9='prereq'
+			otherlv_8='prereq'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getCourseAccess().getPrereqKeyword_9_0());
+				newLeafNode(otherlv_8, grammarAccess.getCourseAccess().getPrereqKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCourseAccess().getPrereqExprParserRuleCall_9_1_0());
+						newCompositeNode(grammarAccess.getCourseAccess().getPrereqExprParserRuleCall_8_1_0());
 					}
-					lv_prereq_10_0=ruleExpr
+					lv_prereq_9_0=ruleExpr
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCourseRule());
@@ -479,7 +461,7 @@ ruleCourse returns [EObject current=null]
 						set(
 							$current,
 							"prereq",
-							lv_prereq_10_0,
+							lv_prereq_9_0,
 							"org.xtext.example.cps.Cps.Expr");
 						afterParserOrEnumRuleCall();
 					}
@@ -487,16 +469,16 @@ ruleCourse returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_11='coreq'
+			otherlv_10='coreq'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getCourseAccess().getCoreqKeyword_10_0());
+				newLeafNode(otherlv_10, grammarAccess.getCourseAccess().getCoreqKeyword_9_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCourseAccess().getCoreqExprParserRuleCall_10_1_0());
+						newCompositeNode(grammarAccess.getCourseAccess().getCoreqExprParserRuleCall_9_1_0());
 					}
-					lv_coreq_12_0=ruleExpr
+					lv_coreq_11_0=ruleExpr
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCourseRule());
@@ -504,7 +486,7 @@ ruleCourse returns [EObject current=null]
 						set(
 							$current,
 							"coreq",
-							lv_coreq_12_0,
+							lv_coreq_11_0,
 							"org.xtext.example.cps.Cps.Expr");
 						afterParserOrEnumRuleCall();
 					}

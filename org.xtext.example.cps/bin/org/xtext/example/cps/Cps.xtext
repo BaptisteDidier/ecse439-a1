@@ -18,7 +18,7 @@ Student:
     'maxCreditsPerTerm' maxCredits=INT;
 
 Course:
-    'course' name=ID number=ID
+    'course' code=ID
     'credits' credits=INT
     'offered' offered=Term
     'year' year=INT

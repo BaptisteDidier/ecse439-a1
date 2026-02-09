@@ -763,50 +763,49 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCourse"
-    // InternalCps.g:349:1: ruleCourse returns [EObject current=null] : (otherlv_0= 'course' ( (lv_name_1_0= RULE_ID ) ) ( (lv_number_2_0= RULE_ID ) ) otherlv_3= 'credits' ( (lv_credits_4_0= RULE_INT ) ) otherlv_5= 'offered' ( (lv_offered_6_0= ruleTerm ) ) otherlv_7= 'year' ( (lv_year_8_0= RULE_INT ) ) (otherlv_9= 'prereq' ( (lv_prereq_10_0= ruleExpr ) ) )? (otherlv_11= 'coreq' ( (lv_coreq_12_0= ruleExpr ) ) )? ) ;
+    // InternalCps.g:349:1: ruleCourse returns [EObject current=null] : (otherlv_0= 'course' ( (lv_code_1_0= RULE_ID ) ) otherlv_2= 'credits' ( (lv_credits_3_0= RULE_INT ) ) otherlv_4= 'offered' ( (lv_offered_5_0= ruleTerm ) ) otherlv_6= 'year' ( (lv_year_7_0= RULE_INT ) ) (otherlv_8= 'prereq' ( (lv_prereq_9_0= ruleExpr ) ) )? (otherlv_10= 'coreq' ( (lv_coreq_11_0= ruleExpr ) ) )? ) ;
     public final EObject ruleCourse() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
-        Token lv_number_2_0=null;
-        Token otherlv_3=null;
-        Token lv_credits_4_0=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token lv_year_8_0=null;
-        Token otherlv_9=null;
-        Token otherlv_11=null;
-        Enumerator lv_offered_6_0 = null;
+        Token lv_code_1_0=null;
+        Token otherlv_2=null;
+        Token lv_credits_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token lv_year_7_0=null;
+        Token otherlv_8=null;
+        Token otherlv_10=null;
+        Enumerator lv_offered_5_0 = null;
 
-        EObject lv_prereq_10_0 = null;
+        EObject lv_prereq_9_0 = null;
 
-        EObject lv_coreq_12_0 = null;
+        EObject lv_coreq_11_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalCps.g:355:2: ( (otherlv_0= 'course' ( (lv_name_1_0= RULE_ID ) ) ( (lv_number_2_0= RULE_ID ) ) otherlv_3= 'credits' ( (lv_credits_4_0= RULE_INT ) ) otherlv_5= 'offered' ( (lv_offered_6_0= ruleTerm ) ) otherlv_7= 'year' ( (lv_year_8_0= RULE_INT ) ) (otherlv_9= 'prereq' ( (lv_prereq_10_0= ruleExpr ) ) )? (otherlv_11= 'coreq' ( (lv_coreq_12_0= ruleExpr ) ) )? ) )
-            // InternalCps.g:356:2: (otherlv_0= 'course' ( (lv_name_1_0= RULE_ID ) ) ( (lv_number_2_0= RULE_ID ) ) otherlv_3= 'credits' ( (lv_credits_4_0= RULE_INT ) ) otherlv_5= 'offered' ( (lv_offered_6_0= ruleTerm ) ) otherlv_7= 'year' ( (lv_year_8_0= RULE_INT ) ) (otherlv_9= 'prereq' ( (lv_prereq_10_0= ruleExpr ) ) )? (otherlv_11= 'coreq' ( (lv_coreq_12_0= ruleExpr ) ) )? )
+            // InternalCps.g:355:2: ( (otherlv_0= 'course' ( (lv_code_1_0= RULE_ID ) ) otherlv_2= 'credits' ( (lv_credits_3_0= RULE_INT ) ) otherlv_4= 'offered' ( (lv_offered_5_0= ruleTerm ) ) otherlv_6= 'year' ( (lv_year_7_0= RULE_INT ) ) (otherlv_8= 'prereq' ( (lv_prereq_9_0= ruleExpr ) ) )? (otherlv_10= 'coreq' ( (lv_coreq_11_0= ruleExpr ) ) )? ) )
+            // InternalCps.g:356:2: (otherlv_0= 'course' ( (lv_code_1_0= RULE_ID ) ) otherlv_2= 'credits' ( (lv_credits_3_0= RULE_INT ) ) otherlv_4= 'offered' ( (lv_offered_5_0= ruleTerm ) ) otherlv_6= 'year' ( (lv_year_7_0= RULE_INT ) ) (otherlv_8= 'prereq' ( (lv_prereq_9_0= ruleExpr ) ) )? (otherlv_10= 'coreq' ( (lv_coreq_11_0= ruleExpr ) ) )? )
             {
-            // InternalCps.g:356:2: (otherlv_0= 'course' ( (lv_name_1_0= RULE_ID ) ) ( (lv_number_2_0= RULE_ID ) ) otherlv_3= 'credits' ( (lv_credits_4_0= RULE_INT ) ) otherlv_5= 'offered' ( (lv_offered_6_0= ruleTerm ) ) otherlv_7= 'year' ( (lv_year_8_0= RULE_INT ) ) (otherlv_9= 'prereq' ( (lv_prereq_10_0= ruleExpr ) ) )? (otherlv_11= 'coreq' ( (lv_coreq_12_0= ruleExpr ) ) )? )
-            // InternalCps.g:357:3: otherlv_0= 'course' ( (lv_name_1_0= RULE_ID ) ) ( (lv_number_2_0= RULE_ID ) ) otherlv_3= 'credits' ( (lv_credits_4_0= RULE_INT ) ) otherlv_5= 'offered' ( (lv_offered_6_0= ruleTerm ) ) otherlv_7= 'year' ( (lv_year_8_0= RULE_INT ) ) (otherlv_9= 'prereq' ( (lv_prereq_10_0= ruleExpr ) ) )? (otherlv_11= 'coreq' ( (lv_coreq_12_0= ruleExpr ) ) )?
+            // InternalCps.g:356:2: (otherlv_0= 'course' ( (lv_code_1_0= RULE_ID ) ) otherlv_2= 'credits' ( (lv_credits_3_0= RULE_INT ) ) otherlv_4= 'offered' ( (lv_offered_5_0= ruleTerm ) ) otherlv_6= 'year' ( (lv_year_7_0= RULE_INT ) ) (otherlv_8= 'prereq' ( (lv_prereq_9_0= ruleExpr ) ) )? (otherlv_10= 'coreq' ( (lv_coreq_11_0= ruleExpr ) ) )? )
+            // InternalCps.g:357:3: otherlv_0= 'course' ( (lv_code_1_0= RULE_ID ) ) otherlv_2= 'credits' ( (lv_credits_3_0= RULE_INT ) ) otherlv_4= 'offered' ( (lv_offered_5_0= ruleTerm ) ) otherlv_6= 'year' ( (lv_year_7_0= RULE_INT ) ) (otherlv_8= 'prereq' ( (lv_prereq_9_0= ruleExpr ) ) )? (otherlv_10= 'coreq' ( (lv_coreq_11_0= ruleExpr ) ) )?
             {
             otherlv_0=(Token)match(input,21,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCourseAccess().getCourseKeyword_0());
             		
-            // InternalCps.g:361:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalCps.g:362:4: (lv_name_1_0= RULE_ID )
+            // InternalCps.g:361:3: ( (lv_code_1_0= RULE_ID ) )
+            // InternalCps.g:362:4: (lv_code_1_0= RULE_ID )
             {
-            // InternalCps.g:362:4: (lv_name_1_0= RULE_ID )
-            // InternalCps.g:363:5: lv_name_1_0= RULE_ID
+            // InternalCps.g:362:4: (lv_code_1_0= RULE_ID )
+            // InternalCps.g:363:5: lv_code_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
+            lv_code_1_0=(Token)match(input,RULE_ID,FOLLOW_14); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getCourseAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_code_1_0, grammarAccess.getCourseAccess().getCodeIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -814,8 +813,8 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             					}
             					setWithLastConsumed(
             						current,
-            						"name",
-            						lv_name_1_0,
+            						"code",
+            						lv_code_1_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -824,45 +823,19 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCps.g:379:3: ( (lv_number_2_0= RULE_ID ) )
-            // InternalCps.g:380:4: (lv_number_2_0= RULE_ID )
-            {
-            // InternalCps.g:380:4: (lv_number_2_0= RULE_ID )
-            // InternalCps.g:381:5: lv_number_2_0= RULE_ID
-            {
-            lv_number_2_0=(Token)match(input,RULE_ID,FOLLOW_14); 
+            otherlv_2=(Token)match(input,22,FOLLOW_13); 
 
-            					newLeafNode(lv_number_2_0, grammarAccess.getCourseAccess().getNumberIDTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCourseRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"number",
-            						lv_number_2_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            otherlv_3=(Token)match(input,22,FOLLOW_13); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getCourseAccess().getCreditsKeyword_3());
+            			newLeafNode(otherlv_2, grammarAccess.getCourseAccess().getCreditsKeyword_2());
             		
-            // InternalCps.g:401:3: ( (lv_credits_4_0= RULE_INT ) )
-            // InternalCps.g:402:4: (lv_credits_4_0= RULE_INT )
+            // InternalCps.g:383:3: ( (lv_credits_3_0= RULE_INT ) )
+            // InternalCps.g:384:4: (lv_credits_3_0= RULE_INT )
             {
-            // InternalCps.g:402:4: (lv_credits_4_0= RULE_INT )
-            // InternalCps.g:403:5: lv_credits_4_0= RULE_INT
+            // InternalCps.g:384:4: (lv_credits_3_0= RULE_INT )
+            // InternalCps.g:385:5: lv_credits_3_0= RULE_INT
             {
-            lv_credits_4_0=(Token)match(input,RULE_INT,FOLLOW_15); 
+            lv_credits_3_0=(Token)match(input,RULE_INT,FOLLOW_15); 
 
-            					newLeafNode(lv_credits_4_0, grammarAccess.getCourseAccess().getCreditsINTTerminalRuleCall_4_0());
+            					newLeafNode(lv_credits_3_0, grammarAccess.getCourseAccess().getCreditsINTTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -871,7 +844,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"credits",
-            						lv_credits_4_0,
+            						lv_credits_3_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -880,21 +853,21 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,23,FOLLOW_16); 
+            otherlv_4=(Token)match(input,23,FOLLOW_16); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getCourseAccess().getOfferedKeyword_5());
+            			newLeafNode(otherlv_4, grammarAccess.getCourseAccess().getOfferedKeyword_4());
             		
-            // InternalCps.g:423:3: ( (lv_offered_6_0= ruleTerm ) )
-            // InternalCps.g:424:4: (lv_offered_6_0= ruleTerm )
+            // InternalCps.g:405:3: ( (lv_offered_5_0= ruleTerm ) )
+            // InternalCps.g:406:4: (lv_offered_5_0= ruleTerm )
             {
-            // InternalCps.g:424:4: (lv_offered_6_0= ruleTerm )
-            // InternalCps.g:425:5: lv_offered_6_0= ruleTerm
+            // InternalCps.g:406:4: (lv_offered_5_0= ruleTerm )
+            // InternalCps.g:407:5: lv_offered_5_0= ruleTerm
             {
 
-            					newCompositeNode(grammarAccess.getCourseAccess().getOfferedTermEnumRuleCall_6_0());
+            					newCompositeNode(grammarAccess.getCourseAccess().getOfferedTermEnumRuleCall_5_0());
             				
             pushFollow(FOLLOW_17);
-            lv_offered_6_0=ruleTerm();
+            lv_offered_5_0=ruleTerm();
 
             state._fsp--;
 
@@ -905,7 +878,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"offered",
-            						lv_offered_6_0,
+            						lv_offered_5_0,
             						"org.xtext.example.cps.Cps.Term");
             					afterParserOrEnumRuleCall();
             				
@@ -915,19 +888,19 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,24,FOLLOW_13); 
+            otherlv_6=(Token)match(input,24,FOLLOW_13); 
 
-            			newLeafNode(otherlv_7, grammarAccess.getCourseAccess().getYearKeyword_7());
+            			newLeafNode(otherlv_6, grammarAccess.getCourseAccess().getYearKeyword_6());
             		
-            // InternalCps.g:446:3: ( (lv_year_8_0= RULE_INT ) )
-            // InternalCps.g:447:4: (lv_year_8_0= RULE_INT )
+            // InternalCps.g:428:3: ( (lv_year_7_0= RULE_INT ) )
+            // InternalCps.g:429:4: (lv_year_7_0= RULE_INT )
             {
-            // InternalCps.g:447:4: (lv_year_8_0= RULE_INT )
-            // InternalCps.g:448:5: lv_year_8_0= RULE_INT
+            // InternalCps.g:429:4: (lv_year_7_0= RULE_INT )
+            // InternalCps.g:430:5: lv_year_7_0= RULE_INT
             {
-            lv_year_8_0=(Token)match(input,RULE_INT,FOLLOW_18); 
+            lv_year_7_0=(Token)match(input,RULE_INT,FOLLOW_18); 
 
-            					newLeafNode(lv_year_8_0, grammarAccess.getCourseAccess().getYearINTTerminalRuleCall_8_0());
+            					newLeafNode(lv_year_7_0, grammarAccess.getCourseAccess().getYearINTTerminalRuleCall_7_0());
             				
 
             					if (current==null) {
@@ -936,7 +909,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"year",
-            						lv_year_8_0,
+            						lv_year_7_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -945,7 +918,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCps.g:464:3: (otherlv_9= 'prereq' ( (lv_prereq_10_0= ruleExpr ) ) )?
+            // InternalCps.g:446:3: (otherlv_8= 'prereq' ( (lv_prereq_9_0= ruleExpr ) ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -954,23 +927,23 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalCps.g:465:4: otherlv_9= 'prereq' ( (lv_prereq_10_0= ruleExpr ) )
+                    // InternalCps.g:447:4: otherlv_8= 'prereq' ( (lv_prereq_9_0= ruleExpr ) )
                     {
-                    otherlv_9=(Token)match(input,25,FOLLOW_19); 
+                    otherlv_8=(Token)match(input,25,FOLLOW_19); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getCourseAccess().getPrereqKeyword_9_0());
+                    				newLeafNode(otherlv_8, grammarAccess.getCourseAccess().getPrereqKeyword_8_0());
                     			
-                    // InternalCps.g:469:4: ( (lv_prereq_10_0= ruleExpr ) )
-                    // InternalCps.g:470:5: (lv_prereq_10_0= ruleExpr )
+                    // InternalCps.g:451:4: ( (lv_prereq_9_0= ruleExpr ) )
+                    // InternalCps.g:452:5: (lv_prereq_9_0= ruleExpr )
                     {
-                    // InternalCps.g:470:5: (lv_prereq_10_0= ruleExpr )
-                    // InternalCps.g:471:6: lv_prereq_10_0= ruleExpr
+                    // InternalCps.g:452:5: (lv_prereq_9_0= ruleExpr )
+                    // InternalCps.g:453:6: lv_prereq_9_0= ruleExpr
                     {
 
-                    						newCompositeNode(grammarAccess.getCourseAccess().getPrereqExprParserRuleCall_9_1_0());
+                    						newCompositeNode(grammarAccess.getCourseAccess().getPrereqExprParserRuleCall_8_1_0());
                     					
                     pushFollow(FOLLOW_20);
-                    lv_prereq_10_0=ruleExpr();
+                    lv_prereq_9_0=ruleExpr();
 
                     state._fsp--;
 
@@ -981,7 +954,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"prereq",
-                    							lv_prereq_10_0,
+                    							lv_prereq_9_0,
                     							"org.xtext.example.cps.Cps.Expr");
                     						afterParserOrEnumRuleCall();
                     					
@@ -997,7 +970,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalCps.g:489:3: (otherlv_11= 'coreq' ( (lv_coreq_12_0= ruleExpr ) ) )?
+            // InternalCps.g:471:3: (otherlv_10= 'coreq' ( (lv_coreq_11_0= ruleExpr ) ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1006,23 +979,23 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalCps.g:490:4: otherlv_11= 'coreq' ( (lv_coreq_12_0= ruleExpr ) )
+                    // InternalCps.g:472:4: otherlv_10= 'coreq' ( (lv_coreq_11_0= ruleExpr ) )
                     {
-                    otherlv_11=(Token)match(input,26,FOLLOW_19); 
+                    otherlv_10=(Token)match(input,26,FOLLOW_19); 
 
-                    				newLeafNode(otherlv_11, grammarAccess.getCourseAccess().getCoreqKeyword_10_0());
+                    				newLeafNode(otherlv_10, grammarAccess.getCourseAccess().getCoreqKeyword_9_0());
                     			
-                    // InternalCps.g:494:4: ( (lv_coreq_12_0= ruleExpr ) )
-                    // InternalCps.g:495:5: (lv_coreq_12_0= ruleExpr )
+                    // InternalCps.g:476:4: ( (lv_coreq_11_0= ruleExpr ) )
+                    // InternalCps.g:477:5: (lv_coreq_11_0= ruleExpr )
                     {
-                    // InternalCps.g:495:5: (lv_coreq_12_0= ruleExpr )
-                    // InternalCps.g:496:6: lv_coreq_12_0= ruleExpr
+                    // InternalCps.g:477:5: (lv_coreq_11_0= ruleExpr )
+                    // InternalCps.g:478:6: lv_coreq_11_0= ruleExpr
                     {
 
-                    						newCompositeNode(grammarAccess.getCourseAccess().getCoreqExprParserRuleCall_10_1_0());
+                    						newCompositeNode(grammarAccess.getCourseAccess().getCoreqExprParserRuleCall_9_1_0());
                     					
                     pushFollow(FOLLOW_2);
-                    lv_coreq_12_0=ruleExpr();
+                    lv_coreq_11_0=ruleExpr();
 
                     state._fsp--;
 
@@ -1033,7 +1006,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"coreq",
-                    							lv_coreq_12_0,
+                    							lv_coreq_11_0,
                     							"org.xtext.example.cps.Cps.Expr");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1072,7 +1045,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpr"
-    // InternalCps.g:518:1: entryRuleExpr returns [EObject current=null] : iv_ruleExpr= ruleExpr EOF ;
+    // InternalCps.g:500:1: entryRuleExpr returns [EObject current=null] : iv_ruleExpr= ruleExpr EOF ;
     public final EObject entryRuleExpr() throws RecognitionException {
         EObject current = null;
 
@@ -1080,8 +1053,8 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCps.g:518:45: (iv_ruleExpr= ruleExpr EOF )
-            // InternalCps.g:519:2: iv_ruleExpr= ruleExpr EOF
+            // InternalCps.g:500:45: (iv_ruleExpr= ruleExpr EOF )
+            // InternalCps.g:501:2: iv_ruleExpr= ruleExpr EOF
             {
              newCompositeNode(grammarAccess.getExprRule()); 
             pushFollow(FOLLOW_1);
@@ -1108,7 +1081,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpr"
-    // InternalCps.g:525:1: ruleExpr returns [EObject current=null] : this_Or_0= ruleOr ;
+    // InternalCps.g:507:1: ruleExpr returns [EObject current=null] : this_Or_0= ruleOr ;
     public final EObject ruleExpr() throws RecognitionException {
         EObject current = null;
 
@@ -1119,8 +1092,8 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCps.g:531:2: (this_Or_0= ruleOr )
-            // InternalCps.g:532:2: this_Or_0= ruleOr
+            // InternalCps.g:513:2: (this_Or_0= ruleOr )
+            // InternalCps.g:514:2: this_Or_0= ruleOr
             {
 
             		newCompositeNode(grammarAccess.getExprAccess().getOrParserRuleCall());
@@ -1154,7 +1127,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOr"
-    // InternalCps.g:543:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
+    // InternalCps.g:525:1: entryRuleOr returns [EObject current=null] : iv_ruleOr= ruleOr EOF ;
     public final EObject entryRuleOr() throws RecognitionException {
         EObject current = null;
 
@@ -1162,8 +1135,8 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCps.g:543:43: (iv_ruleOr= ruleOr EOF )
-            // InternalCps.g:544:2: iv_ruleOr= ruleOr EOF
+            // InternalCps.g:525:43: (iv_ruleOr= ruleOr EOF )
+            // InternalCps.g:526:2: iv_ruleOr= ruleOr EOF
             {
              newCompositeNode(grammarAccess.getOrRule()); 
             pushFollow(FOLLOW_1);
@@ -1190,7 +1163,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOr"
-    // InternalCps.g:550:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* ) ;
+    // InternalCps.g:532:1: ruleOr returns [EObject current=null] : (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* ) ;
     public final EObject ruleOr() throws RecognitionException {
         EObject current = null;
 
@@ -1204,11 +1177,11 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCps.g:556:2: ( (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* ) )
-            // InternalCps.g:557:2: (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* )
+            // InternalCps.g:538:2: ( (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* ) )
+            // InternalCps.g:539:2: (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* )
             {
-            // InternalCps.g:557:2: (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* )
-            // InternalCps.g:558:3: this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )*
+            // InternalCps.g:539:2: (this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )* )
+            // InternalCps.g:540:3: this_And_0= ruleAnd ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getOrAccess().getAndParserRuleCall_0());
@@ -1222,7 +1195,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             			current = this_And_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalCps.g:566:3: ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )*
+            // InternalCps.g:548:3: ( () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -1235,10 +1208,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalCps.g:567:4: () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) )
+            	    // InternalCps.g:549:4: () otherlv_2= 'OR' ( (lv_right_3_0= ruleAnd ) )
             	    {
-            	    // InternalCps.g:567:4: ()
-            	    // InternalCps.g:568:5: 
+            	    // InternalCps.g:549:4: ()
+            	    // InternalCps.g:550:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -1252,11 +1225,11 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             	    				newLeafNode(otherlv_2, grammarAccess.getOrAccess().getORKeyword_1_1());
             	    			
-            	    // InternalCps.g:578:4: ( (lv_right_3_0= ruleAnd ) )
-            	    // InternalCps.g:579:5: (lv_right_3_0= ruleAnd )
+            	    // InternalCps.g:560:4: ( (lv_right_3_0= ruleAnd ) )
+            	    // InternalCps.g:561:5: (lv_right_3_0= ruleAnd )
             	    {
-            	    // InternalCps.g:579:5: (lv_right_3_0= ruleAnd )
-            	    // InternalCps.g:580:6: lv_right_3_0= ruleAnd
+            	    // InternalCps.g:561:5: (lv_right_3_0= ruleAnd )
+            	    // InternalCps.g:562:6: lv_right_3_0= ruleAnd
             	    {
 
             	    						newCompositeNode(grammarAccess.getOrAccess().getRightAndParserRuleCall_1_2_0());
@@ -1315,7 +1288,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnd"
-    // InternalCps.g:602:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
+    // InternalCps.g:584:1: entryRuleAnd returns [EObject current=null] : iv_ruleAnd= ruleAnd EOF ;
     public final EObject entryRuleAnd() throws RecognitionException {
         EObject current = null;
 
@@ -1323,8 +1296,8 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCps.g:602:44: (iv_ruleAnd= ruleAnd EOF )
-            // InternalCps.g:603:2: iv_ruleAnd= ruleAnd EOF
+            // InternalCps.g:584:44: (iv_ruleAnd= ruleAnd EOF )
+            // InternalCps.g:585:2: iv_ruleAnd= ruleAnd EOF
             {
              newCompositeNode(grammarAccess.getAndRule()); 
             pushFollow(FOLLOW_1);
@@ -1351,7 +1324,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnd"
-    // InternalCps.g:609:1: ruleAnd returns [EObject current=null] : (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* ) ;
+    // InternalCps.g:591:1: ruleAnd returns [EObject current=null] : (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* ) ;
     public final EObject ruleAnd() throws RecognitionException {
         EObject current = null;
 
@@ -1365,11 +1338,11 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCps.g:615:2: ( (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* ) )
-            // InternalCps.g:616:2: (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* )
+            // InternalCps.g:597:2: ( (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* ) )
+            // InternalCps.g:598:2: (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* )
             {
-            // InternalCps.g:616:2: (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* )
-            // InternalCps.g:617:3: this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )*
+            // InternalCps.g:598:2: (this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )* )
+            // InternalCps.g:599:3: this_Atom_0= ruleAtom ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getAndAccess().getAtomParserRuleCall_0());
@@ -1383,7 +1356,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             			current = this_Atom_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalCps.g:625:3: ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )*
+            // InternalCps.g:607:3: ( () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1396,10 +1369,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalCps.g:626:4: () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) )
+            	    // InternalCps.g:608:4: () otherlv_2= 'AND' ( (lv_right_3_0= ruleAtom ) )
             	    {
-            	    // InternalCps.g:626:4: ()
-            	    // InternalCps.g:627:5: 
+            	    // InternalCps.g:608:4: ()
+            	    // InternalCps.g:609:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -1413,11 +1386,11 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             	    				newLeafNode(otherlv_2, grammarAccess.getAndAccess().getANDKeyword_1_1());
             	    			
-            	    // InternalCps.g:637:4: ( (lv_right_3_0= ruleAtom ) )
-            	    // InternalCps.g:638:5: (lv_right_3_0= ruleAtom )
+            	    // InternalCps.g:619:4: ( (lv_right_3_0= ruleAtom ) )
+            	    // InternalCps.g:620:5: (lv_right_3_0= ruleAtom )
             	    {
-            	    // InternalCps.g:638:5: (lv_right_3_0= ruleAtom )
-            	    // InternalCps.g:639:6: lv_right_3_0= ruleAtom
+            	    // InternalCps.g:620:5: (lv_right_3_0= ruleAtom )
+            	    // InternalCps.g:621:6: lv_right_3_0= ruleAtom
             	    {
 
             	    						newCompositeNode(grammarAccess.getAndAccess().getRightAtomParserRuleCall_1_2_0());
@@ -1476,7 +1449,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtom"
-    // InternalCps.g:661:1: entryRuleAtom returns [EObject current=null] : iv_ruleAtom= ruleAtom EOF ;
+    // InternalCps.g:643:1: entryRuleAtom returns [EObject current=null] : iv_ruleAtom= ruleAtom EOF ;
     public final EObject entryRuleAtom() throws RecognitionException {
         EObject current = null;
 
@@ -1484,8 +1457,8 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCps.g:661:45: (iv_ruleAtom= ruleAtom EOF )
-            // InternalCps.g:662:2: iv_ruleAtom= ruleAtom EOF
+            // InternalCps.g:643:45: (iv_ruleAtom= ruleAtom EOF )
+            // InternalCps.g:644:2: iv_ruleAtom= ruleAtom EOF
             {
              newCompositeNode(grammarAccess.getAtomRule()); 
             pushFollow(FOLLOW_1);
@@ -1512,7 +1485,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtom"
-    // InternalCps.g:668:1: ruleAtom returns [EObject current=null] : (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) ) ;
+    // InternalCps.g:650:1: ruleAtom returns [EObject current=null] : (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) ) ;
     public final EObject ruleAtom() throws RecognitionException {
         EObject current = null;
 
@@ -1527,10 +1500,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCps.g:674:2: ( (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) ) )
-            // InternalCps.g:675:2: (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) )
+            // InternalCps.g:656:2: ( (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) ) )
+            // InternalCps.g:657:2: (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) )
             {
-            // InternalCps.g:675:2: (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) )
+            // InternalCps.g:657:2: (this_CourseRef_0= ruleCourseRef | (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1548,7 +1521,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalCps.g:676:3: this_CourseRef_0= ruleCourseRef
+                    // InternalCps.g:658:3: this_CourseRef_0= ruleCourseRef
                     {
 
                     			newCompositeNode(grammarAccess.getAtomAccess().getCourseRefParserRuleCall_0());
@@ -1566,10 +1539,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCps.g:685:3: (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' )
+                    // InternalCps.g:667:3: (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' )
                     {
-                    // InternalCps.g:685:3: (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' )
-                    // InternalCps.g:686:4: otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')'
+                    // InternalCps.g:667:3: (otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')' )
+                    // InternalCps.g:668:4: otherlv_1= '(' this_Expr_2= ruleExpr otherlv_3= ')'
                     {
                     otherlv_1=(Token)match(input,29,FOLLOW_19); 
 
@@ -1620,7 +1593,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCourseRef"
-    // InternalCps.g:707:1: entryRuleCourseRef returns [EObject current=null] : iv_ruleCourseRef= ruleCourseRef EOF ;
+    // InternalCps.g:689:1: entryRuleCourseRef returns [EObject current=null] : iv_ruleCourseRef= ruleCourseRef EOF ;
     public final EObject entryRuleCourseRef() throws RecognitionException {
         EObject current = null;
 
@@ -1628,8 +1601,8 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalCps.g:707:50: (iv_ruleCourseRef= ruleCourseRef EOF )
-            // InternalCps.g:708:2: iv_ruleCourseRef= ruleCourseRef EOF
+            // InternalCps.g:689:50: (iv_ruleCourseRef= ruleCourseRef EOF )
+            // InternalCps.g:690:2: iv_ruleCourseRef= ruleCourseRef EOF
             {
              newCompositeNode(grammarAccess.getCourseRefRule()); 
             pushFollow(FOLLOW_1);
@@ -1656,7 +1629,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCourseRef"
-    // InternalCps.g:714:1: ruleCourseRef returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // InternalCps.g:696:1: ruleCourseRef returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
     public final EObject ruleCourseRef() throws RecognitionException {
         EObject current = null;
 
@@ -1666,14 +1639,14 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCps.g:720:2: ( ( (otherlv_0= RULE_ID ) ) )
-            // InternalCps.g:721:2: ( (otherlv_0= RULE_ID ) )
+            // InternalCps.g:702:2: ( ( (otherlv_0= RULE_ID ) ) )
+            // InternalCps.g:703:2: ( (otherlv_0= RULE_ID ) )
             {
-            // InternalCps.g:721:2: ( (otherlv_0= RULE_ID ) )
-            // InternalCps.g:722:3: (otherlv_0= RULE_ID )
+            // InternalCps.g:703:2: ( (otherlv_0= RULE_ID ) )
+            // InternalCps.g:704:3: (otherlv_0= RULE_ID )
             {
-            // InternalCps.g:722:3: (otherlv_0= RULE_ID )
-            // InternalCps.g:723:4: otherlv_0= RULE_ID
+            // InternalCps.g:704:3: (otherlv_0= RULE_ID )
+            // InternalCps.g:705:4: otherlv_0= RULE_ID
             {
 
             				if (current==null) {
@@ -1710,7 +1683,7 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerm"
-    // InternalCps.g:737:1: ruleTerm returns [Enumerator current=null] : ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) ) ;
+    // InternalCps.g:719:1: ruleTerm returns [Enumerator current=null] : ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) ) ;
     public final Enumerator ruleTerm() throws RecognitionException {
         Enumerator current = null;
 
@@ -1722,10 +1695,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalCps.g:743:2: ( ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) ) )
-            // InternalCps.g:744:2: ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) )
+            // InternalCps.g:725:2: ( ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) ) )
+            // InternalCps.g:726:2: ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) )
             {
-            // InternalCps.g:744:2: ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) )
+            // InternalCps.g:726:2: ( (enumLiteral_0= 'FALL' ) | (enumLiteral_1= 'WINTER' ) | (enumLiteral_2= 'BOTH' ) )
             int alt10=3;
             switch ( input.LA(1) ) {
             case 31:
@@ -1752,10 +1725,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
 
             switch (alt10) {
                 case 1 :
-                    // InternalCps.g:745:3: (enumLiteral_0= 'FALL' )
+                    // InternalCps.g:727:3: (enumLiteral_0= 'FALL' )
                     {
-                    // InternalCps.g:745:3: (enumLiteral_0= 'FALL' )
-                    // InternalCps.g:746:4: enumLiteral_0= 'FALL'
+                    // InternalCps.g:727:3: (enumLiteral_0= 'FALL' )
+                    // InternalCps.g:728:4: enumLiteral_0= 'FALL'
                     {
                     enumLiteral_0=(Token)match(input,31,FOLLOW_2); 
 
@@ -1769,10 +1742,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalCps.g:753:3: (enumLiteral_1= 'WINTER' )
+                    // InternalCps.g:735:3: (enumLiteral_1= 'WINTER' )
                     {
-                    // InternalCps.g:753:3: (enumLiteral_1= 'WINTER' )
-                    // InternalCps.g:754:4: enumLiteral_1= 'WINTER'
+                    // InternalCps.g:735:3: (enumLiteral_1= 'WINTER' )
+                    // InternalCps.g:736:4: enumLiteral_1= 'WINTER'
                     {
                     enumLiteral_1=(Token)match(input,32,FOLLOW_2); 
 
@@ -1786,10 +1759,10 @@ public class InternalCpsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalCps.g:761:3: (enumLiteral_2= 'BOTH' )
+                    // InternalCps.g:743:3: (enumLiteral_2= 'BOTH' )
                     {
-                    // InternalCps.g:761:3: (enumLiteral_2= 'BOTH' )
-                    // InternalCps.g:762:4: enumLiteral_2= 'BOTH'
+                    // InternalCps.g:743:3: (enumLiteral_2= 'BOTH' )
+                    // InternalCps.g:744:4: enumLiteral_2= 'BOTH'
                     {
                     enumLiteral_2=(Token)match(input,33,FOLLOW_2); 
 

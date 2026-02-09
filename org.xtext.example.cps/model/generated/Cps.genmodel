@@ -26,8 +26,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/maxCredits"/>
     </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Course">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/code"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/credits"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/offered"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/year"/>
@@ -41,8 +40,5 @@
     </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Or"/>
     <genClasses ecoreClass="Cps.ecore#//And"/>
-    <genClasses ecoreClass="Cps.ecore#//PlannedTerm">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//PlannedTerm/index"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

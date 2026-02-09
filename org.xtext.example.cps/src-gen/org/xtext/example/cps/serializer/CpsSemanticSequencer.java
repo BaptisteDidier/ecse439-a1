@@ -125,8 +125,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
-	 *         number=ID 
+	 *         code=ID 
 	 *         credits=INT 
 	 *         offered=Term 
 	 *         year=INT 

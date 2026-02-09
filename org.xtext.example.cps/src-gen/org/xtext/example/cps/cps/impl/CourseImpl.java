@@ -25,8 +25,7 @@ import org.xtext.example.cps.cps.Term;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCode <em>Code</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCredits <em>Credits</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getOffered <em>Offered</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getYear <em>Year</em>}</li>
@@ -39,44 +38,24 @@ import org.xtext.example.cps.cps.Term;
 public class CourseImpl extends MinimalEObjectImpl.Container implements Course
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getCode()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String CODE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getCode()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNumber()
-   * @generated
-   * @ordered
-   */
-  protected static final String NUMBER_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNumber()
-   * @generated
-   * @ordered
-   */
-  protected String number = NUMBER_EDEFAULT;
+  protected String code = CODE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getCredits() <em>Credits</em>}' attribute.
@@ -185,9 +164,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public String getName()
+  public String getCode()
   {
-    return name;
+    return code;
   }
 
   /**
@@ -196,37 +175,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setCode(String newCode)
   {
-    String oldName = name;
-    name = newName;
+    String oldCode = code;
+    code = newCode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getNumber()
-  {
-    return number;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setNumber(String newNumber)
-  {
-    String oldNumber = number;
-    number = newNumber;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__NUMBER, oldNumber, number));
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__CODE, oldCode, code));
   }
 
   /**
@@ -432,10 +386,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__NAME:
-        return getName();
-      case CpsPackage.COURSE__NUMBER:
-        return getNumber();
+      case CpsPackage.COURSE__CODE:
+        return getCode();
       case CpsPackage.COURSE__CREDITS:
         return getCredits();
       case CpsPackage.COURSE__OFFERED:
@@ -460,11 +412,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__NAME:
-        setName((String)newValue);
-        return;
-      case CpsPackage.COURSE__NUMBER:
-        setNumber((String)newValue);
+      case CpsPackage.COURSE__CODE:
+        setCode((String)newValue);
         return;
       case CpsPackage.COURSE__CREDITS:
         setCredits((Integer)newValue);
@@ -495,11 +444,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case CpsPackage.COURSE__NUMBER:
-        setNumber(NUMBER_EDEFAULT);
+      case CpsPackage.COURSE__CODE:
+        setCode(CODE_EDEFAULT);
         return;
       case CpsPackage.COURSE__CREDITS:
         setCredits(CREDITS_EDEFAULT);
@@ -530,10 +476,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   {
     switch (featureID)
     {
-      case CpsPackage.COURSE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CpsPackage.COURSE__NUMBER:
-        return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
+      case CpsPackage.COURSE__CODE:
+        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
       case CpsPackage.COURSE__CREDITS:
         return credits != CREDITS_EDEFAULT;
       case CpsPackage.COURSE__OFFERED:
@@ -559,10 +503,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", number: ");
-    result.append(number);
+    result.append(" (code: ");
+    result.append(code);
     result.append(", credits: ");
     result.append(credits);
     result.append(", offered: ");

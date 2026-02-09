@@ -198,22 +198,13 @@ public interface CpsPackage extends EPackage
   int COURSE = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Code</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COURSE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Number</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COURSE__NUMBER = 1;
+  int COURSE__CODE = 0;
 
   /**
    * The feature id for the '<em><b>Credits</b></em>' attribute.
@@ -222,7 +213,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COURSE__CREDITS = 2;
+  int COURSE__CREDITS = 1;
 
   /**
    * The feature id for the '<em><b>Offered</b></em>' attribute.
@@ -231,7 +222,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COURSE__OFFERED = 3;
+  int COURSE__OFFERED = 2;
 
   /**
    * The feature id for the '<em><b>Year</b></em>' attribute.
@@ -240,7 +231,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COURSE__YEAR = 4;
+  int COURSE__YEAR = 3;
 
   /**
    * The feature id for the '<em><b>Prereq</b></em>' containment reference.
@@ -249,7 +240,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COURSE__PREREQ = 5;
+  int COURSE__PREREQ = 4;
 
   /**
    * The feature id for the '<em><b>Coreq</b></em>' containment reference.
@@ -258,7 +249,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COURSE__COREQ = 6;
+  int COURSE__COREQ = 5;
 
   /**
    * The number of structural features of the '<em>Course</em>' class.
@@ -267,7 +258,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COURSE_FEATURE_COUNT = 7;
+  int COURSE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtext.example.cps.cps.impl.ExprImpl <em>Expr</em>}' class.
@@ -547,26 +538,15 @@ public interface CpsPackage extends EPackage
   EClass getCourse();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getCode <em>Code</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.cps.cps.Course#getName()
+   * @return the meta object for the attribute '<em>Code</em>'.
+   * @see org.xtext.example.cps.cps.Course#getCode()
    * @see #getCourse()
    * @generated
    */
-  EAttribute getCourse_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getNumber <em>Number</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Number</em>'.
-   * @see org.xtext.example.cps.cps.Course#getNumber()
-   * @see #getCourse()
-   * @generated
-   */
-  EAttribute getCourse_Number();
+  EAttribute getCourse_Code();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.Course#getCredits <em>Credits</em>}'.
@@ -824,20 +804,12 @@ public interface CpsPackage extends EPackage
     EClass COURSE = eINSTANCE.getCourse();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Code</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COURSE__NAME = eINSTANCE.getCourse_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COURSE__NUMBER = eINSTANCE.getCourse_Number();
+    EAttribute COURSE__CODE = eINSTANCE.getCourse_Code();
 
     /**
      * The meta object literal for the '<em><b>Credits</b></em>' attribute feature.

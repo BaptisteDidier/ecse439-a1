@@ -27,7 +27,8 @@ public class AutoCPS {
         xmiResource.getContents().add(cps);
         xmiResource.save(Collections.emptyMap());
 
-        System.out.println("Need to print program like described");
+        // TODO: output the generated schedule to the console as described in the problem description
+        System.out.println("TODO");
 	}
 	
 }
