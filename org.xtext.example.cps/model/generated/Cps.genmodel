@@ -41,5 +41,8 @@
     </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Or"/>
     <genClasses ecoreClass="Cps.ecore#//And"/>
+    <genClasses ecoreClass="Cps.ecore#//PlannedTerm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//PlannedTerm/index"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
