@@ -28,7 +28,7 @@ import org.xtext.example.cps.cps.Term;
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCredits <em>Credits</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getTerm <em>Term</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getOffered <em>Offered</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getYear <em>Year</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getPrereq <em>Prereq</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.CourseImpl#getCoreq <em>Coreq</em>}</li>
@@ -99,24 +99,24 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
   protected int credits = CREDITS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTerm() <em>Term</em>}' attribute.
+   * The default value of the '{@link #getOffered() <em>Offered</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTerm()
+   * @see #getOffered()
    * @generated
    * @ordered
    */
-  protected static final Term TERM_EDEFAULT = Term.FALL;
+  protected static final Term OFFERED_EDEFAULT = Term.FALL;
 
   /**
-   * The cached value of the '{@link #getTerm() <em>Term</em>}' attribute.
+   * The cached value of the '{@link #getOffered() <em>Offered</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTerm()
+   * @see #getOffered()
    * @generated
    * @ordered
    */
-  protected Term term = TERM_EDEFAULT;
+  protected Term offered = OFFERED_EDEFAULT;
 
   /**
    * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
@@ -260,9 +260,9 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public Term getTerm()
+  public Term getOffered()
   {
-    return term;
+    return offered;
   }
 
   /**
@@ -271,12 +271,12 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
    * @generated
    */
   @Override
-  public void setTerm(Term newTerm)
+  public void setOffered(Term newOffered)
   {
-    Term oldTerm = term;
-    term = newTerm == null ? TERM_EDEFAULT : newTerm;
+    Term oldOffered = offered;
+    offered = newOffered == null ? OFFERED_EDEFAULT : newOffered;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__TERM, oldTerm, term));
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__OFFERED, oldOffered, offered));
   }
 
   /**
@@ -438,8 +438,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
         return getNumber();
       case CpsPackage.COURSE__CREDITS:
         return getCredits();
-      case CpsPackage.COURSE__TERM:
-        return getTerm();
+      case CpsPackage.COURSE__OFFERED:
+        return getOffered();
       case CpsPackage.COURSE__YEAR:
         return getYear();
       case CpsPackage.COURSE__PREREQ:
@@ -469,8 +469,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
       case CpsPackage.COURSE__CREDITS:
         setCredits((Integer)newValue);
         return;
-      case CpsPackage.COURSE__TERM:
-        setTerm((Term)newValue);
+      case CpsPackage.COURSE__OFFERED:
+        setOffered((Term)newValue);
         return;
       case CpsPackage.COURSE__YEAR:
         setYear((Integer)newValue);
@@ -504,8 +504,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
       case CpsPackage.COURSE__CREDITS:
         setCredits(CREDITS_EDEFAULT);
         return;
-      case CpsPackage.COURSE__TERM:
-        setTerm(TERM_EDEFAULT);
+      case CpsPackage.COURSE__OFFERED:
+        setOffered(OFFERED_EDEFAULT);
         return;
       case CpsPackage.COURSE__YEAR:
         setYear(YEAR_EDEFAULT);
@@ -536,8 +536,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
         return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
       case CpsPackage.COURSE__CREDITS:
         return credits != CREDITS_EDEFAULT;
-      case CpsPackage.COURSE__TERM:
-        return term != TERM_EDEFAULT;
+      case CpsPackage.COURSE__OFFERED:
+        return offered != OFFERED_EDEFAULT;
       case CpsPackage.COURSE__YEAR:
         return year != YEAR_EDEFAULT;
       case CpsPackage.COURSE__PREREQ:
@@ -565,8 +565,8 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course
     result.append(number);
     result.append(", credits: ");
     result.append(credits);
-    result.append(", term: ");
-    result.append(term);
+    result.append(", offered: ");
+    result.append(offered);
     result.append(", year: ");
     result.append(year);
     result.append(')');

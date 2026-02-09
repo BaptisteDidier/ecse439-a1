@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.cps.cps.Program#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Program#getCourses <em>Courses</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Program#getRequiredCourses <em>Required Courses</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Program#getStudents <em>Students</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.cps.cps.CpsPackage#getProgram()
@@ -59,5 +61,29 @@ public interface Program extends EObject
    * @generated
    */
   EList<Course> getCourses();
+
+  /**
+   * Returns the value of the '<em><b>Required Courses</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.example.cps.cps.Course}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Required Courses</em>' reference list.
+   * @see org.xtext.example.cps.cps.CpsPackage#getProgram_RequiredCourses()
+   * @model
+   * @generated
+   */
+  EList<Course> getRequiredCourses();
+
+  /**
+   * Returns the value of the '<em><b>Students</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.cps.cps.Student}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Students</em>' containment reference list.
+   * @see org.xtext.example.cps.cps.CpsPackage#getProgram_Students()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Student> getStudents();
 
 } // Program

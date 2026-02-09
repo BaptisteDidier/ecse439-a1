@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.cps.cps.Course#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getNumber <em>Number</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getCredits <em>Credits</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.Course#getTerm <em>Term</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Course#getOffered <em>Offered</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getYear <em>Year</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getPrereq <em>Prereq</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Course#getCoreq <em>Coreq</em>}</li>
@@ -96,29 +96,29 @@ public interface Course extends EObject
   void setCredits(int value);
 
   /**
-   * Returns the value of the '<em><b>Term</b></em>' attribute.
+   * Returns the value of the '<em><b>Offered</b></em>' attribute.
    * The literals are from the enumeration {@link org.xtext.example.cps.cps.Term}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Term</em>' attribute.
+   * @return the value of the '<em>Offered</em>' attribute.
    * @see org.xtext.example.cps.cps.Term
-   * @see #setTerm(Term)
-   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Term()
+   * @see #setOffered(Term)
+   * @see org.xtext.example.cps.cps.CpsPackage#getCourse_Offered()
    * @model
    * @generated
    */
-  Term getTerm();
+  Term getOffered();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getTerm <em>Term</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Course#getOffered <em>Offered</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Term</em>' attribute.
+   * @param value the new value of the '<em>Offered</em>' attribute.
    * @see org.xtext.example.cps.cps.Term
-   * @see #getTerm()
+   * @see #getOffered()
    * @generated
    */
-  void setTerm(Term value);
+  void setOffered(Term value);
 
   /**
    * Returns the value of the '<em><b>Year</b></em>' attribute.

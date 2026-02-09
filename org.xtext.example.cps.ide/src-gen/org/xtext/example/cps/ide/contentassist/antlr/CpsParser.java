@@ -33,34 +33,41 @@ public class CpsParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, CpsGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getAtomAccess().getAlternatives(), "rule__Atom__Alternatives");
 			builder.put(grammarAccess.getTermAccess().getAlternatives(), "rule__Term__Alternatives");
-			builder.put(grammarAccess.getCpsAccess().getGroup(), "rule__Cps__Group__0");
+			builder.put(grammarAccess.getOccurrenceStatusAccess().getAlternatives(), "rule__OccurrenceStatus__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
+			builder.put(grammarAccess.getProgramAccess().getGroup_9(), "rule__Program__Group_9__0");
 			builder.put(grammarAccess.getStudentAccess().getGroup(), "rule__Student__Group__0");
+			builder.put(grammarAccess.getCourseOccurrenceAccess().getGroup(), "rule__CourseOccurrence__Group__0");
+			builder.put(grammarAccess.getCourseOccurrenceAccess().getGroup_1(), "rule__CourseOccurrence__Group_1__0");
 			builder.put(grammarAccess.getCourseAccess().getGroup(), "rule__Course__Group__0");
 			builder.put(grammarAccess.getCourseAccess().getGroup_9(), "rule__Course__Group_9__0");
 			builder.put(grammarAccess.getCourseAccess().getGroup_10(), "rule__Course__Group_10__0");
-			builder.put(grammarAccess.getOrExprAccess().getGroup(), "rule__OrExpr__Group__0");
-			builder.put(grammarAccess.getOrExprAccess().getGroup_1(), "rule__OrExpr__Group_1__0");
-			builder.put(grammarAccess.getAndExprAccess().getGroup(), "rule__AndExpr__Group__0");
-			builder.put(grammarAccess.getAndExprAccess().getGroup_1(), "rule__AndExpr__Group_1__0");
+			builder.put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
+			builder.put(grammarAccess.getOrAccess().getGroup_1(), "rule__Or__Group_1__0");
+			builder.put(grammarAccess.getAndAccess().getGroup(), "rule__And__Group__0");
+			builder.put(grammarAccess.getAndAccess().getGroup_1(), "rule__And__Group_1__0");
 			builder.put(grammarAccess.getAtomAccess().getGroup_1(), "rule__Atom__Group_1__0");
-			builder.put(grammarAccess.getCpsAccess().getProgramAssignment_0(), "rule__Cps__ProgramAssignment_0");
-			builder.put(grammarAccess.getCpsAccess().getStudentsAssignment_1(), "rule__Cps__StudentsAssignment_1");
+			builder.put(grammarAccess.getCpsAccess().getProgramAssignment(), "rule__Cps__ProgramAssignment");
 			builder.put(grammarAccess.getProgramAccess().getNameAssignment_1(), "rule__Program__NameAssignment_1");
 			builder.put(grammarAccess.getProgramAccess().getCoursesAssignment_4(), "rule__Program__CoursesAssignment_4");
+			builder.put(grammarAccess.getProgramAccess().getRequiredCoursesAssignment_8(), "rule__Program__RequiredCoursesAssignment_8");
+			builder.put(grammarAccess.getProgramAccess().getRequiredCoursesAssignment_9_1(), "rule__Program__RequiredCoursesAssignment_9_1");
+			builder.put(grammarAccess.getProgramAccess().getStudentsAssignment_13(), "rule__Program__StudentsAssignment_13");
 			builder.put(grammarAccess.getStudentAccess().getNameAssignment_1(), "rule__Student__NameAssignment_1");
-			builder.put(grammarAccess.getStudentAccess().getTakenCoursesAssignment_4(), "rule__Student__TakenCoursesAssignment_4");
+			builder.put(grammarAccess.getStudentAccess().getTakenAssignment_4(), "rule__Student__TakenAssignment_4");
 			builder.put(grammarAccess.getStudentAccess().getMaxCreditsAssignment_7(), "rule__Student__MaxCreditsAssignment_7");
+			builder.put(grammarAccess.getCourseOccurrenceAccess().getCourseAssignment_0(), "rule__CourseOccurrence__CourseAssignment_0");
+			builder.put(grammarAccess.getCourseOccurrenceAccess().getStatusAssignment_1_1(), "rule__CourseOccurrence__StatusAssignment_1_1");
 			builder.put(grammarAccess.getCourseAccess().getNameAssignment_1(), "rule__Course__NameAssignment_1");
 			builder.put(grammarAccess.getCourseAccess().getNumberAssignment_2(), "rule__Course__NumberAssignment_2");
 			builder.put(grammarAccess.getCourseAccess().getCreditsAssignment_4(), "rule__Course__CreditsAssignment_4");
-			builder.put(grammarAccess.getCourseAccess().getTermAssignment_6(), "rule__Course__TermAssignment_6");
+			builder.put(grammarAccess.getCourseAccess().getOfferedAssignment_6(), "rule__Course__OfferedAssignment_6");
 			builder.put(grammarAccess.getCourseAccess().getYearAssignment_8(), "rule__Course__YearAssignment_8");
 			builder.put(grammarAccess.getCourseAccess().getPrereqAssignment_9_1(), "rule__Course__PrereqAssignment_9_1");
 			builder.put(grammarAccess.getCourseAccess().getCoreqAssignment_10_1(), "rule__Course__CoreqAssignment_10_1");
-			builder.put(grammarAccess.getOrExprAccess().getRightAssignment_1_2(), "rule__OrExpr__RightAssignment_1_2");
-			builder.put(grammarAccess.getAndExprAccess().getRightAssignment_1_2(), "rule__AndExpr__RightAssignment_1_2");
-			builder.put(grammarAccess.getAtomAccess().getCourseAssignment_0(), "rule__Atom__CourseAssignment_0");
+			builder.put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");
+			builder.put(grammarAccess.getAndAccess().getRightAssignment_1_2(), "rule__And__RightAssignment_1_2");
+			builder.put(grammarAccess.getCourseRefAccess().getCourseAssignment(), "rule__CourseRef__CourseAssignment");
 		}
 	}
 	

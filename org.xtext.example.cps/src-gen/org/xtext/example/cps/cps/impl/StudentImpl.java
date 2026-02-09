@@ -6,17 +6,20 @@ package org.xtext.example.cps.cps.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.cps.cps.Course;
+import org.xtext.example.cps.cps.CourseOccurrence;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Student;
 
@@ -29,7 +32,7 @@ import org.xtext.example.cps.cps.Student;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getTakenCourses <em>Taken Courses</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getTaken <em>Taken</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.StudentImpl#getMaxCredits <em>Max Credits</em>}</li>
  * </ul>
  *
@@ -58,14 +61,14 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTakenCourses() <em>Taken Courses</em>}' reference list.
+   * The cached value of the '{@link #getTaken() <em>Taken</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTakenCourses()
+   * @see #getTaken()
    * @generated
    * @ordered
    */
-  protected EList<Course> takenCourses;
+  protected EList<CourseOccurrence> taken;
 
   /**
    * The default value of the '{@link #getMaxCredits() <em>Max Credits</em>}' attribute.
@@ -139,13 +142,13 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
    * @generated
    */
   @Override
-  public EList<Course> getTakenCourses()
+  public EList<CourseOccurrence> getTaken()
   {
-    if (takenCourses == null)
+    if (taken == null)
     {
-      takenCourses = new EObjectResolvingEList<Course>(Course.class, this, CpsPackage.STUDENT__TAKEN_COURSES);
+      taken = new EObjectContainmentEList<CourseOccurrence>(CourseOccurrence.class, this, CpsPackage.STUDENT__TAKEN);
     }
-    return takenCourses;
+    return taken;
   }
 
   /**
@@ -179,14 +182,30 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CpsPackage.STUDENT__TAKEN:
+        return ((InternalEList<?>)getTaken()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case CpsPackage.STUDENT__NAME:
         return getName();
-      case CpsPackage.STUDENT__TAKEN_COURSES:
-        return getTakenCourses();
+      case CpsPackage.STUDENT__TAKEN:
+        return getTaken();
       case CpsPackage.STUDENT__MAX_CREDITS:
         return getMaxCredits();
     }
@@ -207,9 +226,9 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
       case CpsPackage.STUDENT__NAME:
         setName((String)newValue);
         return;
-      case CpsPackage.STUDENT__TAKEN_COURSES:
-        getTakenCourses().clear();
-        getTakenCourses().addAll((Collection<? extends Course>)newValue);
+      case CpsPackage.STUDENT__TAKEN:
+        getTaken().clear();
+        getTaken().addAll((Collection<? extends CourseOccurrence>)newValue);
         return;
       case CpsPackage.STUDENT__MAX_CREDITS:
         setMaxCredits((Integer)newValue);
@@ -231,8 +250,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
       case CpsPackage.STUDENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case CpsPackage.STUDENT__TAKEN_COURSES:
-        getTakenCourses().clear();
+      case CpsPackage.STUDENT__TAKEN:
+        getTaken().clear();
         return;
       case CpsPackage.STUDENT__MAX_CREDITS:
         setMaxCredits(MAX_CREDITS_EDEFAULT);
@@ -253,8 +272,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
     {
       case CpsPackage.STUDENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case CpsPackage.STUDENT__TAKEN_COURSES:
-        return takenCourses != null && !takenCourses.isEmpty();
+      case CpsPackage.STUDENT__TAKEN:
+        return taken != null && !taken.isEmpty();
       case CpsPackage.STUDENT__MAX_CREDITS:
         return maxCredits != MAX_CREDITS_EDEFAULT;
     }

@@ -91,6 +91,11 @@ public class CpsAdapterFactory extends AdapterFactoryImpl
         return createStudentAdapter();
       }
       @Override
+      public Adapter caseCourseOccurrence(CourseOccurrence object)
+      {
+        return createCourseOccurrenceAdapter();
+      }
+      @Override
       public Adapter caseCourse(Course object)
       {
         return createCourseAdapter();
@@ -173,6 +178,21 @@ public class CpsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createStudentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cps.cps.CourseOccurrence <em>Course Occurrence</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cps.cps.CourseOccurrence
+   * @generated
+   */
+  public Adapter createCourseOccurrenceAdapter()
   {
     return null;
   }

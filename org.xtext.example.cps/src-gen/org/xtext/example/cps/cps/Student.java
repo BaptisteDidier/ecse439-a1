@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cps.cps.Student#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.cps.cps.Student#getTakenCourses <em>Taken Courses</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.Student#getTaken <em>Taken</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.Student#getMaxCredits <em>Max Credits</em>}</li>
  * </ul>
  *
@@ -50,16 +50,16 @@ public interface Student extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Taken Courses</b></em>' reference list.
-   * The list contents are of type {@link org.xtext.example.cps.cps.Course}.
+   * Returns the value of the '<em><b>Taken</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.cps.cps.CourseOccurrence}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Taken Courses</em>' reference list.
-   * @see org.xtext.example.cps.cps.CpsPackage#getStudent_TakenCourses()
-   * @model
+   * @return the value of the '<em>Taken</em>' containment reference list.
+   * @see org.xtext.example.cps.cps.CpsPackage#getStudent_Taken()
+   * @model containment="true"
    * @generated
    */
-  EList<Course> getTakenCourses();
+  EList<CourseOccurrence> getTaken();
 
   /**
    * Returns the value of the '<em><b>Max Credits</b></em>' attribute.

@@ -17,11 +17,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.cps.cps.Course;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Program;
+import org.xtext.example.cps.cps.Student;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +35,8 @@ import org.xtext.example.cps.cps.Program;
  * <ul>
  *   <li>{@link org.xtext.example.cps.cps.impl.ProgramImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cps.cps.impl.ProgramImpl#getCourses <em>Courses</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.ProgramImpl#getRequiredCourses <em>Required Courses</em>}</li>
+ *   <li>{@link org.xtext.example.cps.cps.impl.ProgramImpl#getStudents <em>Students</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +72,26 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * @ordered
    */
   protected EList<Course> courses;
+
+  /**
+   * The cached value of the '{@link #getRequiredCourses() <em>Required Courses</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRequiredCourses()
+   * @generated
+   * @ordered
+   */
+  protected EList<Course> requiredCourses;
+
+  /**
+   * The cached value of the '{@link #getStudents() <em>Students</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStudents()
+   * @generated
+   * @ordered
+   */
+  protected EList<Student> students;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,12 +160,44 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * @generated
    */
   @Override
+  public EList<Course> getRequiredCourses()
+  {
+    if (requiredCourses == null)
+    {
+      requiredCourses = new EObjectResolvingEList<Course>(Course.class, this, CpsPackage.PROGRAM__REQUIRED_COURSES);
+    }
+    return requiredCourses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<Student> getStudents()
+  {
+    if (students == null)
+    {
+      students = new EObjectContainmentEList<Student>(Student.class, this, CpsPackage.PROGRAM__STUDENTS);
+    }
+    return students;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case CpsPackage.PROGRAM__COURSES:
         return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
+      case CpsPackage.PROGRAM__STUDENTS:
+        return ((InternalEList<?>)getStudents()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -160,6 +216,10 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
         return getName();
       case CpsPackage.PROGRAM__COURSES:
         return getCourses();
+      case CpsPackage.PROGRAM__REQUIRED_COURSES:
+        return getRequiredCourses();
+      case CpsPackage.PROGRAM__STUDENTS:
+        return getStudents();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -182,6 +242,14 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
         getCourses().clear();
         getCourses().addAll((Collection<? extends Course>)newValue);
         return;
+      case CpsPackage.PROGRAM__REQUIRED_COURSES:
+        getRequiredCourses().clear();
+        getRequiredCourses().addAll((Collection<? extends Course>)newValue);
+        return;
+      case CpsPackage.PROGRAM__STUDENTS:
+        getStudents().clear();
+        getStudents().addAll((Collection<? extends Student>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -202,6 +270,12 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
       case CpsPackage.PROGRAM__COURSES:
         getCourses().clear();
         return;
+      case CpsPackage.PROGRAM__REQUIRED_COURSES:
+        getRequiredCourses().clear();
+        return;
+      case CpsPackage.PROGRAM__STUDENTS:
+        getStudents().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -220,6 +294,10 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CpsPackage.PROGRAM__COURSES:
         return courses != null && !courses.isEmpty();
+      case CpsPackage.PROGRAM__REQUIRED_COURSES:
+        return requiredCourses != null && !requiredCourses.isEmpty();
+      case CpsPackage.PROGRAM__STUDENTS:
+        return students != null && !students.isEmpty();
     }
     return super.eIsSet(featureID);
   }

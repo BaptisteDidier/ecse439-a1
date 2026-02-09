@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.cps.cps.And;
 import org.xtext.example.cps.cps.Course;
+import org.xtext.example.cps.cps.CourseOccurrence;
 import org.xtext.example.cps.cps.Cps;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Expr;
@@ -39,19 +40,22 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (epackage == CpsPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
 			case CpsPackage.AND:
-				sequence_AndExpr(context, (And) semanticObject); 
+				sequence_And(context, (And) semanticObject); 
 				return; 
 			case CpsPackage.COURSE:
 				sequence_Course(context, (Course) semanticObject); 
+				return; 
+			case CpsPackage.COURSE_OCCURRENCE:
+				sequence_CourseOccurrence(context, (CourseOccurrence) semanticObject); 
 				return; 
 			case CpsPackage.CPS:
 				sequence_Cps(context, (Cps) semanticObject); 
 				return; 
 			case CpsPackage.EXPR:
-				sequence_Atom(context, (Expr) semanticObject); 
+				sequence_CourseRef(context, (Expr) semanticObject); 
 				return; 
 			case CpsPackage.OR:
-				sequence_OrExpr(context, (Or) semanticObject); 
+				sequence_Or(context, (Or) semanticObject); 
 				return; 
 			case CpsPackage.PROGRAM:
 				sequence_Program(context, (Program) semanticObject); 
@@ -68,17 +72,17 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * <pre>
 	 * Contexts:
 	 *     Expr returns And
-	 *     OrExpr returns And
-	 *     OrExpr.Or_1_0 returns And
-	 *     AndExpr returns And
-	 *     AndExpr.And_1_0 returns And
+	 *     Or returns And
+	 *     Or.Or_1_0 returns And
+	 *     And returns And
+	 *     And.And_1_0 returns And
 	 *     Atom returns And
 	 *
 	 * Constraint:
-	 *     (left=AndExpr_And_1_0 right=Atom)
+	 *     (left=And_And_1_0 right=Atom)
 	 * </pre>
 	 */
-	protected void sequence_AndExpr(ISerializationContext context, And semanticObject) {
+	protected void sequence_And(ISerializationContext context, And semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, CpsPackage.Literals.EXPR__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CpsPackage.Literals.EXPR__LEFT));
@@ -86,8 +90,8 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CpsPackage.Literals.EXPR__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAndExprAccess().getAndLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getAndExprAccess().getRightAtomParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getAndAccess().getAndLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getAndAccess().getRightAtomParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -95,24 +99,39 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     CourseOccurrence returns CourseOccurrence
+	 *
+	 * Constraint:
+	 *     (course=[Course|ID] status=OccurrenceStatus?)
+	 * </pre>
+	 */
+	protected void sequence_CourseOccurrence(ISerializationContext context, CourseOccurrence semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Expr returns Expr
-	 *     OrExpr returns Expr
-	 *     OrExpr.Or_1_0 returns Expr
-	 *     AndExpr returns Expr
-	 *     AndExpr.And_1_0 returns Expr
+	 *     Or returns Expr
+	 *     Or.Or_1_0 returns Expr
+	 *     And returns Expr
+	 *     And.And_1_0 returns Expr
 	 *     Atom returns Expr
+	 *     CourseRef returns Expr
 	 *
 	 * Constraint:
 	 *     course=[Course|ID]
 	 * </pre>
 	 */
-	protected void sequence_Atom(ISerializationContext context, Expr semanticObject) {
+	protected void sequence_CourseRef(ISerializationContext context, Expr semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, CpsPackage.Literals.EXPR__COURSE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CpsPackage.Literals.EXPR__COURSE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomAccess().getCourseCourseIDTerminalRuleCall_0_0_1(), semanticObject.eGet(CpsPackage.Literals.EXPR__COURSE, false));
+		feeder.accept(grammarAccess.getCourseRefAccess().getCourseCourseIDTerminalRuleCall_0_1(), semanticObject.eGet(CpsPackage.Literals.EXPR__COURSE, false));
 		feeder.finish();
 	}
 	
@@ -127,7 +146,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         name=ID 
 	 *         number=ID 
 	 *         credits=INT 
-	 *         term=Term 
+	 *         offered=Term 
 	 *         year=INT 
 	 *         prereq=Expr? 
 	 *         coreq=Expr?
@@ -145,7 +164,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Cps returns Cps
 	 *
 	 * Constraint:
-	 *     (program=Program students+=Student*)
+	 *     program+=Program
 	 * </pre>
 	 */
 	protected void sequence_Cps(ISerializationContext context, Cps semanticObject) {
@@ -157,17 +176,17 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * <pre>
 	 * Contexts:
 	 *     Expr returns Or
-	 *     OrExpr returns Or
-	 *     OrExpr.Or_1_0 returns Or
-	 *     AndExpr returns Or
-	 *     AndExpr.And_1_0 returns Or
+	 *     Or returns Or
+	 *     Or.Or_1_0 returns Or
+	 *     And returns Or
+	 *     And.And_1_0 returns Or
 	 *     Atom returns Or
 	 *
 	 * Constraint:
-	 *     (left=OrExpr_Or_1_0 right=AndExpr)
+	 *     (left=Or_Or_1_0 right=And)
 	 * </pre>
 	 */
-	protected void sequence_OrExpr(ISerializationContext context, Or semanticObject) {
+	protected void sequence_Or(ISerializationContext context, Or semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, CpsPackage.Literals.EXPR__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CpsPackage.Literals.EXPR__LEFT));
@@ -175,8 +194,8 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CpsPackage.Literals.EXPR__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOrExprAccess().getOrLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getOrExprAccess().getRightAndExprParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getOrAccess().getOrLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOrAccess().getRightAndParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -187,7 +206,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Program returns Program
 	 *
 	 * Constraint:
-	 *     (name=ID courses+=Course*)
+	 *     (name=ID courses+=Course* requiredCourses+=[Course|ID] requiredCourses+=[Course|ID]* students+=Student*)
 	 * </pre>
 	 */
 	protected void sequence_Program(ISerializationContext context, Program semanticObject) {
@@ -201,7 +220,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Student returns Student
 	 *
 	 * Constraint:
-	 *     (name=ID takenCourses+=[Course|ID]* maxCredits=INT)
+	 *     (name=ID taken+=CourseOccurrence* maxCredits=INT)
 	 * </pre>
 	 */
 	protected void sequence_Student(ISerializationContext context, Student semanticObject) {
