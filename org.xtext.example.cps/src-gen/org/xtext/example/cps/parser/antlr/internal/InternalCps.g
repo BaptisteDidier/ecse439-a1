@@ -86,7 +86,7 @@ ruleCps returns [EObject current=null]
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getCpsRule());
 				}
-				add(
+				set(
 					$current,
 					"program",
 					lv_program_0_0,
@@ -293,9 +293,9 @@ ruleStudent returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStudentAccess().getTakenCourseOccurrenceParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getStudentAccess().getTakenCourseParserRuleCall_4_0());
 				}
-				lv_taken_4_0=ruleCourseOccurrence
+				lv_taken_4_0=ruleCourse
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStudentRule());
@@ -304,7 +304,7 @@ ruleStudent returns [EObject current=null]
 						$current,
 						"taken",
 						lv_taken_4_0,
-						"org.xtext.example.cps.Cps.CourseOccurrence");
+						"org.xtext.example.cps.Cps.Course");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -335,63 +335,6 @@ ruleStudent returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleCourseOccurrence
-entryRuleCourseOccurrence returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCourseOccurrenceRule()); }
-	iv_ruleCourseOccurrence=ruleCourseOccurrence
-	{ $current=$iv_ruleCourseOccurrence.current; }
-	EOF;
-
-// Rule CourseOccurrence
-ruleCourseOccurrence returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCourseOccurrenceRule());
-					}
-				}
-				otherlv_0=RULE_ID
-				{
-					newLeafNode(otherlv_0, grammarAccess.getCourseOccurrenceAccess().getCourseCourseCrossReference_0_0());
-				}
-			)
-		)
-		(
-			otherlv_1='status'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getCourseOccurrenceAccess().getStatusKeyword_1_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCourseOccurrenceAccess().getStatusOccurrenceStatusEnumRuleCall_1_1_0());
-					}
-					lv_status_2_0=ruleOccurrenceStatus
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCourseOccurrenceRule());
-						}
-						set(
-							$current,
-							"status",
-							lv_status_2_0,
-							"org.xtext.example.cps.Cps.OccurrenceStatus");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -820,33 +763,6 @@ ruleTerm returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getTermAccess().getBOTHEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_2, grammarAccess.getTermAccess().getBOTHEnumLiteralDeclaration_2());
-			}
-		)
-	)
-;
-
-// Rule OccurrenceStatus
-ruleOccurrenceStatus returns [Enumerator current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			enumLiteral_0='TAKEN'
-			{
-				$current = grammarAccess.getOccurrenceStatusAccess().getTAKENEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getOccurrenceStatusAccess().getTAKENEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='PLANNED'
-			{
-				$current = grammarAccess.getOccurrenceStatusAccess().getPLANNEDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getOccurrenceStatusAccess().getPLANNEDEnumLiteralDeclaration_1());
 			}
 		)
 	)

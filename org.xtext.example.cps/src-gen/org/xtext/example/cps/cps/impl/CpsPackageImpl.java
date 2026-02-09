@@ -13,12 +13,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.cps.cps.And;
 import org.xtext.example.cps.cps.Course;
-import org.xtext.example.cps.cps.CourseOccurrence;
 import org.xtext.example.cps.cps.Cps;
 import org.xtext.example.cps.cps.CpsFactory;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Expr;
-import org.xtext.example.cps.cps.OccurrenceStatus;
 import org.xtext.example.cps.cps.Or;
 import org.xtext.example.cps.cps.Program;
 import org.xtext.example.cps.cps.Student;
@@ -58,13 +56,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass courseOccurrenceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass courseEClass = null;
 
   /**
@@ -94,13 +85,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   private EEnum termEEnum = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum occurrenceStatusEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -291,39 +275,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EClass getCourseOccurrence()
-  {
-    return courseOccurrenceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getCourseOccurrence_Course()
-  {
-    return (EReference)courseOccurrenceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getCourseOccurrence_Status()
-  {
-    return (EAttribute)courseOccurrenceEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getCourse()
   {
     return courseEClass;
@@ -489,17 +440,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EEnum getOccurrenceStatus()
-  {
-    return occurrenceStatusEEnum;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public CpsFactory getCpsFactory()
   {
     return (CpsFactory)getEFactoryInstance();
@@ -539,10 +479,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     createEReference(studentEClass, STUDENT__TAKEN);
     createEAttribute(studentEClass, STUDENT__MAX_CREDITS);
 
-    courseOccurrenceEClass = createEClass(COURSE_OCCURRENCE);
-    createEReference(courseOccurrenceEClass, COURSE_OCCURRENCE__COURSE);
-    createEAttribute(courseOccurrenceEClass, COURSE_OCCURRENCE__STATUS);
-
     courseEClass = createEClass(COURSE);
     createEAttribute(courseEClass, COURSE__NAME);
     createEAttribute(courseEClass, COURSE__NUMBER);
@@ -563,7 +499,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
 
     // Create enums
     termEEnum = createEEnum(TERM);
-    occurrenceStatusEEnum = createEEnum(OCCURRENCE_STATUS);
   }
 
   /**
@@ -600,7 +535,7 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(cpsEClass, Cps.class, "Cps", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCps_Program(), this.getProgram(), null, "program", null, 0, -1, Cps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCps_Program(), this.getProgram(), null, "program", null, 0, 1, Cps.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProgram_Name(), ecorePackage.getEString(), "name", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -610,12 +545,8 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
 
     initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStudent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStudent_Taken(), this.getCourseOccurrence(), null, "taken", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStudent_Taken(), this.getCourse(), null, "taken", null, 0, -1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStudent_MaxCredits(), ecorePackage.getEInt(), "maxCredits", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(courseOccurrenceEClass, CourseOccurrence.class, "CourseOccurrence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCourseOccurrence_Course(), this.getCourse(), null, "course", null, 0, 1, CourseOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCourseOccurrence_Status(), this.getOccurrenceStatus(), "status", null, 0, 1, CourseOccurrence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCourse_Name(), ecorePackage.getEString(), "name", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -640,10 +571,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     addEEnumLiteral(termEEnum, Term.FALL);
     addEEnumLiteral(termEEnum, Term.WINTER);
     addEEnumLiteral(termEEnum, Term.BOTH);
-
-    initEEnum(occurrenceStatusEEnum, OccurrenceStatus.class, "OccurrenceStatus");
-    addEEnumLiteral(occurrenceStatusEEnum, OccurrenceStatus.TAKEN);
-    addEEnumLiteral(occurrenceStatusEEnum, OccurrenceStatus.PLANNED);
 
     // Create resource
     createResource(eNS_URI);

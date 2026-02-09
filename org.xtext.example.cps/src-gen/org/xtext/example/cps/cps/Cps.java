@@ -3,8 +3,6 @@
  */
 package org.xtext.example.cps.cps;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,15 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Cps extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Program</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.cps.cps.Program}.
+   * Returns the value of the '<em><b>Program</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Program</em>' containment reference list.
+   * @return the value of the '<em>Program</em>' containment reference.
+   * @see #setProgram(Program)
    * @see org.xtext.example.cps.cps.CpsPackage#getCps_Program()
    * @model containment="true"
    * @generated
    */
-  EList<Program> getProgram();
+  Program getProgram();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.cps.cps.Cps#getProgram <em>Program</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Program</em>' containment reference.
+   * @see #getProgram()
+   * @generated
+   */
+  void setProgram(Program value);
 
 } // Cps

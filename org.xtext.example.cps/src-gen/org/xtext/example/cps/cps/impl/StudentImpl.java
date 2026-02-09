@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.cps.cps.CourseOccurrence;
+import org.xtext.example.cps.cps.Course;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Student;
 
@@ -68,7 +68,7 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
    * @generated
    * @ordered
    */
-  protected EList<CourseOccurrence> taken;
+  protected EList<Course> taken;
 
   /**
    * The default value of the '{@link #getMaxCredits() <em>Max Credits</em>}' attribute.
@@ -142,11 +142,11 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
    * @generated
    */
   @Override
-  public EList<CourseOccurrence> getTaken()
+  public EList<Course> getTaken()
   {
     if (taken == null)
     {
-      taken = new EObjectContainmentEList<CourseOccurrence>(CourseOccurrence.class, this, CpsPackage.STUDENT__TAKEN);
+      taken = new EObjectContainmentEList<Course>(Course.class, this, CpsPackage.STUDENT__TAKEN);
     }
     return taken;
   }
@@ -228,7 +228,7 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
         return;
       case CpsPackage.STUDENT__TAKEN:
         getTaken().clear();
-        getTaken().addAll((Collection<? extends CourseOccurrence>)newValue);
+        getTaken().addAll((Collection<? extends Course>)newValue);
         return;
       case CpsPackage.STUDENT__MAX_CREDITS:
         setMaxCredits((Integer)newValue);

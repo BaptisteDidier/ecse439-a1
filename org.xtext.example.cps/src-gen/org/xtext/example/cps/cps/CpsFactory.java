@@ -51,15 +51,6 @@ public interface CpsFactory extends EFactory
   Student createStudent();
 
   /**
-   * Returns a new object of class '<em>Course Occurrence</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Course Occurrence</em>'.
-   * @generated
-   */
-  CourseOccurrence createCourseOccurrence();
-
-  /**
    * Returns a new object of class '<em>Course</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

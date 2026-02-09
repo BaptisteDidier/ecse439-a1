@@ -69,7 +69,6 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
       case CpsPackage.CPS: return createCps();
       case CpsPackage.PROGRAM: return createProgram();
       case CpsPackage.STUDENT: return createStudent();
-      case CpsPackage.COURSE_OCCURRENCE: return createCourseOccurrence();
       case CpsPackage.COURSE: return createCourse();
       case CpsPackage.EXPR: return createExpr();
       case CpsPackage.OR: return createOr();
@@ -91,8 +90,6 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
     {
       case CpsPackage.TERM:
         return createTermFromString(eDataType, initialValue);
-      case CpsPackage.OCCURRENCE_STATUS:
-        return createOccurrenceStatusFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -110,8 +107,6 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
     {
       case CpsPackage.TERM:
         return convertTermToString(eDataType, instanceValue);
-      case CpsPackage.OCCURRENCE_STATUS:
-        return convertOccurrenceStatusToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -151,18 +146,6 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
   {
     StudentImpl student = new StudentImpl();
     return student;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public CourseOccurrence createCourseOccurrence()
-  {
-    CourseOccurrenceImpl courseOccurrence = new CourseOccurrenceImpl();
-    return courseOccurrence;
   }
 
   /**
@@ -231,28 +214,6 @@ public class CpsFactoryImpl extends EFactoryImpl implements CpsFactory
    * @generated
    */
   public String convertTermToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public OccurrenceStatus createOccurrenceStatusFromString(EDataType eDataType, String initialValue)
-  {
-    OccurrenceStatus result = OccurrenceStatus.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertOccurrenceStatusToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

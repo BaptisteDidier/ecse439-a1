@@ -16,7 +16,6 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.cps.cps.And;
 import org.xtext.example.cps.cps.Course;
-import org.xtext.example.cps.cps.CourseOccurrence;
 import org.xtext.example.cps.cps.Cps;
 import org.xtext.example.cps.cps.CpsPackage;
 import org.xtext.example.cps.cps.Expr;
@@ -44,9 +43,6 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case CpsPackage.COURSE:
 				sequence_Course(context, (Course) semanticObject); 
-				return; 
-			case CpsPackage.COURSE_OCCURRENCE:
-				sequence_CourseOccurrence(context, (CourseOccurrence) semanticObject); 
 				return; 
 			case CpsPackage.CPS:
 				sequence_Cps(context, (Cps) semanticObject); 
@@ -93,20 +89,6 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getAndAccess().getAndLeftAction_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getAndAccess().getRightAtomParserRuleCall_1_2_0(), semanticObject.getRight());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     CourseOccurrence returns CourseOccurrence
-	 *
-	 * Constraint:
-	 *     (course=[Course|ID] status=OccurrenceStatus?)
-	 * </pre>
-	 */
-	protected void sequence_CourseOccurrence(ISerializationContext context, CourseOccurrence semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -164,11 +146,17 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Cps returns Cps
 	 *
 	 * Constraint:
-	 *     program+=Program
+	 *     program=Program
 	 * </pre>
 	 */
 	protected void sequence_Cps(ISerializationContext context, Cps semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, CpsPackage.Literals.CPS__PROGRAM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CpsPackage.Literals.CPS__PROGRAM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCpsAccess().getProgramProgramParserRuleCall_0(), semanticObject.getProgram());
+		feeder.finish();
 	}
 	
 	
@@ -220,7 +208,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Student returns Student
 	 *
 	 * Constraint:
-	 *     (name=ID taken+=CourseOccurrence* maxCredits=INT)
+	 *     (name=ID taken+=Course* maxCredits=INT)
 	 * </pre>
 	 */
 	protected void sequence_Student(ISerializationContext context, Student semanticObject) {

@@ -69,7 +69,7 @@ public interface CpsPackage extends EPackage
   int CPS = 0;
 
   /**
-   * The feature id for the '<em><b>Program</b></em>' containment reference list.
+   * The feature id for the '<em><b>Program</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -188,43 +188,6 @@ public interface CpsPackage extends EPackage
   int STUDENT_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cps.cps.impl.CourseOccurrenceImpl <em>Course Occurrence</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cps.cps.impl.CourseOccurrenceImpl
-   * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getCourseOccurrence()
-   * @generated
-   */
-  int COURSE_OCCURRENCE = 3;
-
-  /**
-   * The feature id for the '<em><b>Course</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COURSE_OCCURRENCE__COURSE = 0;
-
-  /**
-   * The feature id for the '<em><b>Status</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COURSE_OCCURRENCE__STATUS = 1;
-
-  /**
-   * The number of structural features of the '<em>Course Occurrence</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COURSE_OCCURRENCE_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.cps.cps.impl.CourseImpl <em>Course</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -232,7 +195,7 @@ public interface CpsPackage extends EPackage
    * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getCourse()
    * @generated
    */
-  int COURSE = 4;
+  int COURSE = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -314,7 +277,7 @@ public interface CpsPackage extends EPackage
    * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 5;
+  int EXPR = 4;
 
   /**
    * The feature id for the '<em><b>Course</b></em>' reference.
@@ -360,7 +323,7 @@ public interface CpsPackage extends EPackage
    * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getOr()
    * @generated
    */
-  int OR = 6;
+  int OR = 5;
 
   /**
    * The feature id for the '<em><b>Course</b></em>' reference.
@@ -406,7 +369,7 @@ public interface CpsPackage extends EPackage
    * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getAnd()
    * @generated
    */
-  int AND = 7;
+  int AND = 6;
 
   /**
    * The feature id for the '<em><b>Course</b></em>' reference.
@@ -452,17 +415,7 @@ public interface CpsPackage extends EPackage
    * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getTerm()
    * @generated
    */
-  int TERM = 8;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cps.cps.OccurrenceStatus <em>Occurrence Status</em>}' enum.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cps.cps.OccurrenceStatus
-   * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getOccurrenceStatus()
-   * @generated
-   */
-  int OCCURRENCE_STATUS = 9;
+  int TERM = 7;
 
 
   /**
@@ -476,10 +429,10 @@ public interface CpsPackage extends EPackage
   EClass getCps();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.cps.cps.Cps#getProgram <em>Program</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cps.cps.Cps#getProgram <em>Program</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Program</em>'.
+   * @return the meta object for the containment reference '<em>Program</em>'.
    * @see org.xtext.example.cps.cps.Cps#getProgram()
    * @see #getCps()
    * @generated
@@ -582,38 +535,6 @@ public interface CpsPackage extends EPackage
    * @generated
    */
   EAttribute getStudent_MaxCredits();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cps.cps.CourseOccurrence <em>Course Occurrence</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Course Occurrence</em>'.
-   * @see org.xtext.example.cps.cps.CourseOccurrence
-   * @generated
-   */
-  EClass getCourseOccurrence();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.example.cps.cps.CourseOccurrence#getCourse <em>Course</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Course</em>'.
-   * @see org.xtext.example.cps.cps.CourseOccurrence#getCourse()
-   * @see #getCourseOccurrence()
-   * @generated
-   */
-  EReference getCourseOccurrence_Course();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cps.cps.CourseOccurrence#getStatus <em>Status</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Status</em>'.
-   * @see org.xtext.example.cps.cps.CourseOccurrence#getStatus()
-   * @see #getCourseOccurrence()
-   * @generated
-   */
-  EAttribute getCourseOccurrence_Status();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cps.cps.Course <em>Course</em>}'.
@@ -776,16 +697,6 @@ public interface CpsPackage extends EPackage
   EEnum getTerm();
 
   /**
-   * Returns the meta object for enum '{@link org.xtext.example.cps.cps.OccurrenceStatus <em>Occurrence Status</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Occurrence Status</em>'.
-   * @see org.xtext.example.cps.cps.OccurrenceStatus
-   * @generated
-   */
-  EEnum getOccurrenceStatus();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -819,7 +730,7 @@ public interface CpsPackage extends EPackage
     EClass CPS = eINSTANCE.getCps();
 
     /**
-     * The meta object literal for the '<em><b>Program</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Program</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -901,32 +812,6 @@ public interface CpsPackage extends EPackage
      * @generated
      */
     EAttribute STUDENT__MAX_CREDITS = eINSTANCE.getStudent_MaxCredits();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.CourseOccurrenceImpl <em>Course Occurrence</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cps.cps.impl.CourseOccurrenceImpl
-     * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getCourseOccurrence()
-     * @generated
-     */
-    EClass COURSE_OCCURRENCE = eINSTANCE.getCourseOccurrence();
-
-    /**
-     * The meta object literal for the '<em><b>Course</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COURSE_OCCURRENCE__COURSE = eINSTANCE.getCourseOccurrence_Course();
-
-    /**
-     * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COURSE_OCCURRENCE__STATUS = eINSTANCE.getCourseOccurrence_Status();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cps.cps.impl.CourseImpl <em>Course</em>}' class.
@@ -1057,16 +942,6 @@ public interface CpsPackage extends EPackage
      * @generated
      */
     EEnum TERM = eINSTANCE.getTerm();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cps.cps.OccurrenceStatus <em>Occurrence Status</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cps.cps.OccurrenceStatus
-     * @see org.xtext.example.cps.cps.impl.CpsPackageImpl#getOccurrenceStatus()
-     * @generated
-     */
-    EEnum OCCURRENCE_STATUS = eINSTANCE.getOccurrenceStatus();
 
   }
 

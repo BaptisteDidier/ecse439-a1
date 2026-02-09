@@ -51,7 +51,7 @@ public interface Student extends EObject
 
   /**
    * Returns the value of the '<em><b>Taken</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.cps.cps.CourseOccurrence}.
+   * The list contents are of type {@link org.xtext.example.cps.cps.Course}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Taken</em>' containment reference list.
@@ -59,7 +59,7 @@ public interface Student extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<CourseOccurrence> getTaken();
+  EList<Course> getTaken();
 
   /**
    * Returns the value of the '<em><b>Max Credits</b></em>' attribute.

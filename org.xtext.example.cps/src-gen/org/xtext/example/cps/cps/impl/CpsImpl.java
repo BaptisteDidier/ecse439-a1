@@ -3,19 +3,14 @@
  */
 package org.xtext.example.cps.cps.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.cps.cps.Cps;
 import org.xtext.example.cps.cps.CpsPackage;
@@ -37,14 +32,14 @@ import org.xtext.example.cps.cps.Program;
 public class CpsImpl extends MinimalEObjectImpl.Container implements Cps
 {
   /**
-   * The cached value of the '{@link #getProgram() <em>Program</em>}' containment reference list.
+   * The cached value of the '{@link #getProgram() <em>Program</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getProgram()
    * @generated
    * @ordered
    */
-  protected EList<Program> program;
+  protected Program program;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +68,48 @@ public class CpsImpl extends MinimalEObjectImpl.Container implements Cps
    * @generated
    */
   @Override
-  public EList<Program> getProgram()
+  public Program getProgram()
   {
-    if (program == null)
-    {
-      program = new EObjectContainmentEList<Program>(Program.class, this, CpsPackage.CPS__PROGRAM);
-    }
     return program;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetProgram(Program newProgram, NotificationChain msgs)
+  {
+    Program oldProgram = program;
+    program = newProgram;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CpsPackage.CPS__PROGRAM, oldProgram, newProgram);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setProgram(Program newProgram)
+  {
+    if (newProgram != program)
+    {
+      NotificationChain msgs = null;
+      if (program != null)
+        msgs = ((InternalEObject)program).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CpsPackage.CPS__PROGRAM, null, msgs);
+      if (newProgram != null)
+        msgs = ((InternalEObject)newProgram).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CpsPackage.CPS__PROGRAM, null, msgs);
+      msgs = basicSetProgram(newProgram, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.CPS__PROGRAM, newProgram, newProgram));
   }
 
   /**
@@ -93,7 +123,7 @@ public class CpsImpl extends MinimalEObjectImpl.Container implements Cps
     switch (featureID)
     {
       case CpsPackage.CPS__PROGRAM:
-        return ((InternalEList<?>)getProgram()).basicRemove(otherEnd, msgs);
+        return basicSetProgram(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -119,15 +149,13 @@ public class CpsImpl extends MinimalEObjectImpl.Container implements Cps
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case CpsPackage.CPS__PROGRAM:
-        getProgram().clear();
-        getProgram().addAll((Collection<? extends Program>)newValue);
+        setProgram((Program)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -144,7 +172,7 @@ public class CpsImpl extends MinimalEObjectImpl.Container implements Cps
     switch (featureID)
     {
       case CpsPackage.CPS__PROGRAM:
-        getProgram().clear();
+        setProgram((Program)null);
         return;
     }
     super.eUnset(featureID);
@@ -161,7 +189,7 @@ public class CpsImpl extends MinimalEObjectImpl.Container implements Cps
     switch (featureID)
     {
       case CpsPackage.CPS__PROGRAM:
-        return program != null && !program.isEmpty();
+        return program != null;
     }
     return super.eIsSet(featureID);
   }

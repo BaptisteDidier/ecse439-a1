@@ -11,10 +11,6 @@
       <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Term/WINTER"/>
       <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Term/BOTH"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Cps.ecore#//OccurrenceStatus">
-      <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//OccurrenceStatus/TAKEN"/>
-      <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//OccurrenceStatus/PLANNED"/>
-    </genEnums>
     <genClasses ecoreClass="Cps.ecore#//Cps">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Cps/program"/>
     </genClasses>
@@ -28,10 +24,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Student/taken"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/maxCredits"/>
-    </genClasses>
-    <genClasses ecoreClass="Cps.ecore#//CourseOccurrence">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//CourseOccurrence/course"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//CourseOccurrence/status"/>
     </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Course">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/name"/>

@@ -124,31 +124,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleCourseOccurrence
-entryRuleCourseOccurrence
-:
-{ before(grammarAccess.getCourseOccurrenceRule()); }
-	 ruleCourseOccurrence
-{ after(grammarAccess.getCourseOccurrenceRule()); } 
-	 EOF 
-;
-
-// Rule CourseOccurrence
-ruleCourseOccurrence 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getCourseOccurrenceAccess().getGroup()); }
-		(rule__CourseOccurrence__Group__0)
-		{ after(grammarAccess.getCourseOccurrenceAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleCourse
 entryRuleCourse
 :
@@ -315,22 +290,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule OccurrenceStatus
-ruleOccurrenceStatus
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getOccurrenceStatusAccess().getAlternatives()); }
-		(rule__OccurrenceStatus__Alternatives)
-		{ after(grammarAccess.getOccurrenceStatusAccess().getAlternatives()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__Atom__Alternatives
 	@init {
 		int stackSize = keepStackSize();
@@ -373,27 +332,6 @@ rule__Term__Alternatives
 		{ before(grammarAccess.getTermAccess().getBOTHEnumLiteralDeclaration_2()); }
 		('BOTH')
 		{ after(grammarAccess.getTermAccess().getBOTHEnumLiteralDeclaration_2()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__OccurrenceStatus__Alternatives
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getOccurrenceStatusAccess().getTAKENEnumLiteralDeclaration_0()); }
-		('TAKEN')
-		{ after(grammarAccess.getOccurrenceStatusAccess().getTAKENEnumLiteralDeclaration_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getOccurrenceStatusAccess().getPLANNEDEnumLiteralDeclaration_1()); }
-		('PLANNED')
-		{ after(grammarAccess.getOccurrenceStatusAccess().getPLANNEDEnumLiteralDeclaration_1()); }
 	)
 ;
 finally {
@@ -1068,114 +1006,6 @@ rule__Student__Group__7__Impl
 	{ before(grammarAccess.getStudentAccess().getMaxCreditsAssignment_7()); }
 	(rule__Student__MaxCreditsAssignment_7)
 	{ after(grammarAccess.getStudentAccess().getMaxCreditsAssignment_7()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__CourseOccurrence__Group__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CourseOccurrence__Group__0__Impl
-	rule__CourseOccurrence__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__Group__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCourseOccurrenceAccess().getCourseAssignment_0()); }
-	(rule__CourseOccurrence__CourseAssignment_0)
-	{ after(grammarAccess.getCourseOccurrenceAccess().getCourseAssignment_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CourseOccurrence__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCourseOccurrenceAccess().getGroup_1()); }
-	(rule__CourseOccurrence__Group_1__0)?
-	{ after(grammarAccess.getCourseOccurrenceAccess().getGroup_1()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__CourseOccurrence__Group_1__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CourseOccurrence__Group_1__0__Impl
-	rule__CourseOccurrence__Group_1__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__Group_1__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCourseOccurrenceAccess().getStatusKeyword_1_0()); }
-	'status'
-	{ after(grammarAccess.getCourseOccurrenceAccess().getStatusKeyword_1_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__Group_1__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__CourseOccurrence__Group_1__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__Group_1__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getCourseOccurrenceAccess().getStatusAssignment_1_1()); }
-	(rule__CourseOccurrence__StatusAssignment_1_1)
-	{ after(grammarAccess.getCourseOccurrenceAccess().getStatusAssignment_1_1()); }
 )
 ;
 finally {
@@ -2058,9 +1888,9 @@ rule__Student__TakenAssignment_4
 	}
 :
 	(
-		{ before(grammarAccess.getStudentAccess().getTakenCourseOccurrenceParserRuleCall_4_0()); }
-		ruleCourseOccurrence
-		{ after(grammarAccess.getStudentAccess().getTakenCourseOccurrenceParserRuleCall_4_0()); }
+		{ before(grammarAccess.getStudentAccess().getTakenCourseParserRuleCall_4_0()); }
+		ruleCourse
+		{ after(grammarAccess.getStudentAccess().getTakenCourseParserRuleCall_4_0()); }
 	)
 ;
 finally {
@@ -2076,40 +1906,6 @@ rule__Student__MaxCreditsAssignment_7
 		{ before(grammarAccess.getStudentAccess().getMaxCreditsINTTerminalRuleCall_7_0()); }
 		RULE_INT
 		{ after(grammarAccess.getStudentAccess().getMaxCreditsINTTerminalRuleCall_7_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__CourseAssignment_0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getCourseOccurrenceAccess().getCourseCourseCrossReference_0_0()); }
-		(
-			{ before(grammarAccess.getCourseOccurrenceAccess().getCourseCourseIDTerminalRuleCall_0_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getCourseOccurrenceAccess().getCourseCourseIDTerminalRuleCall_0_0_1()); }
-		)
-		{ after(grammarAccess.getCourseOccurrenceAccess().getCourseCourseCrossReference_0_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__CourseOccurrence__StatusAssignment_1_1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getCourseOccurrenceAccess().getStatusOccurrenceStatusEnumRuleCall_1_1_0()); }
-		ruleOccurrenceStatus
-		{ after(grammarAccess.getCourseOccurrenceAccess().getStatusOccurrenceStatusEnumRuleCall_1_1_0()); }
 	)
 ;
 finally {

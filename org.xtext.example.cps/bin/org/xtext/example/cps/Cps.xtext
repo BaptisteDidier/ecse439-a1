@@ -1,28 +1,21 @@
 grammar org.xtext.example.cps.Cps with org.eclipse.xtext.common.Terminals
 
 generate cps "http://www.xtext.org/example/cps/Cps" //for steps 1 and 2
-//import "http://www.xtext.org/example/cps/Cps"
+//import "http://www.xtext.org/example/cps/Cps" // for steps 3, 4, 5
 
 Cps:
-    program+=Program
-;
+    program=Program;
 
 Program:
     'program' name=ID
     'courses' '{' courses+=Course* '}'
     'required' '{' requiredCourses+=[Course] (',' requiredCourses+=[Course])* '}'
-    'students' '{' students+=Student* '}'
-;
+    'students' '{' students+=Student* '}';
 
 Student:
     'student' name=ID
-    'taken' '{' taken+=CourseOccurrence* '}'
-    'maxCreditsPerTerm' maxCredits=INT
-;
-
-CourseOccurrence:
-    course=[Course] ('status' status=OccurrenceStatus)?
-;
+    'taken' '{' taken+=Course* '}'
+    'maxCreditsPerTerm' maxCredits=INT;
 
 Course:
     'course' name=ID number=ID
@@ -30,37 +23,22 @@ Course:
     'offered' offered=Term
     'year' year=INT
     ('prereq' prereq=Expr)?
-    ('coreq' coreq=Expr)?
-;
+    ('coreq' coreq=Expr)?;
 
 enum Term:
-    FALL='FALL'
-  | WINTER='WINTER'
-  | BOTH='BOTH'
-;
-
-enum OccurrenceStatus:
-    TAKEN='TAKEN'
-  | PLANNED='PLANNED'
-;
+    FALL='FALL' | WINTER='WINTER' | BOTH='BOTH';
 
 Expr returns Expr:
-      Or
-;
+      Or;
 
 Or returns Expr:
-    And ( {Or.left=current} 'OR' right=And )*
-;
+    And ( {Or.left=current} 'OR' right=And )*;
 
 And returns Expr:
-    Atom ( {And.left=current} 'AND' right=Atom )*
-;
+    Atom ( {And.left=current} 'AND' right=Atom )*;
 
 Atom returns Expr:
-      CourseRef
-    | '(' Expr ')'
-;
+      CourseRef | '(' Expr ')';
 
 CourseRef returns Expr:
-    course=[Course]
-;
+    course=[Course];
