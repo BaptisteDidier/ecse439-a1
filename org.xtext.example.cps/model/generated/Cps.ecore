@@ -9,8 +9,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//Course" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCourses" unique="false"
-        upperBound="-1" eType="#//Course"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="students" upperBound="-1"
         eType="#//Student" containment="true"/>
   </eClassifiers>
@@ -19,8 +17,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="taken" upperBound="-1"
         eType="#//Course" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxCredits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="remainingTerms" upperBound="-1"
-        eType="#//PlannedTerm" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -45,10 +41,4 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//Expr"/>
   <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//Expr"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PlannedTerm">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="term" eType="#//Term"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="proposedCourses" upperBound="-1"
-        eType="#//Course"/>
-  </eClassifiers>
 </ecore:EPackage>

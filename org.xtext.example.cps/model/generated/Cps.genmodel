@@ -17,7 +17,6 @@
     <genClasses ecoreClass="Cps.ecore#//Program">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Program/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Program/courses"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//Program/requiredCourses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Program/students"/>
     </genClasses>
     <genClasses ecoreClass="Cps.ecore#//Student">

@@ -115,22 +115,13 @@ public interface CpsPackage extends EPackage
   int PROGRAM__COURSES = 1;
 
   /**
-   * The feature id for the '<em><b>Required Courses</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROGRAM__REQUIRED_COURSES = 2;
-
-  /**
    * The feature id for the '<em><b>Students</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROGRAM__STUDENTS = 3;
+  int PROGRAM__STUDENTS = 2;
 
   /**
    * The number of structural features of the '<em>Program</em>' class.
@@ -139,7 +130,7 @@ public interface CpsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROGRAM_FEATURE_COUNT = 4;
+  int PROGRAM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.example.cps.cps.impl.StudentImpl <em>Student</em>}' class.
@@ -463,17 +454,6 @@ public interface CpsPackage extends EPackage
   EReference getProgram_Courses();
 
   /**
-   * Returns the meta object for the reference list '{@link org.xtext.example.cps.cps.Program#getRequiredCourses <em>Required Courses</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Required Courses</em>'.
-   * @see org.xtext.example.cps.cps.Program#getRequiredCourses()
-   * @see #getProgram()
-   * @generated
-   */
-  EReference getProgram_RequiredCourses();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.cps.cps.Program#getStudents <em>Students</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -742,14 +722,6 @@ public interface CpsPackage extends EPackage
      * @generated
      */
     EReference PROGRAM__COURSES = eINSTANCE.getProgram_Courses();
-
-    /**
-     * The meta object literal for the '<em><b>Required Courses</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PROGRAM__REQUIRED_COURSES = eINSTANCE.getProgram_RequiredCourses();
 
     /**
      * The meta object literal for the '<em><b>Students</b></em>' containment reference list feature.

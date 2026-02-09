@@ -1,5 +1,3 @@
-
-
 program "Software Engineering" {
 
   courses {

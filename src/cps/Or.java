@@ -1,0 +1,17 @@
+/**
+ */
+package cps;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Or</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see cps.CpsPackage#getOr()
+ * @model
+ * @generated
+ */
+public interface Or extends Expr {
+} // Or

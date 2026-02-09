@@ -9,7 +9,6 @@ Cps:
 Program:
     'program' name=ID
     'courses' '{' courses+=Course* '}'
-    'required' '{' requiredCourses+=[Course] (',' requiredCourses+=[Course])* '}'
     'students' '{' students+=Student* '}';
 
 Student:

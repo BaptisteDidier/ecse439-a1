@@ -193,7 +193,7 @@ public class CpsSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Program returns Program
 	 *
 	 * Constraint:
-	 *     (name=ID courses+=Course* requiredCourses+=[Course|ID] requiredCourses+=[Course|ID]* students+=Student*)
+	 *     (name=ID courses+=Course* students+=Student*)
 	 * </pre>
 	 */
 	protected void sequence_Program(ISerializationContext context, Program semanticObject) {

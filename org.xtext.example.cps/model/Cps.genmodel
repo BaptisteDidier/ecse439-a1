@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ecse439-a1/src" modelPluginID="ecse439-a1" modelName="Cps"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="21.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>../../../org.xtext.example.cps/model/Cps.ecore</foreignModel>
+  <genPackages prefix="Cps" disposableProviderFactory="true" ecorePackage="Cps.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Cps.ecore#//Term">
+      <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Term/FALL"/>
+      <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Term/WINTER"/>
+      <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Term/BOTH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Cps.ecore#//Semester">
+      <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Semester/FALL"/>
+      <genEnumLiterals ecoreEnumLiteral="Cps.ecore#//Semester/WINTER"/>
+    </genEnums>
+    <genClasses ecoreClass="Cps.ecore#//Cps">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Cps/program"/>
+    </genClasses>
+    <genClasses ecoreClass="Cps.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Program/courses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Program/students"/>
+    </genClasses>
+    <genClasses ecoreClass="Cps.ecore#//Student">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Student/taken"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Student/maxCredits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Student/plannedSessions"/>
+    </genClasses>
+    <genClasses ecoreClass="Cps.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/credits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/offered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//Course/year"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Course/prereq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Course/coreq"/>
+    </genClasses>
+    <genClasses ecoreClass="Cps.ecore#//Expr">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//Expr/course"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Expr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cps.ecore#//Expr/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Cps.ecore#//Or"/>
+    <genClasses ecoreClass="Cps.ecore#//And"/>
+    <genClasses ecoreClass="Cps.ecore#//PlannedSession">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//PlannedSession/termOrder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cps.ecore#//PlannedSession/semester"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Cps.ecore#//PlannedSession/proposedCourses"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Cps -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="cps.presentation.CpsModelWizardID"
+            name="%_UI_CpsModelWizard_label"
+            class="cps.presentation.CpsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CpsModelFile.gif">
+         <description>%_UI_CpsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Cps -->
+      <editor
+            id="cps.presentation.CpsEditorID"
+            name="%_UI_CpsEditor_label"
+            icon="icons/full/obj16/CpsModelFile.gif"
+            extensions="cps"
+            class="cps.presentation.CpsEditor"
+            contributorClass="cps.presentation.CpsActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

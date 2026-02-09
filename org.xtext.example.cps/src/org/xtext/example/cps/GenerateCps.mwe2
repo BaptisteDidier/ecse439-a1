@@ -33,6 +33,8 @@ Workflow {
 		language = StandardLanguage {
 			name = "org.xtext.example.cps.Cps"
 			fileExtensions = "cps"
+			
+			referencedResource = "platform:/resource/org.xtext.example.cps/model/Cps.genmodel"
 
 			serializer = {
 				generateStub = false

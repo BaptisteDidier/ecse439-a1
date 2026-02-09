@@ -209,20 +209,9 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
    * @generated
    */
   @Override
-  public EReference getProgram_RequiredCourses()
-  {
-    return (EReference)programEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getProgram_Students()
   {
-    return (EReference)programEClass.getEStructuralFeatures().get(3);
+    return (EReference)programEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -460,7 +449,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     programEClass = createEClass(PROGRAM);
     createEAttribute(programEClass, PROGRAM__NAME);
     createEReference(programEClass, PROGRAM__COURSES);
-    createEReference(programEClass, PROGRAM__REQUIRED_COURSES);
     createEReference(programEClass, PROGRAM__STUDENTS);
 
     studentEClass = createEClass(STUDENT);
@@ -528,7 +516,6 @@ public class CpsPackageImpl extends EPackageImpl implements CpsPackage
     initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProgram_Name(), ecorePackage.getEString(), "name", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProgram_Courses(), this.getCourse(), null, "courses", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProgram_RequiredCourses(), this.getCourse(), null, "requiredCourses", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProgram_Students(), this.getStudent(), null, "students", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -1,0 +1,485 @@
+/**
+ */
+package cps.impl;
+
+import cps.Course;
+import cps.CpsPackage;
+import cps.Expr;
+import cps.Term;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Course</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link cps.impl.CourseImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link cps.impl.CourseImpl#getCredits <em>Credits</em>}</li>
+ *   <li>{@link cps.impl.CourseImpl#getOffered <em>Offered</em>}</li>
+ *   <li>{@link cps.impl.CourseImpl#getYear <em>Year</em>}</li>
+ *   <li>{@link cps.impl.CourseImpl#getPrereq <em>Prereq</em>}</li>
+ *   <li>{@link cps.impl.CourseImpl#getCoreq <em>Coreq</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
+	/**
+	 * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String CODE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCode()
+	 * @generated
+	 * @ordered
+	 */
+	protected String code = CODE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getCredits() <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredits()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int CREDITS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCredits() <em>Credits</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCredits()
+	 * @generated
+	 * @ordered
+	 */
+	protected int credits = CREDITS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getOffered() <em>Offered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOffered()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Term OFFERED_EDEFAULT = Term.FALL;
+
+	/**
+	 * The cached value of the '{@link #getOffered() <em>Offered</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOffered()
+	 * @generated
+	 * @ordered
+	 */
+	protected Term offered = OFFERED_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int YEAR_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected int year = YEAR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPrereq() <em>Prereq</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPrereq()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expr prereq;
+
+	/**
+	 * The cached value of the '{@link #getCoreq() <em>Coreq</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCoreq()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expr coreq;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CourseImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CpsPackage.Literals.COURSE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCode() {
+		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCode(String newCode) {
+		String oldCode = code;
+		code = newCode;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__CODE, oldCode, code));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getCredits() {
+		return credits;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCredits(int newCredits) {
+		int oldCredits = credits;
+		credits = newCredits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__CREDITS, oldCredits, credits));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Term getOffered() {
+		return offered;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOffered(Term newOffered) {
+		Term oldOffered = offered;
+		offered = newOffered == null ? OFFERED_EDEFAULT : newOffered;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__OFFERED, oldOffered, offered));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getYear() {
+		return year;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setYear(int newYear) {
+		int oldYear = year;
+		year = newYear;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__YEAR, oldYear, year));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Expr getPrereq() {
+		return prereq;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPrereq(Expr newPrereq, NotificationChain msgs) {
+		Expr oldPrereq = prereq;
+		prereq = newPrereq;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__PREREQ, oldPrereq, newPrereq);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPrereq(Expr newPrereq) {
+		if (newPrereq != prereq) {
+			NotificationChain msgs = null;
+			if (prereq != null)
+				msgs = ((InternalEObject)prereq).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__PREREQ, null, msgs);
+			if (newPrereq != null)
+				msgs = ((InternalEObject)newPrereq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__PREREQ, null, msgs);
+			msgs = basicSetPrereq(newPrereq, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__PREREQ, newPrereq, newPrereq));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Expr getCoreq() {
+		return coreq;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCoreq(Expr newCoreq, NotificationChain msgs) {
+		Expr oldCoreq = coreq;
+		coreq = newCoreq;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__COREQ, oldCoreq, newCoreq);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCoreq(Expr newCoreq) {
+		if (newCoreq != coreq) {
+			NotificationChain msgs = null;
+			if (coreq != null)
+				msgs = ((InternalEObject)coreq).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__COREQ, null, msgs);
+			if (newCoreq != null)
+				msgs = ((InternalEObject)newCoreq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CpsPackage.COURSE__COREQ, null, msgs);
+			msgs = basicSetCoreq(newCoreq, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CpsPackage.COURSE__COREQ, newCoreq, newCoreq));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CpsPackage.COURSE__PREREQ:
+				return basicSetPrereq(null, msgs);
+			case CpsPackage.COURSE__COREQ:
+				return basicSetCoreq(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case CpsPackage.COURSE__CODE:
+				return getCode();
+			case CpsPackage.COURSE__CREDITS:
+				return getCredits();
+			case CpsPackage.COURSE__OFFERED:
+				return getOffered();
+			case CpsPackage.COURSE__YEAR:
+				return getYear();
+			case CpsPackage.COURSE__PREREQ:
+				return getPrereq();
+			case CpsPackage.COURSE__COREQ:
+				return getCoreq();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case CpsPackage.COURSE__CODE:
+				setCode((String)newValue);
+				return;
+			case CpsPackage.COURSE__CREDITS:
+				setCredits((Integer)newValue);
+				return;
+			case CpsPackage.COURSE__OFFERED:
+				setOffered((Term)newValue);
+				return;
+			case CpsPackage.COURSE__YEAR:
+				setYear((Integer)newValue);
+				return;
+			case CpsPackage.COURSE__PREREQ:
+				setPrereq((Expr)newValue);
+				return;
+			case CpsPackage.COURSE__COREQ:
+				setCoreq((Expr)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case CpsPackage.COURSE__CODE:
+				setCode(CODE_EDEFAULT);
+				return;
+			case CpsPackage.COURSE__CREDITS:
+				setCredits(CREDITS_EDEFAULT);
+				return;
+			case CpsPackage.COURSE__OFFERED:
+				setOffered(OFFERED_EDEFAULT);
+				return;
+			case CpsPackage.COURSE__YEAR:
+				setYear(YEAR_EDEFAULT);
+				return;
+			case CpsPackage.COURSE__PREREQ:
+				setPrereq((Expr)null);
+				return;
+			case CpsPackage.COURSE__COREQ:
+				setCoreq((Expr)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case CpsPackage.COURSE__CODE:
+				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+			case CpsPackage.COURSE__CREDITS:
+				return credits != CREDITS_EDEFAULT;
+			case CpsPackage.COURSE__OFFERED:
+				return offered != OFFERED_EDEFAULT;
+			case CpsPackage.COURSE__YEAR:
+				return year != YEAR_EDEFAULT;
+			case CpsPackage.COURSE__PREREQ:
+				return prereq != null;
+			case CpsPackage.COURSE__COREQ:
+				return coreq != null;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (code: ");
+		result.append(code);
+		result.append(", credits: ");
+		result.append(credits);
+		result.append(", offered: ");
+		result.append(offered);
+		result.append(", year: ");
+		result.append(year);
+		result.append(')');
+		return result.toString();
+	}
+
+} //CourseImpl

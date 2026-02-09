@@ -166,9 +166,9 @@ ruleProgram returns [EObject current=null]
 		{
 			newLeafNode(otherlv_5, grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_5());
 		}
-		otherlv_6='required'
+		otherlv_6='students'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getProgramAccess().getRequiredKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getProgramAccess().getStudentsKeyword_6());
 		}
 		otherlv_7='{'
 		{
@@ -177,53 +177,9 @@ ruleProgram returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getProgramRule());
-					}
+					newCompositeNode(grammarAccess.getProgramAccess().getStudentsStudentParserRuleCall_8_0());
 				}
-				otherlv_8=RULE_ID
-				{
-					newLeafNode(otherlv_8, grammarAccess.getProgramAccess().getRequiredCoursesCourseCrossReference_8_0());
-				}
-			)
-		)
-		(
-			otherlv_9=','
-			{
-				newLeafNode(otherlv_9, grammarAccess.getProgramAccess().getCommaKeyword_9_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getProgramRule());
-						}
-					}
-					otherlv_10=RULE_ID
-					{
-						newLeafNode(otherlv_10, grammarAccess.getProgramAccess().getRequiredCoursesCourseCrossReference_9_1_0());
-					}
-				)
-			)
-		)*
-		otherlv_11='}'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_10());
-		}
-		otherlv_12='students'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getProgramAccess().getStudentsKeyword_11());
-		}
-		otherlv_13='{'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getProgramAccess().getLeftCurlyBracketKeyword_12());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getProgramAccess().getStudentsStudentParserRuleCall_13_0());
-				}
-				lv_students_14_0=ruleStudent
+				lv_students_8_0=ruleStudent
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getProgramRule());
@@ -231,15 +187,15 @@ ruleProgram returns [EObject current=null]
 					add(
 						$current,
 						"students",
-						lv_students_14_0,
+						lv_students_8_0,
 						"org.xtext.example.cps.Cps.Student");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_15='}'
+		otherlv_9='}'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_14());
+			newLeafNode(otherlv_9, grammarAccess.getProgramAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;

@@ -34,7 +34,6 @@ public class CpsParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAtomAccess().getAlternatives(), "rule__Atom__Alternatives");
 			builder.put(grammarAccess.getTermAccess().getAlternatives(), "rule__Term__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
-			builder.put(grammarAccess.getProgramAccess().getGroup_9(), "rule__Program__Group_9__0");
 			builder.put(grammarAccess.getStudentAccess().getGroup(), "rule__Student__Group__0");
 			builder.put(grammarAccess.getCourseAccess().getGroup(), "rule__Course__Group__0");
 			builder.put(grammarAccess.getCourseAccess().getGroup_8(), "rule__Course__Group_8__0");
@@ -47,9 +46,7 @@ public class CpsParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCpsAccess().getProgramAssignment(), "rule__Cps__ProgramAssignment");
 			builder.put(grammarAccess.getProgramAccess().getNameAssignment_1(), "rule__Program__NameAssignment_1");
 			builder.put(grammarAccess.getProgramAccess().getCoursesAssignment_4(), "rule__Program__CoursesAssignment_4");
-			builder.put(grammarAccess.getProgramAccess().getRequiredCoursesAssignment_8(), "rule__Program__RequiredCoursesAssignment_8");
-			builder.put(grammarAccess.getProgramAccess().getRequiredCoursesAssignment_9_1(), "rule__Program__RequiredCoursesAssignment_9_1");
-			builder.put(grammarAccess.getProgramAccess().getStudentsAssignment_13(), "rule__Program__StudentsAssignment_13");
+			builder.put(grammarAccess.getProgramAccess().getStudentsAssignment_8(), "rule__Program__StudentsAssignment_8");
 			builder.put(grammarAccess.getStudentAccess().getNameAssignment_1(), "rule__Student__NameAssignment_1");
 			builder.put(grammarAccess.getStudentAccess().getTakenAssignment_4(), "rule__Student__TakenAssignment_4");
 			builder.put(grammarAccess.getStudentAccess().getMaxCreditsAssignment_7(), "rule__Student__MaxCreditsAssignment_7");

@@ -54,33 +54,20 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Assignment cCoursesAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cCoursesCourseParserRuleCall_4_0 = (RuleCall)cCoursesAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cRequiredKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cStudentsKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cRequiredCoursesAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cRequiredCoursesCourseCrossReference_8_0 = (CrossReference)cRequiredCoursesAssignment_8.eContents().get(0);
-		private final RuleCall cRequiredCoursesCourseIDTerminalRuleCall_8_0_1 = (RuleCall)cRequiredCoursesCourseCrossReference_8_0.eContents().get(1);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
-		private final Assignment cRequiredCoursesAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final CrossReference cRequiredCoursesCourseCrossReference_9_1_0 = (CrossReference)cRequiredCoursesAssignment_9_1.eContents().get(0);
-		private final RuleCall cRequiredCoursesCourseIDTerminalRuleCall_9_1_0_1 = (RuleCall)cRequiredCoursesCourseCrossReference_9_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cStudentsKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Assignment cStudentsAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cStudentsStudentParserRuleCall_13_0 = (RuleCall)cStudentsAssignment_13.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cStudentsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cStudentsStudentParserRuleCall_8_0 = (RuleCall)cStudentsAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Program:
 		//    'program' name=ID
 		//    'courses' '{' courses+=Course* '}'
-		//    'required' '{' requiredCourses+=[Course] (',' requiredCourses+=[Course])* '}'
 		//    'students' '{' students+=Student* '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'program' name=ID
 		//'courses' '{' courses+=Course* '}'
-		//'required' '{' requiredCourses+=[Course] (',' requiredCourses+=[Course])* '}'
 		//'students' '{' students+=Student* '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -108,53 +95,20 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 		
-		//'required'
-		public Keyword getRequiredKeyword_6() { return cRequiredKeyword_6; }
+		//'students'
+		public Keyword getStudentsKeyword_6() { return cStudentsKeyword_6; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
 		
-		//requiredCourses+=[Course]
-		public Assignment getRequiredCoursesAssignment_8() { return cRequiredCoursesAssignment_8; }
-		
-		//[Course]
-		public CrossReference getRequiredCoursesCourseCrossReference_8_0() { return cRequiredCoursesCourseCrossReference_8_0; }
-		
-		//ID
-		public RuleCall getRequiredCoursesCourseIDTerminalRuleCall_8_0_1() { return cRequiredCoursesCourseIDTerminalRuleCall_8_0_1; }
-		
-		//(',' requiredCourses+=[Course])*
-		public Group getGroup_9() { return cGroup_9; }
-		
-		//','
-		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
-		
-		//requiredCourses+=[Course]
-		public Assignment getRequiredCoursesAssignment_9_1() { return cRequiredCoursesAssignment_9_1; }
-		
-		//[Course]
-		public CrossReference getRequiredCoursesCourseCrossReference_9_1_0() { return cRequiredCoursesCourseCrossReference_9_1_0; }
-		
-		//ID
-		public RuleCall getRequiredCoursesCourseIDTerminalRuleCall_9_1_0_1() { return cRequiredCoursesCourseIDTerminalRuleCall_9_1_0_1; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
-		
-		//'students'
-		public Keyword getStudentsKeyword_11() { return cStudentsKeyword_11; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
-		
 		//students+=Student*
-		public Assignment getStudentsAssignment_13() { return cStudentsAssignment_13; }
+		public Assignment getStudentsAssignment_8() { return cStudentsAssignment_8; }
 		
 		//Student
-		public RuleCall getStudentsStudentParserRuleCall_13_0() { return cStudentsStudentParserRuleCall_13_0; }
+		public RuleCall getStudentsStudentParserRuleCall_8_0() { return cStudentsStudentParserRuleCall_8_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class StudentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.cps.Cps.Student");
@@ -558,7 +512,6 @@ public class CpsGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//Program:
 	//    'program' name=ID
 	//    'courses' '{' courses+=Course* '}'
-	//    'required' '{' requiredCourses+=[Course] (',' requiredCourses+=[Course])* '}'
 	//    'students' '{' students+=Student* '}';
 	public ProgramElements getProgramAccess() {
 		return pProgram;
