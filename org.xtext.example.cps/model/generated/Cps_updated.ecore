@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<ns0:EPackage xmlns:ns0="http://www.eclipse.org/emf/2002/Ecore" xmlns:ns1="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ns1:version="2.0" name="cps" nsURI="http://www.xtext.org/example/cps/Cps" nsPrefix="cps">
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="Cps">
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" eType="#//Program" containment="true"/>
+    
+    
+  </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="Program">
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1" eType="#//Course" containment="true"/>
+    
+  
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCourses" eType="#//Course" containment="false" upperBound="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="students" eType="#//Student" containment="true" upperBound="-1"/>
+  </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="Student">
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxCredits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    
+  
+    <eStructuralFeatures xsi:type="ecore:EReference" name="taken" eType="#//CourseOccurrence" containment="true" upperBound="-1"/>
+  </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="Course">
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offered" eType="#//Term"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EReference" name="prereq" eType="#//Expr" containment="true"/>
+    
+    
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coreq" eType="#//Expr" containment="true"/>
+    
+  
+  </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EEnum" name="Term">
+    
+    
+    <eLiterals name="FALL" literal="FALL"/>
+    
+    
+    <eLiterals name="WINTER" value="1" literal="WINTER"/>
+    
+    
+    <eLiterals name="BOTH" value="2" literal="BOTH"/>
+    
+  
+  </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="Expr" abstract="true">
+    </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//Expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr" containment="true" lowerBound="1"/>
+  </eClassifiers>
+  
+  
+  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//Expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expr" containment="true" lowerBound="1"/>
+  </eClassifiers>
+  
+
+  <eClassifiers xsi:type="ecore:EEnum" name="OccurrenceStatus">
+    <eLiterals name="TAKEN" literal="TAKEN"/>
+    <eLiterals name="PLANNED" value="1" literal="PLANNED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseOccurrence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course" containment="false" lowerBound="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//OccurrenceStatus" lowerBound="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseRef" eSuperTypes="#//Expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course" containment="false" lowerBound="1"/>
+  </eClassifiers>
+</ns0:EPackage>
