@@ -1,32 +1,51 @@
-program "Software Engineering" {
+program SoftwareEng
+courses {
+  course ECSE250
+    credits 3
+    offered FALL
+    year 1
 
-  courses {
-    course ECSE200 "Introduction to Electrical Engineering" credits 3 year 1 term FALL
-    course ECSE202 "Foundations of Programming"            credits 3 year 1 term WINTER
-    course COMP202 "Foundations of Programming"            credits 3 year 1 term WINTER
-    course ECSE205 "Intro to Signals"                      credits 3 year 1 term BOTH
+  course COMP251
+    credits 4
+    offered WINTER
+    year 1
 
-    course ECSE211 "Design Principles"                     credits 3 year 2 term FALL
-      prereq: (ECSE200 OR ECSE205)
+  course ECSE223
+    credits 3
+    offered BOTH
+    year 1
+    prereq ECSE250
 
-    course ECSE222 "Digital Logic"                         credits 3 year 2 term WINTER
-      prereq: ECSE200
+  course ECSE326
+    credits 4
+    offered FALL
+    year 2
+    prereq ECSE223
 
-    course ECSE223 "Model-Based Programming"               credits 3 year 2 term FALL
-      prereq: (ECSE202 OR COMP202)
-      coreq:  ECSE211
+  course ECSE439
+    credits 3
+    offered WINTER
+    year 2
+    prereq COMP251
+    coreq ECSE326
 
-    course ECSE321 "Intro to Software Engineering"         credits 3 year 3 term WINTER
-      prereq: (ECSE223 AND ECSE222)
-  }
-
-  students {
-    student "Alice" maxCredits 6 {
-      taken: ECSE200, ECSE202
-    }
-
-    student "Bob" maxCredits 9 {
-      taken: ECSE200, COMP202, ECSE205
-    }
-  }
+  course ECSE539
+    credits 3
+    offered BOTH
+    year 3
+    prereq ECSE326 OR ECSE439
 }
+students {
+  student Alice
+    taken { ECSE250 }
+    maxCreditsPerTerm 12
+
+  student Bob
+    taken { }
+    maxCreditsPerTerm 16
+
+  student Carol
+    taken { ECSE250 COMP251 }
+    maxCreditsPerTerm 14
+}
+
