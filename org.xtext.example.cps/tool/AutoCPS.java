@@ -39,13 +39,30 @@ public class AutoCPS {
             Set<Course> completed = new HashSet<>(taken);
             
             for (Course c : remaining) {
-                boolean scheduled = false;
 
-                
-                
+                for (int termIndex = 0; !remaining.isEmpty(); termIndex++) {
+                    Term termType = (termIndex % 2 == 0) ? Term.FALL : Term.WINTER;
 
-                if (!scheduled) {
-                    System.out.println("Course " + c.getCode() + " could not be scheduled");
+                    // Check if course is offered in this term
+                    if (!(c.getOffered() == Term.BOTH || c.getOffered() == termType))
+                        continue;
+
+                    // Check prerequisites
+                    if (c.getPrereq() != null && !evalExpr(c.getPrereq(), completed))
+                        continue;
+
+                    int usedCredits = creditsPerTerm.getOrDefault(termIndex, 0);
+                    if (usedCredits + c.getCredits() > s.getMaxCreditsPerTerm())
+                        continue;
+
+                    // Ensure plannedTerms list is big enough
+                    while (s.getPlannedTerms().size() <= termIndex) {
+                        s.getPlannedTerms().add(new ArrayList<>());
+                    }
+                    s.getPlannedTerms().get(termIndex).add(c);
+
+                    creditsPerTerm.put(termIndex, usedCredits + c.getCredits());
+                    completed.add(c);
                 }
             }
         }
